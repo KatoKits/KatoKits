@@ -10,30 +10,40 @@
   <style>
     .contact-form {
       max-width: 600px;
-      margin: 3rem auto 0 auto;
+      margin: 2rem auto;
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: 0 2px 14px #0001;
-      padding: 2.2rem;
+      padding: 2rem;
     }
     .contact-form label {
-      font-size: 1.07rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--green);
       display: block;
       margin-bottom: 0.5rem;
     }
     .contact-form input, .contact-form textarea, .contact-form select {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+      outline: none;
+      border-color: var(--green);
     }
     .contact-form textarea {
-      min-height: 120px;
+      min-height: 100px;
       resize: vertical;
     }
     .contact-info {
       background: var(--cream-left);
       border-radius: var(--radius);
-      padding: 2rem;
+      padding: 1.5rem;
       margin: 2rem auto;
       max-width: 600px;
       text-align: center;
@@ -41,28 +51,39 @@
     .contact-info h3 {
       color: var(--green);
       margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
     .contact-info p {
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark-green);
+      font-size: 0.95rem;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .footer-info {
+      text-align: right;
+    }
+    .footer-info p {
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
       color: var(--dark-green);
     }
-    .instagram-cta {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-      color: white;
-      padding: 1rem;
-      border-radius: var(--radius);
-      margin: 2rem auto;
-      max-width: 600px;
-      text-align: center;
-      font-weight: 700;
-    }
-    .instagram-cta a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-    .instagram-cta a:hover {
-      text-decoration: underline;
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-info {
+        text-align: center;
+      }
     }
     #form-status {
       border: 1px solid #ddd;
@@ -93,8 +114,6 @@
     <h3>💌 Let's Connect!</h3>
     <p><strong>Email:</strong> hello@katokits.com</p>
     <p><strong>Response Time:</strong> Within 24 hours</p>
-    <p><strong>Support Hours:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
-    <p><strong>Need Quick Help?</strong> Follow us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: var(--green); text-decoration: underline;">Instagram @katokitsdigital</a> 📱</p>
   </div>
 
   <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
@@ -126,12 +145,6 @@
     
     <div id="form-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
   </form>
-  
-  <div class="instagram-cta">
-    <h3>🚀 Need Quick Help?</h3>
-    <p>Follow us on Instagram for instant updates, tips, and quick support!</p>
-    <a href="https://www.instagram.com/katokitsdigital/" target="_blank">@katokitsdigital 📱</a>
-  </div>
 </section>
 
 <section class="features grid">
@@ -153,7 +166,13 @@
 </section>
 
 <footer>
-  <p>© 2025 KatoKits. All rights reserved.</p>
+  <div class="footer-content">
+    <p>© 2025 KatoKits. All rights reserved.</p>
+    <div class="footer-info">
+      <p><strong>Support Hours:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
+      <p><strong>Need Quick Help?</strong> Follow us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: var(--green); text-decoration: underline;">Instagram @katokitsdigital</a> 📱</p>
+    </div>
+  </div>
 </footer>
 
 <script>

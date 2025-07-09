@@ -260,10 +260,37 @@ form textarea {
 footer {
   background: var(--white);
   color: var(--green);
-  text-align: center;
-  padding: 2rem 0 1.5rem 0;
+  padding: 1.5rem 0;
   margin-top: 3rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-top: 1px solid #dceee3;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.footer-info {
+  text-align: right;
+}
+.footer-info p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--green);
+}
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .footer-info {
+    text-align: center;
+  }
 }
 .center { text-align: center; }
