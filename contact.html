@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – KatoKits</title>
+  <meta name="description" content="Get in touch with KatoKits! Contact us for support, questions, or custom lesson plan requests for your preschool or early childhood program.">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .contact-form {
+      max-width: 600px;
+      margin: 3rem auto 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 14px #0001;
+      padding: 2.2rem;
+    }
+    .contact-form label {
+      font-size: 1.07rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      margin-bottom: 1.2rem;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-info {
+      background: var(--cream-left);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    .contact-info h3 {
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      margin-bottom: 0.8rem;
+      color: var(--dark-green);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">KatoKits</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="lesson-plans.html">Lesson Plans</a>
+    <a href="ai.html">AI Generator</a>
+    <a href="freebies.html">Freebies</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>📧 Get in Touch</h1>
+  <p>We'd love to hear from you! Questions, feedback, or custom requests welcome.</p>
+</section>
+
+<section>
+  <div class="contact-info">
+    <h3>💌 Let's Connect!</h3>
+    <p><strong>Email:</strong> hello@katokits.com</p>
+    <p><strong>Response Time:</strong> Within 24 hours</p>
+    <p><strong>Support Hours:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
+  </div>
+
+  <form class="contact-form">
+    <label for="name">Your Name *</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="subject">Subject *</label>
+    <select id="subject" name="subject" required>
+      <option value="">-- Select a topic --</option>
+      <option>General Question</option>
+      <option>Technical Support</option>
+      <option>Custom Lesson Plan Request</option>
+      <option>Partnership Inquiry</option>
+      <option>Feedback & Suggestions</option>
+      <option>Other</option>
+    </select>
+
+    <label for="message">Your Message *</label>
+    <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</section>
+
+<section class="features grid">
+  <div class="feature card">
+    <div style="font-size:2rem;">🤝</div>
+    <h3>Partnership Opportunities</h3>
+    <p>Interested in collaborating? We work with schools, daycares, and educational organizations.</p>
+  </div>
+  <div class="feature card">
+    <div style="font-size:2rem;">🎯</div>
+    <h3>Custom Lesson Plans</h3>
+    <p>Need something specific? We create custom lesson plans tailored to your curriculum needs.</p>
+  </div>
+  <div class="feature card">
+    <div style="font-size:2rem;">💡</div>
+    <h3>Have Ideas?</h3>
+    <p>We love hearing your suggestions for new themes, activities, and improvements!</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 KatoKits. All rights reserved.</p>
+</footer>
+
+<script>
+  // Simple form submission handler
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Simple validation
+    if (!data.name || !data.email || !data.subject || !data.message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
+    // For now, just show a success message
+    // In a real implementation, you'd send this to your backend
+    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+    this.reset();
+  });
+</script>
+</body>
+</html>
