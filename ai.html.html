@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Generator – KatoKits</title>
+  <meta name="description" content="Build custom preschool lesson plans in seconds! Use the KatoKits AI activity generator for personalized, playful, and curriculum-aligned ideas.">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .ai-gen-form {
+      max-width: 500px;
+      margin: 3rem auto 0 auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 14px #0001;
+      padding: 2.2rem 1.2rem;
+      text-align: center;
+    }
+    .ai-gen-form label {
+      font-size: 1.07rem;
+      font-weight: 700;
+      color: var(--green);
+      display: block;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+    .ai-gen-form input, .ai-gen-form select {
+      margin-bottom: 1.2rem;
+    }
+    .ai-output {
+      margin-top: 2rem;
+      background: var(--cream-left);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      color: var(--green);
+      box-shadow: 0 1px 8px #0001;
+      font-size: 1.08rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">KatoKits</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="lesson-plans.html">Lesson Plans</a>
+    <a href="ai.html" class="active">AI Generator</a>
+    <a href="freebies.html">Freebies</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>🤖 AI Lesson Plan Generator</h1>
+  <p>Build a custom, playful lesson plan in seconds! Powered by KatoKits and early childhood best practices.</p>
+</section>
+
+<section>
+  <form class="ai-gen-form">
+    <label for="theme">Pick a theme:</label>
+    <select id="theme" name="theme" required>
+      <option value="">-- Select --</option>
+      <option>Weather & Seasons</option>
+      <option>Feelings & SEL</option>
+      <option>Bugs & Nature</option>
+      <option>All About Me</option>
+      <option>Custom</option>
+    </select>
+    <label for="age">Child's Age:</label>
+    <select id="age" name="age" required>
+      <option value="">-- Select --</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+    </select>
+    <label for="goal">Learning Goal (optional):</label>
+    <input type="text" id="goal" name="goal" placeholder="e.g. counting, empathy, fine motor">
+    <button type="submit" class="btn">Generate Plan</button>
+    <div class="ai-output" style="display:none;">
+      <!-- AI result will appear here -->
+    </div>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 KatoKits. All rights reserved.</p>
+</footer>
+<script>
+  // Demo AI output
+  document.querySelector('.ai-gen-form').onsubmit = function(e){
+    e.preventDefault();
+    document.querySelector('.ai-output').style.display = 'block';
+    document.querySelector('.ai-output').innerHTML = '🌱 Sample Activity: <b>Weather Sensory Bin</b><br>Fill a bin with cotton ball "clouds", blue-dyed water "rain", and yellow pompom "sun". Let your child explore and talk about the weather!';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KatoKits Shop | Printable Preschool Activities</title>
+  <meta name="description" content="Shop printable preschool activity sheets, lesson plans, and themed bundles. Free starter activity, instant downloads, and daycare center access from KatoKits.">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --peach: #F9A471;
+      --mint: #D8F2DE;
+      --green: #50805E;
+      --cream: #FBE8D3;
+      --radius: 2.3rem;
+      --shadow: 0 2px 14px #0001;
+      --white: #fff;
+    }
+    body {
+      font-family: 'Nunito', Arial, sans-serif;
+      background: #fafaf8;
+      margin: 0;
+      color: var(--green);
+    }
+    header {
+      background: var(--white);
+      box-shadow: 0 2px 10px #0001;
+      padding: 1.1rem 0 0.9rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: var(--peach);
+      margin-right: 2rem;
+      font-weight: bold;
+      letter-spacing: 0.03em;
+    }
+    nav {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 1.5rem;
+      padding: 0.47rem 1.05rem;
+      transition: background 0.13s, color 0.13s;
+    }
+    nav a.btn, nav a.active {
+      background: var(--peach);
+      color: #fff;
+    }
+    nav a:hover {
+      background: var(--mint);
+      color: var(--green);
+    }
+    .shop-hero {
+      background: linear-gradient(90deg, var(--mint) 0%, var(--cream) 100%);
+      border-radius: var(--radius);
+      margin: 2.5rem auto 2.2rem auto;
+      text-align: center;
+      padding: 3.2rem 1rem 2.1rem 1rem;
+      max-width: 900px;
+      box-shadow: var(--shadow);
+    }
+    .shop-hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+    }
+    .shop-hero p {
+      font-size: 1.18rem;
+      color: var(--green);
+      margin-bottom: 1.7rem;
+    }
+    .freebie-cta-mini {
+      background: #fffbe9;
+      border: 2px dashed var(--peach);
+      color: var(--green);
+      max-width: 360px;
+      margin: -1.3rem auto 2.2rem auto;
+      padding: 0.7rem 1rem 1.1rem 1rem;
+      border-radius: 1.4rem;
+      text-align: center;
+      box-shadow: 0 1px 7px #F9A47122;
+      position: relative;
+      z-index: 5;
+      transition: box-shadow 0.2s;
+    }
+    .freebie-cta-mini:hover,
+    .freebie-cta-mini:focus-within {
+      box-shadow: 0 6px 24px #F9A47133;
+    }
+    .freebie-cta-mini span {
+      font-size: 1.09rem;
+      font-weight: 800;
+      color: #F9A471;
+      display: block;
+      margin-bottom: 0.15rem;
+      letter-spacing: 0.01em;
+    }
+    .freebie-cta-mini small {
+      display: block;
+      color: var(--green);
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .freebie-cta-mini form {
+      display: flex;
+      gap: 0.3rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .freebie-cta-mini input[type="email"] {
+      border-radius: 2rem;
+      border: 1.2px solid #F9A471;
+      padding: 0.63rem 1rem;
+      font-size: 0.97rem;
+      width: 56%;
+      min-width: 115px;
+      margin-bottom: 0.3rem;
+      background: #FFF;
+      box-sizing: border-box;
+    }
+    .freebie-cta-mini input[type="email"]:focus {
+      border-color: var(--green);
+      outline: none;
+      box-shadow: 0 0 0 1.5px #F9A47166;
+    }
+    .freebie-cta-mini .btn {
+      font-size: 0.97rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 2rem;
+      background: var(--peach);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      margin-bottom: 0.3rem;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+      box-shadow: 0 2px 8px #F9A47122;
+      letter-spacing: 0.01em;
+    }
+    .freebie-cta-mini .btn:hover {
+      background: #ffb87d;
+      color: #fff;
+      box-shadow: 0 4px 16px #F9A47133;
+    }
+    .shop-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.1rem;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 2.5rem auto 2.5rem auto;
+    }
+    .shop-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.1rem 1.6rem 2.2rem 1.6rem;
+      min-width: 250px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.13s;
+    }
+    .shop-card:hover {
+      box-shadow: 0 8px 32px #F9A47133;
+      transform: translateY(-2px) scale(1.015);
+    }
+    .shop-card h3 {
+      font-size: 1.19rem;
+      font-weight: 800;
+      margin: 0 0 0.5rem 0;
+      color: var(--green);
+      letter-spacing: 0.01em;
+    }
+    .shop-card p {
+      font-size: 1.06rem;
+      margin: 0 0 0.7rem 0;
+      color: var(--green);
+    }
+    .shop-card ul {
+      margin: 0.4rem 0 0.8rem 1.1rem;
+      padding-left: 0.5rem;
+      font-size: 0.98rem;
+      color: var(--green);
+      line-height: 1.7;
+    }
+    .shop-card .price {
+      margin: 0.7rem 0 0.6rem 0;
+      font-weight: 900;
+      color: var(--green);
+      font-size: 1.07rem;
+    }
+    .shop-card .best {
+      color: #F9A471;
+      font-weight: bold;
+      font-size: 1.04rem;
+      margin-left: 0.3em;
+    }
+    .shop-card .btn, 
+    .shop-card .btn-alt {
+      width: 100%;
+      font-size: 1.06rem;
+      border-radius: 2rem;
+      padding: 0.95rem 0;
+      margin-top: 0.3rem;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      background: var(--peach);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.11s;
+      box-shadow: 0 2px 8px #F9A47122;
+      letter-spacing: 0.01em;
+    }
+    .shop-card .btn-alt {
+      background: var(--green);
+    }
+    .shop-card .btn:hover, .shop-card .btn-alt:hover {
+      background: #ffb87d;
+      color: #fff;
+      box-shadow: 0 4px 16px #F9A47133;
+      transform: translateY(-1px) scale(1.01);
+    }
+    .bundle-section, .daycare-section {
+      background: var(--white);
+      border-radius: var(--radius);
+      max-width: 650px;
+      margin: 2.2rem auto 2.2rem auto;
+      padding: 2.1rem 1.2rem 2.2rem 1.2rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .bundle-section h3, .daycare-section h3 {
+      font-size: 1.19rem;
+      font-weight: 800;
+      color: var(--green);
+      margin: 0 0 0.5rem 0;
+      letter-spacing: 0.01em;
+    }
+    .bundle-section .btn, .daycare-section .btn {
+      font-size: 1.08rem;
+      border-radius: 2rem;
+      padding: 0.96rem 2.3rem;
+      margin-top: 1rem;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      background: var(--peach);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.11s;
+      box-shadow: 0 2px 8px #F9A47122;
+      letter-spacing: 0.01em;
+    }
+    .bundle-section .btn:hover, .daycare-section .btn:hover {
+      background: #ffb87d;
+      color: #fff;
+      box-shadow: 0 4px 16px #F9A47133;
+    }
+    .bundle-section p, .daycare-section p {
+      font-size: 1.04rem;
+      color: var(--green);
+      margin: 0.3rem 0 0.7rem 0;
+    }
+    .daycare-section ul {
+      margin: 0.5rem auto 0.8rem 1.1rem;
+      padding-left: 0.5rem;
+      font-size: 1rem;
+      color: var(--green);
+      line-height: 1.7;
+      text-align: left;
+      max-width: 420px;
+    }
+    .daycare-section .price {
+      font-weight: 900;
+      font-size: 1.07rem;
+      color: var(--green);
+      margin: 0.7rem 0 1rem 0;
+    }
+    .daycare-section .free-trial {
+      color: #F9A471;
+      font-weight: bold;
+      font-size: 1.01rem;
+      margin-top: 1.2rem;
+      display: block;
+    }
+    footer {
+      background: #f5f5f2;
+      margin-top: 2.5rem;
+      padding: 2rem 0 1.2rem 0;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--green);
+    }
+    @media (max-width: 980px) {
+      .shop-grid {
+        flex-direction: column;
+        gap: 1.1rem;
+        align-items: center;
+      }
+    }
+    @media (max-width: 700px) {
+      .shop-hero {
+        padding: 2rem 0.5rem 2rem 0.5rem;
+      }
+      .shop-card, .bundle-section, .daycare-section {
+        padding: 1.1rem 0.7rem 1.3rem 0.7rem;
+        min-width: unset;
+        max-width: unset;
+      }
+      .freebie-cta-mini {
+        max-width: 97vw;
+        font-size: 0.97rem;
+        padding: 0.6rem 0.35rem 0.95rem 0.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">KatoKits</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="lesson-plans.html">Lesson Plans</a>
+    <a href="ai.html">AI Generator</a>
+    <a href="freebies.html">Freebies</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="pricing.html">Pricing</a>
+  </nav>
+</header>
+
+<section class="shop-hero">
+  <h1>🛍️ Printable Preschool Activities</h1>
+  <p>Instant downloads. Easy instructions. Joyful learning.</p>
+</section>
+
+<section class="freebie-cta-mini" aria-label="Free starter activity sign-up">
+  <span>🎁 Free Starter Activity</span>
+  <small>Get 1 printable + checklist.<br>No cost—just creativity!</small>
+  <form action="https://your-mailchimp-or-form-url" method="POST">
+    <input type="email" name="email" placeholder="Your email" required />
+    <button type="submit" class="btn" aria-label="Download Freebie">Download Freebie</button>
+  </form>
+</section>
+
+<section>
+  <h2 class="center" style="font-size:1.45rem; margin-bottom:0.5rem; font-weight:900; color:#50805E;">🧩 Pick What You Need</h2>
+  <div class="shop-grid">
+
+    <!-- Activity Sheet (Basic) -->
+    <div class="shop-card">
+      <h3>📄 Activity Sheet (Basic)</h3>
+      <p>Just the printable – fun &amp; done.</p>
+      <ul>
+        <li>✔️ Visuals &amp; clear steps</li>
+        <li>✔️ Black &amp; white + color options</li>
+      </ul>
+      <div class="price">$0.99</div>
+      <a href="https://buy.stripe.com/test-basic" class="btn" aria-label="Add to Cart for Activity Sheet Basic">Add to Cart</a>
+    </div>
+    <!-- Activity + Lesson Plan -->
+    <div class="shop-card">
+      <h3>📝 Activity + Lesson Plan</h3>
+      <p>Printable + guided lesson plan<br><span style="color:#F9A471;">(one free when you join our email list!)</span></p>
+      <ul>
+        <li>✔️ Learning objectives &amp; transitions</li>
+        <li>✔️ Materials list + reflection prompts</li>
+      </ul>
+      <div class="price">$1.49</div>
+      <a href="https://buy.stripe.com/test-plan" class="btn" aria-label="Buy Now for Activity Plus Lesson Plan">Buy Now</a>
+    </div>
+    <!-- Full Kit -->
+    <div class="shop-card">
+      <h3>🌟 Full Kit: Activity + Plan + Checklist</h3>
+      <p>All-in-one! Great for documentation &amp; centers.</p>
+      <ul>
+        <li>✔️ Includes full developmental checklist</li>
+        <li>✔️ Ready for portfolios or assessments</li>
+      </ul>
+      <div class="price">$2.49 <span class="best">(Best Value)</span></div>
+      <a href="https://buy.stripe.com/test-fullkit" class="btn btn-alt" aria-label="Get Full Pack">Get Full Pack</a>
+    </div>
+  </div>
+</section>
+
+<section class="bundle-section">
+  <h3>📦 View All Bundles</h3>
+  <p>Save more with 3–6 activity kits per theme.<br>Starting at $4.99</p>
+  <a href="lesson-plans.html" class="btn" aria-label="Browse Bundles">Browse Bundles</a>
+</section>
+
+<section class="daycare-section">
+  <h3>🏫 Daycare Unlimited Access</h3>
+  <p>Support your entire center — one subscription, all staff.</p>
+  <ul>
+    <li>✔️ Unlimited AI lesson plans</li>
+    <li>✔️ Full library of activities + printables</li>
+    <li>✔️ Up to 10 staff accounts included</li>
+    <li>✔️ Admin dashboard for classrooms</li>
+  </ul>
+  <div class="price">$99.99/month or $999/year</div>
+  <a href="https://buy.stripe.com/test-daycare" class="btn btn-alt" aria-label="Get Daycare Plan">Get Daycare Plan</a>
+  <span class="free-trial">💡 Try 7 days free – no credit card needed.</span>
+</section>
+
+<footer>
+  <p>© 2025 KatoKits. Made with ❤️ for early educators.</p>
+</footer>
+</body>
+</html>
