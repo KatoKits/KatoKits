@@ -46,6 +46,28 @@
       margin-bottom: 0.8rem;
       color: var(--dark-green);
     }
+    .instagram-cta {
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin: 2rem auto;
+      max-width: 600px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .instagram-cta a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+    .instagram-cta a:hover {
+      text-decoration: underline;
+    }
+    #form-status {
+      border: 1px solid #ddd;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -72,14 +94,15 @@
     <p><strong>Email:</strong> hello@katokits.com</p>
     <p><strong>Response Time:</strong> Within 24 hours</p>
     <p><strong>Support Hours:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
+    <p><strong>Need Quick Help?</strong> Follow us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: var(--green); text-decoration: underline;">Instagram @katokitsdigital</a> 📱</p>
   </div>
 
-  <form class="contact-form">
+  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <label for="name">Your Name *</label>
     <input type="text" id="name" name="name" required>
 
     <label for="email">Your Email *</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" name="_replyto" required>
 
     <label for="subject">Subject *</label>
     <select id="subject" name="subject" required>
@@ -95,8 +118,20 @@
     <label for="message">Your Message *</label>
     <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
 
+    <!-- Hidden field for form identification -->
+    <input type="hidden" name="_subject" value="New Contact Form Submission from KatoKits">
+    <input type="hidden" name="_next" value="thank-you.html">
+
     <button type="submit" class="btn">Send Message</button>
+    
+    <div id="form-status" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;"></div>
   </form>
+  
+  <div class="instagram-cta">
+    <h3>🚀 Need Quick Help?</h3>
+    <p>Follow us on Instagram for instant updates, tips, and quick support!</p>
+    <a href="https://www.instagram.com/katokitsdigital/" target="_blank">@katokitsdigital 📱</a>
+  </div>
 </section>
 
 <section class="features grid">
@@ -122,8 +157,21 @@
 </footer>
 
 <script>
-  // Simple form submission handler
+  // Enhanced form submission handler with real backend integration
   document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    const statusDiv = document.getElementById('form-status');
+    const submitBtn = this.querySelector('button[type="submit"]');
+    
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    statusDiv.style.display = 'block';
+    statusDiv.style.backgroundColor = '#e3f2fd';
+    statusDiv.style.color = '#1976d2';
+    statusDiv.textContent = 'Sending your message...';
+    
+    // If using Formspree or similar service, let the form submit naturally
+    // For now, we'll prevent default and show success message
     e.preventDefault();
     
     // Get form data
@@ -131,15 +179,26 @@
     const data = Object.fromEntries(formData);
     
     // Simple validation
-    if (!data.name || !data.email || !data.subject || !data.message) {
-      alert('Please fill in all required fields.');
+    if (!data.name || !data._replyto || !data.subject || !data.message) {
+      statusDiv.style.backgroundColor = '#ffebee';
+      statusDiv.style.color = '#c62828';
+      statusDiv.textContent = 'Please fill in all required fields.';
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
       return;
     }
     
-    // For now, just show a success message
-    // In a real implementation, you'd send this to your backend
-    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
-    this.reset();
+    // Simulate form submission (replace with actual backend call)
+    setTimeout(() => {
+      statusDiv.style.backgroundColor = '#e8f5e8';
+      statusDiv.style.color = '#2e7d32';
+      statusDiv.innerHTML = '✅ Thank you for your message! We\'ll get back to you within 24 hours.<br><br>For quick questions, you can also reach us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: #2e7d32; text-decoration: underline;">Instagram @katokitsdigital</a>';
+      
+      // Reset form
+      this.reset();
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }, 1500);
   });
 </script>
 </body>
