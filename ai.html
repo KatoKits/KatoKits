@@ -9,16 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
     .ai-gen-form {
-      max-width: 500px;
-      margin: 3rem auto 0 auto;
+      max-width: 600px;
+      margin: 2rem auto;
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: 0 2px 14px #0001;
-      padding: 2.2rem 1.2rem;
+      padding: 2rem;
       text-align: center;
     }
     .ai-gen-form label {
-      font-size: 1.07rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--green);
       display: block;
@@ -26,7 +26,17 @@
       text-align: left;
     }
     .ai-gen-form input, .ai-gen-form select {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .ai-gen-form input:focus, .ai-gen-form select:focus {
+      outline: none;
+      border-color: var(--green);
     }
     .ai-output {
       margin-top: 2rem;
@@ -54,31 +64,73 @@
 
 <section class="hero">
   <h1>🤖 AI Lesson Plan Generator</h1>
-  <p>Build a custom, playful lesson plan in seconds! Powered by KatoKits and early childhood best practices.</p>
+  <p>Build custom, developmentally-appropriate activities for infants through kindergarten! Powered by KatoKits and early childhood best practices.</p>
 </section>
 
 <section>
   <form class="ai-gen-form">
     <label for="theme">Pick a theme:</label>
     <select id="theme" name="theme" required>
-      <option value="">-- Select --</option>
+      <option value="">-- Select Theme --</option>
+      <option>Animals & Pets</option>
       <option>Weather & Seasons</option>
-      <option>Feelings & SEL</option>
+      <option>Transportation</option>
+      <option>Community Helpers</option>
+      <option>Feelings & Social-Emotional</option>
       <option>Bugs & Nature</option>
-      <option>All About Me</option>
-      <option>Custom</option>
+      <option>All About Me & Family</option>
+      <option>Colors & Shapes</option>
+      <option>Food & Nutrition</option>
+      <option>Holidays & Celebrations</option>
+      <option>Ocean & Sea Life</option>
+      <option>Space & Planets</option>
+      <option>Plants & Gardens</option>
+      <option>Music & Movement</option>
+      <option>Art & Creativity</option>
+      <option>Books & Stories</option>
+      <option>Safety & Health</option>
+      <option>Custom Theme</option>
     </select>
     <label for="age">Child's Age:</label>
     <select id="age" name="age" required>
-      <option value="">-- Select --</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
+      <option value="">-- Select Age Range --</option>
+      <option>6-12 months (Infant)</option>
+      <option>12-18 months (Young Toddler)</option>
+      <option>18-24 months (Toddler)</option>
+      <option>2-3 years (Older Toddler)</option>
+      <option>3-4 years (Preschool)</option>
+      <option>4-5 years (Pre-K)</option>
+      <option>5-6 years (Kindergarten)</option>
     </select>
-    <label for="goal">Learning Goal (optional):</label>
-    <input type="text" id="goal" name="goal" placeholder="e.g. counting, empathy, fine motor">
+    <label for="domain">Developmental Domain:</label>
+    <select id="domain" name="domain" required>
+      <option value="">-- Select Domain --</option>
+      <option>Physical Development (Gross Motor)</option>
+      <option>Physical Development (Fine Motor)</option>
+      <option>Cognitive Development</option>
+      <option>Language & Communication</option>
+      <option>Social-Emotional Development</option>
+      <option>Creative Arts & Expression</option>
+      <option>Math & Early Numeracy</option>
+      <option>Science & Discovery</option>
+      <option>Literacy & Pre-Reading</option>
+      <option>Self-Help & Independence</option>
+      <option>Sensory Development</option>
+      <option>Multi-Domain (Integrated)</option>
+    </select>
+    <label for="goal">Specific Learning Goal (optional):</label>
+    <input type="text" id="goal" name="goal" placeholder="e.g. counting 1-5, expressing emotions, building with blocks">
+    <label for="setting">Learning Environment:</label>
+    <select id="setting" name="setting">
+      <option value="">-- Select Setting --</option>
+      <option>Home/Family Setting</option>
+      <option>Daycare Center</option>
+      <option>Preschool Classroom</option>
+      <option>Outdoor/Nature</option>
+      <option>Small Group (2-4 children)</option>
+      <option>Large Group (5+ children)</option>
+      <option>One-on-One</option>
+    </select>
     <button type="submit" class="btn">Generate Plan</button>
     <div class="ai-output" style="display:none;">
       <!-- AI result will appear here -->
@@ -96,11 +148,41 @@
   </div>
 </footer>
 <script>
-  // Demo AI output
+  // Enhanced demo with age-appropriate responses
   document.querySelector('.ai-gen-form').onsubmit = function(e){
     e.preventDefault();
-    document.querySelector('.ai-output').style.display = 'block';
-    document.querySelector('.ai-output').innerHTML = '🌱 Sample Activity: <b>Weather Sensory Bin</b><br>Fill a bin with cotton ball "clouds", blue-dyed water "rain", and yellow pompom "sun". Let your child explore and talk about the weather!';
+    
+    const age = document.getElementById('age').value;
+    const domain = document.getElementById('domain').value;
+    const theme = document.getElementById('theme').value;
+    const setting = document.getElementById('setting').value;
+    
+    // Show output
+    const output = document.querySelector('.ai-output');
+    output.style.display = 'block';
+    
+    // Generate age-appropriate sample activity
+    let sampleActivity = '';
+    
+    if (age.includes('6-12 months')) {
+      sampleActivity = '🍼 <b>Infant Sensory Play:</b><br>Provide soft fabric squares in different textures for baby to explore with hands and mouth. Narrate what they\'re feeling: "This is bumpy! This is smooth!" Perfect for sensory development and early language exposure.';
+    } else if (age.includes('12-18 months')) {
+      sampleActivity = '👶 <b>Toddler Discovery:</b><br>Fill a shallow bin with large, safe objects to dump and fill. Add a spoon for scooping practice. This builds fine motor skills, cause-and-effect understanding, and independence!';
+    } else if (age.includes('18-24 months')) {
+      sampleActivity = '🔵 <b>Shape Sorting Fun:</b><br>Use a simple shape sorter or make holes in a box lid. Start with just circles and squares. Celebrate each success to build confidence and shape recognition!';
+    } else if (age.includes('2-3 years')) {
+      sampleActivity = '🎨 <b>Process Art Creation:</b><br>Set up finger painting with just 2 colors. Let toddlers explore mixing and making marks. Focus on the process, not the product. Great for creativity and fine motor development!';
+    } else if (age.includes('3-4 years')) {
+      sampleActivity = '🌱 <b>Dramatic Play Garden:</b><br>Create a pretend garden with play vegetables, watering cans, and gardening tools. Children can "plant," "water," and "harvest." Builds language, social skills, and science concepts!';
+    } else if (age.includes('4-5 years')) {
+      sampleActivity = '📊 <b>Weather Graphing:</b><br>Track daily weather on a simple graph for a week. Children can draw symbols and count sunny vs. rainy days. Combines math, science, and data analysis skills!';
+    } else if (age.includes('5-6 years')) {
+      sampleActivity = '🔬 <b>Simple Science Experiment:</b><br>Mix baking soda and vinegar in a clear container. Children can predict, observe, and explain what happens. Perfect for developing scientific thinking and vocabulary!';
+    } else {
+      sampleActivity = '🌟 <b>Multi-Age Activity:</b><br>Set up a sensory bin with rice and hidden toys. Younger children explore textures while older ones can sort, count, or create stories with the objects they find!';
+    }
+    
+    output.innerHTML = sampleActivity + '<br><br><small>💡 This is a sample activity. The full AI generator will create personalized activities based on all your selections!</small>';
   }
 </script>
 </body>
