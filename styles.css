@@ -35,6 +35,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-weight: 400;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -63,7 +64,7 @@ header {
 }
 .logo {
   font-family: 'Pacifico', cursive;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   margin-left: 2rem;
   color: var(--green);
   letter-spacing: 1px;
@@ -78,7 +79,7 @@ nav {
   display: flex;
   gap: 1rem;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-left: 2rem;
   margin-top: 0.8rem;
   font-family: 'Nunito', sans-serif;
@@ -140,7 +141,7 @@ nav a.active::before {
   letter-spacing: 0.01em;
   display: inline-block;
   font-family: 'Nunito', sans-serif;
-  border:
+  border: none;
   position: relative;
   overflow: hidden;
 }
@@ -200,7 +201,7 @@ nav a.active::before {
   z-index: 1;
 }
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--green);
   margin-bottom: 1.5rem;
@@ -210,7 +211,7 @@ nav a.active::before {
   text-shadow: 0 2px 4px rgba(80, 128, 94, 0.1);
 }
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--light-green);
   margin-bottom: 3rem;
   font-weight: 500;
@@ -242,7 +243,7 @@ nav a.active::before {
   padding: 0 2rem;
 }
 .section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 2rem;
   margin-top: 0;
@@ -289,7 +290,7 @@ nav a.active::before {
   border-color: var(--peach);
 }
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: var(--green);
@@ -400,7 +401,7 @@ form textarea {
     padding: 3rem 1.5rem;
   }
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -410,10 +411,10 @@ form textarea {
     margin: 1rem auto 3rem auto;
   }
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .hero-buttons {
     flex-direction: column;

@@ -737,42 +737,57 @@
   <h3 style="font-size: 2rem; margin-bottom: 1rem;">🤖 AI Generator Subscriptions</h3>
   <p style="font-size: 1.1rem; margin-bottom: 3rem;">Unlock unlimited lesson planning with our AI-powered generator!</p>
   
-  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; justify-content: center; margin: 3rem 0;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-content: center; margin: 3rem 0;">
     
-    <!-- Unlimited AI Plan -->
-    <div style="background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); border-radius: 1.5rem; padding: 2.5rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.12); max-width: 340px; text-align: center; border: 3px solid var(--peach); position: relative; transition: all 0.3s ease;">
+    <!-- Basic Plan -->
+    <div style="background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); border-radius: 1.5rem; padding: 2rem 1.8rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); text-align: center; border: 2px solid #e5e7eb; transition: all 0.3s ease;">
+      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌱</div>
+      <h4 style="color: #374151; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700;">Basic Plan</h4>
+      <div style="font-size: 2rem; font-weight: 900; color: #374151; margin-bottom: 0.5rem;">$9.99</div>
+      <div style="color: #6b7280; font-size: 1rem; margin-bottom: 2rem;">CAD per month</div>
+      <p style="font-size: 1rem; margin-bottom: 2rem; color: #6b7280; font-style: italic;">Perfect for parents</p>
+      <ul style="text-align: left; font-size: 0.95rem; margin-bottom: 2.5rem; color: #6b7280; line-height: 1.8; list-style: none; padding: 0;">
+        <li style="margin-bottom: 0.5rem;">✅ 10 AI plans per month</li>
+        <li style="margin-bottom: 0.5rem;">✅ Basic activity sheets</li>
+        <li style="margin-bottom: 0.5rem;">✅ Email support</li>
+        <li style="margin-bottom: 0.5rem;">✅ Age-appropriate activities</li>
+      </ul>
+      <a href="https://buy.stripe.com/basic-ai" style="background: linear-gradient(135deg, #6b7280, #4b5563); color: white; padding: 1rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3); display: inline-block; width: 100%; box-sizing: border-box; transition: all 0.3s ease;">Choose Basic</a>
+    </div>
+
+    <!-- Premium Plan -->
+    <div style="background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); border-radius: 1.5rem; padding: 2.5rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.12); text-align: center; border: 3px solid var(--peach); position: relative; transition: all 0.3s ease; transform: scale(1.05);">
       <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--peach), var(--dark-peach)); color: white; padding: 0.5rem 1.5rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 700; box-shadow: 0 4px 12px rgba(249, 164, 113, 0.3);">MOST POPULAR</div>
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🧠</div>
-      <h4 style="color: var(--green); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700;">Unlimited AI Plan</h4>
-      <div style="font-size: 2.2rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$19.99</div>
+      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
+      <h4 style="color: var(--green); margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700;">Premium Plan</h4>
+      <div style="font-size: 2rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$19.99</div>
       <div style="color: var(--light-green); font-size: 1rem; margin-bottom: 2rem;">CAD per month</div>
-      <p style="font-size: 1rem; margin-bottom: 2rem; color: var(--light-green); font-style: italic;">Perfect for teachers & therapists</p>
-      <ul style="text-align: left; font-size: 1rem; margin-bottom: 2.5rem; color: var(--green); line-height: 2; list-style: none; padding: 0;">
+      <p style="font-size: 1rem; margin-bottom: 2rem; color: var(--light-green); font-style: italic;">Perfect for teachers</p>
+      <ul style="text-align: left; font-size: 0.95rem; margin-bottom: 2.5rem; color: var(--green); line-height: 1.8; list-style: none; padding: 0;">
         <li style="margin-bottom: 0.5rem;">✅ Unlimited AI lesson plans</li>
         <li style="margin-bottom: 0.5rem;">✅ All printable activity sheets</li>
         <li style="margin-bottom: 0.5rem;">✅ Priority email support</li>
         <li style="margin-bottom: 0.5rem;">✅ Personal activity library</li>
-        <li style="margin-bottom: 0.5rem;">✅ Perfect for classrooms</li>
       </ul>
-      <a href="https://buy.stripe.com/unlimited-ai" style="background: linear-gradient(135deg, var(--peach), var(--dark-peach)); color: white; padding: 1rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(249, 164, 113, 0.3); display: inline-block; width: 100%; box-sizing: border-box; transition: all 0.3s ease;">Choose Unlimited</a>
+      <a href="https://buy.stripe.com/unlimited-ai" style="background: linear-gradient(135deg, var(--peach), var(--dark-peach)); color: white; padding: 1rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 15px rgba(249, 164, 113, 0.3); display: inline-block; width: 100%; box-sizing: border-box; transition: all 0.3s ease;">Choose Premium</a>
     </div>
 
-    <!-- Daycare Plan -->
-    <div style="background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); border-radius: 1.5rem; padding: 2.5rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.12); max-width: 340px; text-align: center; border: 2px solid var(--green); transition: all 0.3s ease;">
-      <div style="font-size: 3rem; margin-bottom: 1rem;">🏫</div>
-      <h4 style="color: var(--green); margin-bottom: 1rem; font-size: 1.5rem; font-weight: 700;">Daycare Unlimited</h4>
-      <div style="font-size: 2.2rem; font-weight: 900; color: var(--green); margin-bottom: 0.3rem;">$79.99</div>
-      <div style="color: var(--light-green); font-size: 1rem; margin-bottom: 0.5rem;">CAD per month</div>
-      <div style="background: rgba(80, 128, 94, 0.1); color: var(--green); font-size: 0.9rem; margin-bottom: 2rem; padding: 0.5rem; border-radius: 0.5rem;">💰 Annual: $799 (save $160)</div>
-      <p style="font-size: 1rem; margin-bottom: 2rem; color: var(--light-green); font-style: italic;">For daycare centers & schools</p>
-      <ul style="text-align: left; font-size: 1rem; margin-bottom: 2.5rem; color: var(--green); line-height: 2; list-style: none; padding: 0;">
-        <li style="margin-bottom: 0.5rem;">✅ Full staff access (up to 10 teachers)</li>
-        <li style="margin-bottom: 0.5rem;">✅ Unlimited AI lesson plans</li>
-        <li style="margin-bottom: 0.5rem;">✅ Classroom dashboards</li>
-        <li style="margin-bottom: 0.5rem;">✅ Commercial use license</li>
-        <li style="margin-bottom: 0.5rem;">✅ Priority phone support</li>
+    <!-- Professional Plan -->
+    <div style="background: linear-gradient(145deg, #ffffff 0%, #fefefe 100%); border-radius: 1.5rem; padding: 2rem 1.8rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); text-align: center; border: 2px solid #8b5cf6; transition: all 0.3s ease;">
+      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏫</div>
+      <h4 style="color: #7c3aed; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700;">Professional Plan</h4>
+      <div style="font-size: 2rem; font-weight: 900; color: #7c3aed; margin-bottom: 0.3rem;">$39.99</div>
+      <div style="color: #6d28d9; font-size: 1rem; margin-bottom: 0.5rem;">CAD per month</div>
+      <div style="background: rgba(124, 58, 237, 0.1); color: #7c3aed; font-size: 0.9rem; margin-bottom: 2rem; padding: 0.5rem; border-radius: 0.5rem;">💰 Annual: $399 (save $80)</div>
+      <p style="font-size: 1rem; margin-bottom: 2rem; color: #6d28d9; font-style: italic;">For centers & schools</p>
+      <ul style="text-align: left; font-size: 0.95rem; margin-bottom: 2.5rem; color: #6d28d9; line-height: 1.8; list-style: none; padding: 0;">
+        <li style="margin-bottom: 0.5rem;">✅ Unlimited AI plans</li>
+        <li style="margin-bottom: 0.5rem;">✅ Premium templates</li>
+        <li style="margin-bottom: 0.5rem;">✅ Phone support</li>
+        <li style="margin-bottom: 0.5rem;">✅ Multi-user access</li>
+        <li style="margin-bottom: 0.5rem;">✅ Curriculum alignment</li>
       </ul>
-      <a href="https://buy.stripe.com/daycare-plan" style="background: linear-gradient(135deg, var(--green), var(--dark-green)); color: white; padding: 1rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(80, 128, 94, 0.3); display: inline-block; width: 100%; box-sizing: border-box; transition: all 0.3s ease;">Get Daycare Plan</a>
+      <a href="https://buy.stripe.com/daycare-plan" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 1rem 2rem; border-radius: 2rem; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); display: inline-block; width: 100%; box-sizing: border-box; transition: all 0.3s ease;">Get Professional</a>
     </div>
 
   </div>
