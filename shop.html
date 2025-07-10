@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KatoKits Shop | Printable Preschool Activities</title>
-  <meta name="description" content="Shop printable preschool activity sheets, lesson plans, and themed bundles. Free starter activity, instant downloads, and daycare center access from KatoKits." />
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>Shop Printable Preschool Activities | Educational PDFs & Lesson Plans – KatoKits</title>
+  <meta name="description" content="Shop instant download preschool activities, printable lesson plans, and educational PDFs. Curriculum-aligned materials for ages 6 months to kindergarten.">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -544,8 +545,18 @@
 </header>
 
 <section class="shop-hero">
-  <h1>🛍️ Printable Preschool Activities</h1>
-  <p>Instant downloads. Easy instructions. Joyful learning.</p>
+  <h1>🛍️ Printable Activity Shop</h1>
+  <p>Instant downloads. Professional quality. Endless learning fun!</p>
+  
+  <!-- Filter Toggle -->
+  <div class="shop-filters" style="margin: 2rem 0 1rem 0;">
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <button class="filter-btn active" data-filter="all" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 2px solid var(--green); background: var(--green); color: white; cursor: pointer; font-weight: 600;">All Items</button>
+      <button class="filter-btn" data-filter="printables" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 2px solid var(--green); background: transparent; color: var(--green); cursor: pointer; font-weight: 600;">Printable Activities</button>
+      <button class="filter-btn" data-filter="bundles" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 2px solid var(--green); background: transparent; color: var(--green); cursor: pointer; font-weight: 600;">Lesson Bundles</button>
+      <button class="filter-btn" data-filter="plans" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 2px solid var(--green); background: transparent; color: var(--green); cursor: pointer; font-weight: 600;">Subscription Plans</button>
+    </div>
+  </div>
 </section>
 
 <section class="freebie-cta-mini" aria-label="Free starter activity sign-up">
@@ -603,36 +614,44 @@
         </div>
 
         <!-- Fish Color Sorting Activity -->
-        <div class="activity-item">
+        <div class="activity-item" data-category="printables">
+          <div class="activity-image" style="width: 80px; height: 80px; margin-right: 1.5rem; flex-shrink: 0;">
+            <img src="images/katokits-logo.png" alt="Fish Color Sorting Printable Activity" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          </div>
           <div class="activity-info">
             <h4>🐠 Fish Color Sorting Activity</h4>
-            <p>Color recognition and cognitive skill-building.</p>
+            <p>Color recognition and cognitive skill-building for toddlers.</p>
             <div class="features">
               <span>✔️ Color identification practice</span>
               <span>✔️ Sorting & cognitive skills</span>
               <span>✔️ Cut-and-sort pieces included</span>
+              <span style="background: #fdf6ed; color: var(--peach);">Ages 18m-3y</span>
             </div>
           </div>
           <div class="activity-purchase">
-            <div class="price">$2.47</div>
-            <a href="https://buy.stripe.com/test-fish-sorting" class="btn-small">Buy Now</a>
+            <div class="price">$0.99</div>
+            <a href="PDFs.pdf/Fish Color Sorting.pdf" class="btn-small" target="_blank">Buy for $0.99</a>
           </div>
         </div>
 
         <!-- Car Race Sorting & Graphing -->
-        <div class="activity-item">
+        <div class="activity-item" data-category="printables">
+          <div class="activity-image" style="width: 80px; height: 80px; margin-right: 1.5rem; flex-shrink: 0;">
+            <img src="images/katokits-logo.png" alt="Car Race Sorting and Graphing Math Activity" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          </div>
           <div class="activity-info">
             <h4>🏎️ Car Race Sorting & Graphing</h4>
-            <p>Sorting, movement, and beginner math.</p>
+            <p>Early math skills with sorting, movement, and beginner graphing.</p>
             <div class="features">
               <span>✔️ Math & graphing skills</span>
               <span>✔️ Sorting practice</span>
               <span>✔️ Movement integration</span>
+              <span style="background: #fdf6ed; color: var(--peach);">Ages 2-4y</span>
             </div>
           </div>
           <div class="activity-purchase">
-            <div class="price">$2.47</div>
-            <a href="https://buy.stripe.com/test-car-graphing" class="btn-small">Buy Now</a>
+            <div class="price">$2.49</div>
+            <a href="PDFs.pdf/Car Race Sort & Graph.pdf" class="btn-small" target="_blank">Buy for $2.49</a>
           </div>
         </div>
 
@@ -654,19 +673,23 @@
         </div>
 
         <!-- Animal Movement Cards -->
-        <div class="activity-item">
+        <div class="activity-item" data-category="printables">
+          <div class="activity-image" style="width: 80px; height: 80px; margin-right: 1.5rem; flex-shrink: 0;">
+            <img src="images/katokits-logo.png" alt="Animal Movement Cards Gross Motor Activity" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          </div>
           <div class="activity-info">
             <h4>🐾 Animal Movement Cards</h4>
-            <p>Gross motor skills development cards.</p>
+            <p>Fun gross motor skills development cards for active play.</p>
             <div class="features">
               <span>✔️ Gross motor development</span>
               <span>✔️ Active movement prompts</span>
               <span>✔️ Perfect for circle time</span>
+              <span style="background: #fdf6ed; color: var(--peach);">Ages 1-5y</span>
             </div>
           </div>
           <div class="activity-purchase">
-            <div class="price">$2.47</div>
-            <a href="https://buy.stripe.com/test-animal-movement" class="btn-small">Buy Now</a>
+            <div class="price">$0.99</div>
+            <a href="PDFs.pdf/Animal Movemen.pdf" class="btn-small" target="_blank">Buy for $0.99</a>
           </div>
         </div>
 
@@ -816,6 +839,39 @@ function toggleDropdown() {
   dropdown.classList.toggle('active');
   arrow.classList.toggle('rotated');
 }
+
+// Shop Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const activityItems = document.querySelectorAll('.activity-item');
+  
+  if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.style.background = 'transparent';
+          btn.style.color = 'var(--green)';
+          btn.classList.remove('active');
+        });
+        this.style.background = 'var(--green)';
+        this.style.color = 'white';
+        this.classList.add('active');
+        
+        // Filter items
+        activityItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+});
 </script>
 
 </body>

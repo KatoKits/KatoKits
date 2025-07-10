@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us – KatoKits</title>
-  <meta name="description" content="Get in touch with KatoKits! Contact us for support, questions, or custom lesson plan requests for your preschool or early childhood program.">
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>Contact KatoKits Support | Questions & Custom Lesson Plan Requests</title>
+  <meta name="description" content="Contact KatoKits for support, custom lesson plan requests, or partnership inquiries. We respond within 24 hours. Email: support@katokits.com">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -115,28 +116,37 @@
 
 <section>
   <div class="contact-info">
-    <h3>📞 Let's Connect!</h3>
-    <p><strong>📧 Email Response Time:</strong> Within 24 hours</p>
+    <h3>� We Reply Within 24 Hours!</h3>
+    <p><strong>📧 Email:</strong> <a href="mailto:support@katokits.com" style="color: var(--green); text-decoration: underline;">support@katokits.com</a></p>
     <p><strong>⏰ Support Hours:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
     <p><strong>📱 Quick Help:</strong> Follow us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: var(--peach); text-decoration: none; font-weight: 600;">Instagram @katokitsdigital</a> for instant tips!</p>
-    <p><strong>🎯 What we love helping with:</strong><br>
-    • Custom lesson plan requests<br>
-    • Technical support and troubleshooting<br>
-    • Bulk orders and daycare partnerships<br>
-    • Activity adaptation for special needs<br>
-    • General questions about early childhood education</p>
+    
+    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 0.8rem; margin: 1.5rem 0; text-align: left;">
+      <h4 style="color: var(--green); margin-bottom: 1rem;">🎯 How We Can Help:</h4>
+      <ul style="color: #666; font-size: 0.9rem; list-style: none; padding: 0;">
+        <li style="margin-bottom: 0.5rem;">✓ Custom lesson plan requests for your curriculum</li>
+        <li style="margin-bottom: 0.5rem;">✓ Technical support and account troubleshooting</li>
+        <li style="margin-bottom: 0.5rem;">✓ Bulk orders and daycare center partnerships</li>
+        <li style="margin-bottom: 0.5rem;">✓ Activity adaptations for special needs</li>
+        <li style="margin-bottom: 0.5rem;">✓ General early childhood education questions</li>
+      </ul>
+    </div>
+    
+    <div style="background: #e8f5e8; padding: 1rem; border-radius: 0.8rem; margin-top: 1rem;">
+      <p style="color: var(--green); font-weight: 600; margin: 0;"><a href="freebies.html" style="color: var(--green); text-decoration: underline;">Check our FAQs</a> or <a href="shop.html" style="color: var(--green); text-decoration: underline;">browse our help center</a> for quick answers!</p>
+    </div>
   </div>
 
   <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <label for="name">Your Name *</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" placeholder="Your full name..." required>
 
     <label for="email">Your Email *</label>
-    <input type="email" id="email" name="_replyto" required>
+    <input type="email" id="email" name="_replyto" placeholder="your.email@example.com" required>
 
     <label for="subject">Subject *</label>
     <select id="subject" name="subject" required>
-      <option value="">-- Select a topic --</option>
+      <option value="">-- How can we help you? --</option>
       <option>General Question</option>
       <option>Technical Support</option>
       <option>Custom Lesson Plan Request</option>
@@ -146,7 +156,7 @@
     </select>
 
     <label for="message">Your Message *</label>
-    <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+    <textarea id="message" name="message" placeholder="Tell us how we can help you. Be as detailed as you'd like - we love hearing from educators!" required></textarea>
 
     <!-- Hidden field for form identification -->
     <input type="hidden" name="_subject" value="New Contact Form Submission from KatoKits">

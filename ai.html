@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Generator – KatoKits</title>
-  <meta name="description" content="Build custom preschool lesson plans in seconds! Use the KatoKits AI activity generator for personalized, playful, and curriculum-aligned ideas.">
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>AI Lesson Plan Generator | Create Custom Preschool Curriculum Instantly – KatoKits</title>
+  <meta name="description" content="Generate AI-powered toddler lesson plans and preschool curriculum in seconds. Custom activities for ages 6 months to 6 years. Try 3 plans free!">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -56,6 +57,47 @@
       font-size: 0.85rem;
       line-height: 1.5;
       border-left: 3px solid var(--peach);
+    }
+    .how-it-works {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .step-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+      min-width: 2rem;
+    }
+    .step-icon {
+      font-size: 2rem;
+    }
+    .ai-preview {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .ai-preview h4 {
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+    .ai-limits-section {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .ai-limits-section h3 {
+      color: var(--green);
     }
   </style>
 </head>
@@ -132,7 +174,9 @@
 </section>
 
 <section>
-  <form class="ai-gen-form">
+  <form class="ai-gen-form" id="ai-form">
+    <h3 style="color: var(--green); margin-bottom: 1rem;">🤖 AI-Powered Preschool Curriculum Creator</h3>
+    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Create custom AI-generated toddler lesson plans in under 30 seconds!</p>
     <label for="theme">Pick a theme:</label>
     <select id="theme" name="theme" required>
       <option value="">-- Select Theme --</option>
@@ -298,14 +342,55 @@
   </div>
 </section>
 
-<!-- Newsletter Section - matching home page -->
-<section class="newsletter-section">
-  <h2>🎁 Try our classroom-tested activities for ages 6 months to kindergarten, absolutely free.</h2>
-  <p>Download, print, and play—no signup needed!</p>
-  <form>
-    <input type="email" name="EMAIL" placeholder="Email address" required>
-    <button type="submit" class="btn">Get 3 Free AI Plans</button>
-  </form>
+<!-- How It Works Section -->
+<section class="section">
+  <h2>🔍 How AI Lesson Planning Works</h2>
+  <div class="how-it-works">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-icon">🎯</div>
+      <h3>Choose Your Focus</h3>
+      <p>Select age range, theme, and developmental domain. Perfect for AI-generated toddler lesson plans and preschool curriculum creation.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-icon">🤖</div>
+      <h3>AI Creates Magic</h3>
+      <p>Our AI instantly generates a custom lesson plan with activities, materials list, and learning objectives.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-icon">📄</div>
+      <h3>Download & Print</h3>
+      <p>Get your professional PDF with step-by-step instructions, supply lists, and assessment tools.</p>
+    </div>
+  </div>
+  
+  <div class="ai-preview" style="text-align: center; margin: 2rem 0; padding: 2rem; background: #f8f9fa; border-radius: 1rem;">
+    <h4 style="color: var(--green); margin-bottom: 1rem;">🖼️ Sample AI-Generated Plan Preview</h4>
+    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto; text-align: left;">
+      <h5 style="color: var(--green); margin-bottom: 0.5rem;">🌈 Colors & Shapes Adventure (Ages 2-3)</h5>
+      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;"><strong>Objective:</strong> Identify 3 basic colors and 2 shapes</p>
+      <ul style="font-size: 0.85rem; color: #555; margin-bottom: 1rem;">
+        <li>🎨 Color sorting with everyday objects</li>
+        <li>🔺 Shape hunt around the room</li>
+        <li>🖍️ Create shape art with crayons</li>
+      </ul>
+      <div style="background: #f0f9f4; padding: 0.8rem; border-radius: 0.3rem; font-size: 0.8rem; color: var(--green);">
+        <strong>Materials needed:</strong> Paper, crayons, colored blocks, shape stickers
+      </div>
+    </div>
+    <p style="color: #666; font-size: 0.9rem; margin-top: 1rem;">This is what your AI-generated preschool curriculum creator produces!</p>
+  </div>
+</section>
+
+<section class="ai-limits-section" style="background: #f8f9fa; padding: 2rem; border-radius: 1rem; margin: 2rem 0; text-align: center;">
+  <h3 style="color: var(--green);">🎁 Try the AI Generator Free</h3>
+  <p style="margin-bottom: 1.5rem;">Free users get <strong>3 AI lesson plans per month</strong> to test our system</p>
+  <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <a href="#ai-form" class="btn btn-primary">Generate Your First Plan</a>
+    <a href="shop.html" class="btn btn-secondary">Upgrade for Unlimited → $19.99/month</a>
+  </div>
 </section>
 
 <footer>
