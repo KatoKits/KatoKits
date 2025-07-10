@@ -12,12 +12,12 @@
   --gray-100: #f8f9fa;
   --gray-200: #e9ecef;
   --gray-300: #dee2e6;
-  --radius: 1.5rem;
-  --radius-small: 0.75rem;
-  --radius-large: 2rem;
-  --shadow: 0 4px 16px rgba(0,0,0,0.08);
-  --shadow-card: 0 8px 32px rgba(0,0,0,0.12);
-  --shadow-hover: 0 12px 48px rgba(0,0,0,0.15);
+  --radius: 1rem;
+  --radius-small: 0.5rem;
+  --radius-large: 1.5rem;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 36px rgba(0,0,0,0.12);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --gradient-bg: linear-gradient(135deg, var(--cream-left) 0%, var(--cream-right) 100%);
   --gradient-card: linear-gradient(145deg, #ffffff 0%, #fefefe 100%);
@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,7 +52,7 @@ a:hover {
 header {
   background: var(--white);
   color: var(--green);
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -64,8 +64,8 @@ header {
 }
 .logo {
   font-family: 'Pacifico', cursive;
-  font-size: 2.2rem;
-  margin-left: 2rem;
+  font-size: 1.8rem;
+  margin-left: 1.5rem;
   color: var(--green);
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(80, 128, 94, 0.1);
@@ -77,11 +77,11 @@ header {
 }
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 0.7rem;
   align-items: center;
-  font-size: 1rem;
-  margin-left: 2rem;
-  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  margin-left: 1.5rem;
+  margin-top: 0.6rem;
   font-family: 'Nunito', sans-serif;
   flex-wrap: wrap;
 }
@@ -89,10 +89,10 @@ nav a {
   color: var(--green);
   text-decoration: none;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.2rem;
   border-radius: var(--radius);
   transition: var(--transition);
-  font-size: 1rem;
+  font-size: 0.85rem;
   letter-spacing: 0.01em;
   background: none;
   position: relative;
@@ -133,11 +133,11 @@ nav a.active::before {
   font-weight: 700;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   cursor: pointer;
   text-decoration: none;
   transition: var(--transition);
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   letter-spacing: 0.01em;
   display: inline-block;
   font-family: 'Nunito', sans-serif;
@@ -170,11 +170,11 @@ nav a.active::before {
   transform: translateY(-1px) scale(1.01);
 }
 .hero {
-  margin: 2rem auto 4rem auto;
+  margin: 1.5rem auto 3rem auto;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
   border-radius: var(--radius-large);
-  max-width: 1200px;
+  max-width: 1000px;
   background: var(--gradient-card);
   box-shadow: var(--shadow-card);
   position: relative;
@@ -201,51 +201,51 @@ nav a.active::before {
   z-index: 1;
 }
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--green);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   margin-top: 0;
   letter-spacing: -0.02em;
   line-height: 1.2;
   text-shadow: 0 2px 4px rgba(80, 128, 94, 0.1);
 }
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--light-green);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-weight: 500;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 .hero-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 .hero-buttons .btn,
 .hero-buttons .btn-alt {
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: var(--radius);
-  padding: 1.2rem 2.5rem;
-  min-width: 200px;
+  padding: 1rem 2rem;
+  min-width: 180px;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   position: relative;
 }
 .section, .features, .grid {
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
 }
 .section h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   margin-top: 0;
   color: var(--green);
   text-align: center;
@@ -254,18 +254,18 @@ nav a.active::before {
 }
 .features, .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
   justify-content: center;
 }
 .card {
   background: var(--gradient-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   color: var(--green);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   transition: var(--transition);
   border: 1px solid var(--gray-200);
   position: relative;
@@ -290,21 +290,21 @@ nav a.active::before {
   border-color: var(--peach);
 }
 .card h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: var(--green);
 }
 .card p {
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--light-green);
 }
 .card .btn, .card .btn-alt {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   width: 100%;
-  font-size: 1rem;
-  padding: 1rem 0;
+  font-size: 0.85rem;
+  padding: 0.8rem 0;
   border-radius: var(--radius);
 }
 .testimonial-slider {
@@ -317,17 +317,17 @@ nav a.active::before {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 1.5rem 2.3rem;
-  max-width: 420px;
-  font-size: 1.15rem;
+  padding: 1.2rem 1.8rem;
+  max-width: 350px;
+  font-size: 0.95rem;
 }
 form input, form textarea, form select {
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.85rem;
   border: 2px solid var(--gray-300);
   border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
   width: 100%;
   box-sizing: border-box;
   background: var(--white);
@@ -342,15 +342,15 @@ form input:focus, form textarea:focus, form select:focus {
 }
 form textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
 }
 .newsletter-section {
   background: var(--gradient-card);
   border-radius: var(--radius-large);
   box-shadow: var(--shadow-card);
-  padding: 3rem 2rem;
-  margin: 4rem auto;
-  max-width: 600px;
+  padding: 2rem 1.5rem;
+  margin: 3rem auto;
+  max-width: 500px;
   text-align: center;
   border: 1px solid var(--gray-200);
   position: relative;
@@ -366,55 +366,55 @@ form textarea {
   background: linear-gradient(90deg, var(--peach), var(--green));
 }
 .newsletter-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
   color: var(--green);
   font-weight: 700;
 }
 .newsletter-section p {
   color: var(--light-green);
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
 }
 .newsletter-section input[type="email"] {
-  padding: 1rem 1.25rem;
+  padding: 0.8rem 1rem;
   border-radius: var(--radius);
   border: 2px solid var(--gray-300);
   margin: 0 0.5rem 1rem 0;
   width: 60%;
-  max-width: 300px;
-  font-size: 1rem;
+  max-width: 250px;
+  font-size: 0.85rem;
   display: inline-block;
 }
 .newsletter-section .btn {
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   border-radius: var(--radius);
-  font-size: 1rem;
+  font-size: 0.85rem;
   margin-left: 0.5rem;
 }
 @media (max-width: 1024px) {
   .grid, .features {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
   }
   .hero {
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.2rem;
   }
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: 2.5rem 1rem;
-    margin: 1rem auto 3rem auto;
+    padding: 2rem 0.8rem;
+    margin: 0.8rem auto 2rem auto;
   }
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   .hero p {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   .hero-buttons {
     flex-direction: column;
@@ -423,35 +423,35 @@ form textarea {
   }
   .hero-buttons .btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
   }
   nav {
-    font-size: 0.95rem;
-    gap: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    font-size: 0.8rem;
+    gap: 0.4rem;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
   }
   nav a {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
   .logo {
-    font-size: 2.2rem;
-    margin-left: 1rem;
+    font-size: 1.8rem;
+    margin-left: 0.8rem;
   }
   .section, .features, .grid {
     padding: 0 1rem;
   }
   .section h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .grid, .features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .newsletter-section {
-    padding: 2rem 1rem;
-    margin: 2rem auto;
+    padding: 1.5rem 0.8rem;
+    margin: 1.5rem auto;
   }
   .newsletter-section input[type="email"] {
     width: 100%;
@@ -475,16 +475,16 @@ form textarea {
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .hero p {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
   }
   .card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.2rem;
   }
   .section h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
   nav {
     justify-content: center;
@@ -492,17 +492,17 @@ form textarea {
     margin-right: 0.5rem;
   }
   .logo {
-    font-size: 2rem;
-    margin-left: 0.5rem;
+    font-size: 1.6rem;
+    margin-left: 0.4rem;
     text-align: center;
   }
 }
 footer {
   background: var(--green);
   color: var(--white);
-  padding: 3rem 0 2rem 0;
-  margin-top: 4rem;
-  font-size: 1rem;
+  padding: 2rem 0 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 0.85rem;
   position: relative;
 }
 footer::before {
@@ -519,13 +519,13 @@ footer::before {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
+  gap: 1.5rem;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 .footer-content > p {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   margin: 0;
   color: var(--white);
@@ -534,8 +534,8 @@ footer::before {
   text-align: right;
 }
 .footer-info p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
+  margin: 0.4rem 0;
+  font-size: 0.85rem;
   color: var(--cream-left);
   font-weight: 400;
 }
@@ -557,8 +557,8 @@ footer::before {
   position: relative;
 }
 .feature div {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
   transition: var(--transition);
 }
 .feature:hover div {
@@ -569,23 +569,23 @@ footer::before {
 .testimonial-slider {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 .testimonial {
   background: var(--gradient-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 2rem 2.5rem;
-  max-width: 500px;
-  font-size: 1.1rem;
+  padding: 1.5rem 2rem;
+  max-width: 400px;
+  font-size: 0.9rem;
   position: relative;
   border-left: 4px solid var(--peach);
 }
 .testimonial::before {
   content: '"';
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--peach);
   position: absolute;
   top: -10px;
