@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KatoKits – Stress-Free Lesson Plans for Ages 2–6</title>
-  <meta name="description" content="Printable, editable, curriculum-aligned lesson plans for early childhood educators and parents. Get free plans, browse bundles, or try the AI generator for preschool activities.">
+  <title>KatoKits – Stress-Free Lesson Plans for Ages 6 Months to Kindergarten</title>
+  <meta name="description" content="Printable, editable, curriculum-aligned lesson plans for early childhood educators and parents. Get free plans, browse bundles, or try the AI generator for activities from 6 months to kindergarten.">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +23,7 @@
 </header>
 
 <section class="hero">
-  <h1>✨ Stress-Free Lesson Plans for Ages 2–6</h1>
+  <h1>✨ Stress-Free Lesson Plans for Ages 6 Months to Kindergarten</h1>
   <p>Printable, editable, and aligned with early learning goals.</p>
   <div class="hero-buttons">
     <a href="lesson-plans.html" class="btn">Browse Bundles</a>
@@ -92,13 +92,26 @@
 </section>
 
 <section class="newsletter-section">
-  <h2>🎁 Get your premade activity lesson plan with a developmental checklist and activity page—free!</h2>
-  <p>Delivered straight to your inbox, no spam.</p>
+  <h2>🎁 Try our classroom-tested activities for ages 6 months to kindergarten, absolutely free.</h2>
+  <p>Download, print, and play—no signup needed!</p>
   <form action="https://YOUR-MAILCHIMP-OR-CONVERTKIT-URL" method="post">
     <input type="email" name="EMAIL" placeholder="Email address" required>
     <button type="submit" class="btn">Get My Free Plan</button>
   </form>
 </section>
+
+<div id="ai-free-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; border-radius:2rem; max-width:370px; width:90vw; padding:2.2rem 1.5rem 1.7rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
+    <button id="close-ai-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
+    <h2 style="color:#50805E; font-size:1.3rem; margin-bottom:0.7rem;">🎁 Try the AI Generator Free</h2>
+    <p style="color:#50805E; font-size:1.05rem; margin-bottom:1.1rem;">Sign up with your email to get <b>3 free AI lesson plans</b> instantly!</p>
+    <form id="ai-free-form">
+      <input type="email" name="email" placeholder="Your email" required style="width:90%; padding:0.7rem; border-radius:1.2rem; border:1.2px solid #F9A471; margin-bottom:0.7rem; font-size:1rem;">
+      <button type="submit" class="btn" style="width:100%;">Get 3 Free AI Uses</button>
+    </form>
+    <small style="color:#888; display:block; margin-top:0.7rem;">No spam. Cancel anytime.</small>
+  </div>
+</div>
 
 <footer>
   <div class="footer-content">
@@ -109,5 +122,35 @@
     </div>
   </div>
 </footer>
+
+<script>
+// --- AI Free Modal Logic ---
+function showAIModal() {
+  document.getElementById('ai-free-modal').style.display = 'flex';
+}
+function hideAIModal() {
+  document.getElementById('ai-free-modal').style.display = 'none';
+}
+function hasUsedAIFreeTrial() {
+  return localStorage.getItem('katokits_free_uses') > 0 || localStorage.getItem('katokits_email_signedup') === 'true';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  if (!hasUsedAIFreeTrial()) {
+    setTimeout(showAIModal, 1200);
+  }
+  document.getElementById('close-ai-modal').onclick = function() {
+    hideAIModal();
+    localStorage.setItem('katokits_email_signedup', 'dismissed');
+  };
+  document.getElementById('ai-free-form').onsubmit = function(e) {
+    e.preventDefault();
+    // Here you would send the email to your backend or service
+    localStorage.setItem('katokits_email_signedup', 'true');
+    localStorage.setItem('katokits_free_uses', '0');
+    hideAIModal();
+    alert('You now have 3 free AI uses! Visit the AI Generator page.');
+  };
+});
+</script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KatoKits Shop | Printable Preschool Activities</title>
-  <meta name="description" content="Shop printable preschool activity sheets, lesson plans, and themed bundles. Free starter activity, instant downloads, and daycare center access from KatoKits.">
+  <meta name="description" content="Shop printable preschool activity sheets, lesson plans, and themed bundles. Free starter activity, instant downloads, and daycare center access from KatoKits." />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -13,10 +13,7 @@
       --peach: #F9A471;
       --cream-left: #D8F2DE;
       --cream-right: #FBE8D3;
-      --white: #FFFFFF;
-      --dark-green: #3a5f44;
-      --radius: 2.3rem;
-      --shadow: 0 2px 8px #0001;
+      --whi  --radiuhadow: 0 2px 8px #0001;
       --shadow-card: 0 4px 20px #0001;
     }
     body {
@@ -312,6 +309,139 @@
       margin-top: 1.2rem;
       display: block;
     }
+    
+    /* Single Activities Dropdown Styles */
+    .single-activities-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .section-description {
+      text-align: center;
+      color: var(--green);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .dropdown-container {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .dropdown-header {
+      background: var(--green);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .dropdown-header:hover {
+      background: var(--dark-green);
+    }
+    .dropdown-arrow {
+      font-size: 1rem;
+      transition: transform 0.3s;
+    }
+    .dropdown-arrow.rotated {
+      transform: rotate(180deg);
+    }
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: var(--white);
+    }
+    .dropdown-content.active {
+      max-height: 2000px;
+    }
+    .activities-grid {
+      padding: 2rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem;
+      background: #f9f9f9;
+      border-radius: 1rem;
+      border: 1px solid #e5e5e5;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .activity-item:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .activity-info {
+      flex: 1;
+      margin-right: 1.5rem;
+    }
+    .activity-info h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      margin: 0 0 0.5rem 0;
+    }
+    .activity-info p {
+      color: var(--green);
+      margin: 0 0 0.8rem 0;
+      font-size: 1rem;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .features span {
+      font-size: 0.85rem;
+      color: var(--green);
+      background: var(--cream-left);
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.5rem;
+    }
+    .activity-purchase {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .activity-purchase .price {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--green);
+    }
+    .btn-small {
+      background: var(--peach);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 1.5rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(249, 164, 113, 0.2);
+    }
+    .btn-small:hover {
+      background: #ffb87d;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(249, 164, 113, 0.3);
+    }
     @media (max-width: 980px) {
       .shop-grid {
         flex-direction: column;
@@ -333,6 +463,19 @@
         font-size: 2rem;
         margin-left: 1rem;
       }
+      .activity-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+      .activity-info {
+        margin-right: 0;
+      }
+      .activity-purchase {
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+      }
     }
     @media (max-width: 700px) {
       .shop-hero {
@@ -347,6 +490,39 @@
         max-width: 95vw;
         padding: 1rem;
       }
+      .dropdown-header {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+      .activities-grid {
+        padding: 1rem;
+      }
+      .activity-item {
+        padding: 1rem;
+      }
+      .features {
+        justify-content: center;
+      }
+    }
+    
+    /* Footer Styles */
+    footer {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-content p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .footer-info {
+      margin-top: 1rem;
+    }
+    .footer-info p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -378,48 +554,170 @@
   </form>
 </section>
 
-<section>
-  <h2 class="center" style="font-size:1.45rem; margin-bottom:0.5rem; font-weight:900; color:#50805E;">🧩 Pick What You Need</h2>
-  <div class="shop-grid">
-
-    <!-- Paint Mixing Activity -->
-    <div class="shop-card">
-      <h3>🎨 Paint Mixing Activity</h3>
-      <p>Hands-on preschool printable exploring color theory and sensory development.</p>
-      <ul>
-        <li>✔️ Color mixing experiments</li>
-        <li>✔️ Sensory exploration</li>
-        <li>✔️ Art & creativity focus</li>
-      </ul>
-      <div class="price">$0.99</div>
-      <a href="https://buy.stripe.com/test-paint-mixing" class="btn" aria-label="Buy Paint Mixing Activity">Buy Now</a>
+<section class="single-activities-section">
+  <h2 class="section-title">📝 Single Activity Worksheets</h2>
+  <p class="section-description">Choose from our collection of individual printable activities</p>
+  
+  <div class="dropdown-container">
+    <div class="dropdown-header" onclick="toggleDropdown()">
+      <span>Browse All Single Activities (8 Available)</span>
+      <span class="dropdown-arrow">▼</span>
     </div>
+    
+    <div class="dropdown-content" id="activitiesDropdown">
+      <div class="activities-grid">
+        
+        <!-- Paint Mixing Activity -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🎨 Paint Mixing Activity</h4>
+            <p>Hands-on color theory and sensory development.</p>
+            <div class="features">
+              <span>✔️ Color mixing experiments</span>
+              <span>✔️ Sensory exploration</span>
+              <span>✔️ Activity lesson plans</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-paint-mixing" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Fish Color Sorting Activity -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🐠 Fish Color Sorting Activity</h4>
+            <p>Color recognition and cognitive skill-building.</p>
+            <div class="features">
+              <span>✔️ Color identification practice</span>
+              <span>✔️ Sorting & cognitive skills</span>
+              <span>✔️ Cut-and-sort pieces included</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-fish-sorting" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Car Race Sorting & Graphing -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🏎️ Car Race Sorting & Graphing</h4>
+            <p>Sorting, movement, and beginner math.</p>
+            <div class="features">
+              <span>✔️ Math & graphing skills</span>
+              <span>✔️ Sorting practice</span>
+              <span>✔️ Movement integration</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-car-graphing" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Pumpkin Sorting Halloween -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🎃 Pumpkin Sorting (Halloween)</h4>
+            <p>Fall-themed color sorting activity.</p>
+            <div class="features">
+              <span>✔️ Halloween-themed fun</span>
+              <span>✔️ Color & size sorting</span>
+              <span>✔️ Includes checklist</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-pumpkin-sort" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Animal Movement Cards -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>� Animal Movement Cards</h4>
+            <p>Gross motor skills development cards.</p>
+            <div class="features">
+              <span>✔️ Gross motor development</span>
+              <span>✔️ Active movement prompts</span>
+              <span>✔️ Perfect for circle time</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-animal-movement" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Cookie Decorating Shapes -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🍪 Cookie Decorating Shapes</h4>
+            <p>Shape recognition and fine motor practice.</p>
+            <div class="features">
+              <span>✔️ Shape identification</span>
+              <span>✔️ Fine motor skills</span>
+              <span>✔️ Creative decoration fun</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-cookie-shapes" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Leaf Sorting Activity -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🍃 Leaf Sorting by Size & Shape</h4>
+            <p>Nature-themed sorting and classification.</p>
+            <div class="features">
+              <span>✔️ Size & shape sorting</span>
+              <span>✔️ Nature exploration</span>
+              <span>✔️ Classification skills</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-leaf-sorting" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Holiday Ornament Decorating -->
+        <div class="activity-item">
+          <div class="activity-info">
+            <h4>🎄 Holiday Ornament Decorating</h4>
+            <p>Festive creativity and pattern practice.</p>
+            <div class="features">
+              <span>✔️ Holiday creativity</span>
+              <span>✔️ Pattern recognition</span>
+              <span>✔️ Fine motor skills</span>
+            </div>
+          </div>
+          <div class="activity-purchase">
+            <div class="price">$2.47</div>
+            <a href="https://buy.stripe.com/test-ornament-decorating" class="btn-small">Buy Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Fish Color Sorting Activity -->
     <div class="shop-card">
       <h3>� Fish Color Sorting Activity</h3>
       <p>Color recognition printable for cognitive skill-building using cut-and-sort fish pieces.</p>
       <ul>
-        <li>✔️ Color identification practice</li>
-        <li>✔️ Sorting & cognitive skills</li>
-        <li>✔️ Cut-and-sort pieces included</li>
-      </ul>
-      <div class="price">$0.99</div>
-      <a href="https://buy.stripe.com/test-fish-sorting" class="btn" aria-label="Buy Fish Color Sorting">Buy Now</a>
-    </div>
 
-    <!-- Car Race Sorting & Graphing -->
-    <div class="shop-card">
-      <h3>🏎️ Car Race Sorting & Graphing</h3>
-      <p>Combine sorting, movement, and beginner math in this race-themed preschool printable.</p>
-      <ul>
-        <li>✔️ Math & graphing skills</li>
-        <li>✔️ Sorting practice</li>
-        <li>✔️ Movement integration</li>
-      </ul>
-      <div class="price">$2.49 <span class="best">(Full Kit)</span></div>
-      <a href="https://buy.stripe.com/test-car-graphing" class="btn btn-alt" aria-label="Buy Car Race Activity">Buy Now</a>
-    </div>
+
+
 
     <!-- Pumpkin Sorting Halloween -->
     <div class="shop-card">
@@ -434,34 +732,9 @@
       <a href="https://buy.stripe.com/test-pumpkin-sort" class="btn" aria-label="Buy Pumpkin Sorting">Buy Now</a>
     </div>
 
-    <!-- Animal Movement Cards -->
-    <div class="shop-card">
-      <h3>🦘 Animal Movement Cards</h3>
-      <p>Printable movement prompt cards to build gross motor skills — jump like a frog, wiggle like a worm!</p>
-      <ul>
-        <li>✔️ Gross motor development</li>
-        <li>✔️ Active movement prompts</li>
-        <li>✔️ Perfect for circle time</li>
-      </ul>
-      <div class="price">$0.99</div>
-      <a href="https://buy.stripe.com/test-animal-movement" class="btn" aria-label="Buy Animal Movement Cards">Buy Now</a>
-    </div>
 
-    <!-- Cookie Decorating Shapes -->
-    <div class="shop-card">
-      <h3>🍪 Cookie Decorating Shapes</h3>
-      <p>Shape recognition and fine motor practice with this sweet cookie-themed activity.</p>
-      <ul>
-        <li>✔️ Shape identification</li>
-        <li>✔️ Fine motor skills</li>
-        <li>✔️ Creative decoration fun</li>
-      </ul>
-      <div class="price">$1.49</div>
-      <a href="https://buy.stripe.com/test-cookie-shapes" class="btn" aria-label="Buy Cookie Shapes Activity">Buy Now</a>
-    </div>
 
-  </div>
-</section>
+
 
 <section class="bundle-section">
   <h3>📦 Themed Activity Bundles</h3>
@@ -518,7 +791,6 @@
 
   </div>
   
-  <span class="free-trial">💡 All plans include 7-day free trial – no credit card needed.</span>
 </section>
 
 <footer>
@@ -530,5 +802,16 @@
     </div>
   </div>
 </footer>
+
+<script>
+function toggleDropdown() {
+  const dropdown = document.getElementById('activitiesDropdown');
+  const arrow = document.querySelector('.dropdown-arrow');
+  
+  dropdown.classList.toggle('active');
+  arrow.classList.toggle('rotated');
+}
+</script>
+
 </body>
 </html>
