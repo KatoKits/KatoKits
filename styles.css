@@ -260,10 +260,11 @@ form textarea {
 footer {
   background: var(--white);
   color: var(--green);
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   margin-top: 3rem;
   font-size: 1rem;
   border-top: 1px solid #dceee3;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
 .footer-content {
   display: flex;
@@ -275,13 +276,19 @@ footer {
   margin: 0 auto;
   padding: 0 2rem;
 }
+.footer-content > p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
 .footer-info {
   text-align: right;
 }
 .footer-info p {
-  margin: 0.2rem 0;
-  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  font-size: 1rem;
   color: var(--green);
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   .footer-content {

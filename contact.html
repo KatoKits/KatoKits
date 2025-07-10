@@ -13,37 +13,39 @@
       margin: 2rem auto;
       background: var(--white);
       border-radius: var(--radius);
-      box-shadow: 0 2px 14px #0001;
+      box-shadow: var(--shadow-card);
       padding: 2rem;
     }
     .contact-form label {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--green);
       display: block;
       margin-bottom: 0.5rem;
     }
     .contact-form input, .contact-form textarea, .contact-form select {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       padding: 0.75rem;
       border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      border-radius: 1rem;
+      font-size: 1rem;
       width: 100%;
       box-sizing: border-box;
+      font-family: 'Nunito', Arial, sans-serif;
     }
     .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
       outline: none;
       border-color: var(--green);
     }
     .contact-form textarea {
-      min-height: 100px;
+      min-height: 120px;
       resize: vertical;
     }
     .contact-info {
-      background: var(--cream-left);
+      background: var(--white);
       border-radius: var(--radius);
-      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+      padding: 2rem;
       margin: 2rem auto;
       max-width: 600px;
       text-align: center;
@@ -51,12 +53,13 @@
     .contact-info h3 {
       color: var(--green);
       margin-bottom: 1rem;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      font-weight: 700;
     }
     .contact-info p {
       margin-bottom: 0.5rem;
-      color: var(--dark-green);
-      font-size: 0.95rem;
+      color: var(--green);
+      font-size: 1.1rem;
     }
     .footer-content {
       display: flex;
