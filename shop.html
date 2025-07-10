@@ -10,10 +10,13 @@
   <style>
     :root {
       --green: #50805E;
+      --dark-green: #3d6249;
       --peach: #F9A471;
       --cream-left: #D8F2DE;
       --cream-right: #FBE8D3;
-      --whi  --radiuhadow: 0 2px 8px #0001;
+      --white: #fff;
+      --radius: 1rem;
+      --shadow: 0 4px 20px #0001;
       --shadow-card: 0 4px 20px #0001;
     }
     body {
@@ -554,7 +557,22 @@
   </form>
 </section>
 
-<section class="single-activities-section">
+<!-- Main Shopping Categories -->
+<section style="max-width: 1000px; margin: 1rem auto 3rem auto; padding: 0 1rem;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <!-- Quick Category Navigation -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+      <a href="#single-activities" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;" onmouseover="this.style.background='var(--green)'; this.style.color='var(--white)'" onmouseout="this.style.background='var(--cream-left)'; this.style.color='var(--green)'">📝 Single Activities</a>
+      <a href="#bundles" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;" onmouseover="this.style.background='var(--green)'; this.style.color='var(--white)'" onmouseout="this.style.background='var(--cream-left)'; this.style.color='var(--green)'">📦 Activity Bundles</a>
+      <a href="#subscriptions" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;" onmouseover="this.style.background='var(--green)'; this.style.color='var(--white)'" onmouseout="this.style.background='var(--cream-left)'; this.style.color='var(--green)'">🤖 AI Subscriptions</a>
+    </div>ref="#single-activities" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;">📝 Single Activities</a>
+      <a href="#bundles" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;">📦 Activity Bundles</a>
+      <a href="#subscriptions" style="background: var(--cream-left); color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; text-decoration: none; font-weight: 600; border: 2px solid var(--green); transition: all 0.2s;">🤖 AI Subscriptions</a>
+    </div>
+  </div>
+</section>
+
+<section class="single-activities-section" id="single-activities">
   <h2 class="section-title">📝 Single Activity Worksheets</h2>
   <p class="section-description">Choose from our collection of individual printable activities</p>
   
@@ -638,7 +656,7 @@
         <!-- Animal Movement Cards -->
         <div class="activity-item">
           <div class="activity-info">
-            <h4>� Animal Movement Cards</h4>
+            <h4>🐾 Animal Movement Cards</h4>
             <p>Gross motor skills development cards.</p>
             <div class="features">
               <span>✔️ Gross motor development</span>
@@ -709,84 +727,48 @@
 </section>
 
 
-
-    <!-- Fish Color Sorting Activity -->
-    <div class="shop-card">
-      <h3>� Fish Color Sorting Activity</h3>
-      <p>Color recognition printable for cognitive skill-building using cut-and-sort fish pieces.</p>
-      <ul>
-
-
-
-
-    <!-- Pumpkin Sorting Halloween -->
-    <div class="shop-card">
-      <h3>� Pumpkin Sorting (Halloween)</h3>
-      <p>Fall-themed color sorting activity with printable pumpkins, checklist, and cut-out cards.</p>
-      <ul>
-        <li>✔️ Halloween-themed fun</li>
-        <li>✔️ Color & size sorting</li>
-        <li>✔️ Includes checklist</li>
-      </ul>
-      <div class="price">$2.49</div>
-      <a href="https://buy.stripe.com/test-pumpkin-sort" class="btn" aria-label="Buy Pumpkin Sorting">Buy Now</a>
-    </div>
-
-
-
-
-
-<section class="bundle-section">
+<section class="bundle-section" id="bundles">
   <h3>📦 Themed Activity Bundles</h3>
   <p>Save more with collections by theme:<br>🎨 Art & Creativity • 🧠 Cognitive Skills • 🎃 Holiday Themes • 🏃 Gross Motor Movement</p>
   <a href="lesson-plans.html" class="btn" aria-label="Browse All Bundles">Browse All Bundles</a>
 </section>
 
-<section class="daycare-section">
-  <h3>🔁 AI Generator Subscriptions</h3>
+<section class="daycare-section" id="subscriptions">
+  <h3>🤖 AI Generator Subscriptions</h3>
   <p>Unlock unlimited lesson planning with our AI-powered generator!</p>
   
-  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin: 2rem 0;">
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2rem 0;">
     
-    <!-- Starter AI Plan -->
-    <div style="background: var(--white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); max-width: 300px; text-align: center;">
-      <h4 style="color: var(--green); margin-bottom: 1rem;">🧍 Starter AI Plan</h4>
-      <div style="font-size: 1.5rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$9.99 CAD/month</div>
-      <p style="font-size: 0.9rem; margin-bottom: 1rem;">30 AI Uses / Month</p>
-      <ul style="text-align: left; font-size: 0.9rem; margin-bottom: 1.5rem;">
-        <li>✔️ 30 AI lesson plans monthly</li>
-        <li>✔️ Access to personal library</li>
-        <li>✔️ Perfect for homeschool parents</li>
-      </ul>
-      <a href="https://buy.stripe.com/starter-ai" class="btn" style="width: 100%; padding: 0.75rem;">Get Started</a>
-    </div>
-
     <!-- Unlimited AI Plan -->
-    <div style="background: var(--white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); max-width: 300px; text-align: center; border: 2px solid var(--peach);">
-      <h4 style="color: var(--green); margin-bottom: 1rem;">🧠 Unlimited AI Plan</h4>
-      <div style="font-size: 1.5rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$19.99 CAD/month</div>
-      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--peach); font-weight: 700;">Most Popular!</p>
-      <ul style="text-align: left; font-size: 0.9rem; margin-bottom: 1.5rem;">
+    <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-card); max-width: 320px; text-align: center; border: 3px solid var(--peach); position: relative;">
+      <div style="position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--peach); color: white; padding: 0.3rem 1rem; border-radius: 1rem; font-size: 0.8rem; font-weight: 700;">MOST POPULAR</div>
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+      <h4 style="color: var(--green); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700;">Unlimited AI Plan</h4>
+      <div style="font-size: 1.8rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$19.99 CAD/month</div>
+      <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--green);">Perfect for teachers & therapists</p>
+      <ul style="text-align: left; font-size: 0.95rem; margin-bottom: 2rem; color: var(--green); line-height: 1.6;">
         <li>✔️ Unlimited AI lesson plans</li>
         <li>✔️ All printable activity sheets</li>
         <li>✔️ Priority support</li>
-        <li>✔️ Great for teachers & therapists</li>
+        <li>✔️ Perfect for classrooms</li>
       </ul>
-      <a href="https://buy.stripe.com/unlimited-ai" class="btn btn-alt" style="width: 100%; padding: 0.75rem;">Choose Unlimited</a>
+      <a href="https://buy.stripe.com/unlimited-ai" class="btn" style="width: 100%; padding: 0.9rem; font-size: 1rem;">Choose Unlimited</a>
     </div>
 
     <!-- Daycare Plan -->
-    <div style="background: var(--white); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); max-width: 300px; text-align: center;">
-      <h4 style="color: var(--green); margin-bottom: 1rem;">🏫 Daycare Unlimited</h4>
-      <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.5rem;">$79.99 CAD/month</div>
-      <div style="font-size: 1rem; color: var(--green); margin-bottom: 1rem;">or $799/year</div>
-      <ul style="text-align: left; font-size: 0.9rem; margin-bottom: 1.5rem;">
+    <div style="background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-card); max-width: 320px; text-align: center; border: 2px solid var(--green);">
+      <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏫</div>
+      <h4 style="color: var(--green); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700;">Daycare Unlimited</h4>
+      <div style="font-size: 1.6rem; font-weight: 900; color: var(--green); margin-bottom: 0.3rem;">$79.99 CAD/month</div>
+      <div style="font-size: 1rem; color: var(--green); margin-bottom: 1.2rem;">or $799/year (save $160)</div>
+      <p style="font-size: 0.9rem; margin-bottom: 1.5rem; color: var(--green);">For daycare centers & schools</p>
+      <ul style="text-align: left; font-size: 0.95rem; margin-bottom: 2rem; color: var(--green); line-height: 1.6;">
         <li>✔️ Full staff access (up to 10 teachers)</li>
         <li>✔️ Unlimited AI lesson plans</li>
         <li>✔️ Classroom dashboards</li>
-        <li>✔️ Printable license for center</li>
+        <li>✔️ Commercial use license</li>
       </ul>
-      <a href="https://buy.stripe.com/daycare-plan" class="btn" style="width: 100%; padding: 0.75rem;">Get Daycare Plan</a>
+      <a href="https://buy.stripe.com/daycare-plan" class="btn btn-alt" style="width: 100%; padding: 0.9rem; font-size: 1rem;">Get Daycare Plan</a>
     </div>
 
   </div>
