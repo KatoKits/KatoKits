@@ -11,23 +11,24 @@
 </head>
 <body>
 <header>
-  <div class="logo">KatoKits</div>
-  <nav>
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="lesson-plans.html">Lesson Plans</a>
-      <a href="ai.html">AI Generator</a>
-      <a href="freebies.html">Freebies</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <div class="auth-buttons">
-        <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
-        <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+  <div class="header-container">
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="lesson-plans.html">Lesson Plans</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="freebies.html">Freebies</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </div>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
     </div>
-  </nav>
+  </div>
 </header>
 
 <section class="hero" role="banner" aria-labelledby="hero-headline">
@@ -305,29 +306,15 @@
 
 <!-- Login Modal -->
 <div id="login-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; border-radius:2rem; max-width:420px; width:90vw; padding:2.5rem 2rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
+  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
     <button id="close-login-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
-    <h2 style="color:#50805E; font-size:1.5rem; margin-bottom:1rem;">Welcome Back!</h2>
-    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Sign in to access your activities and lesson plans</p>
-    
-    <!-- Social Login Buttons -->
-    <div style="margin-bottom:1.5rem;">
-      <button class="social-btn google-btn" onclick="loginWithGoogle()" style="width:100%; margin-bottom:0.8rem; padding:0.8rem; border:1px solid #ddd; border-radius:0.8rem; background:white; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;">
-        <img src="https://developers.google.com/identity/images/g-logo.png" style="width:20px; height:20px; margin-right:0.8rem;" alt="Google">
-        Continue with Google
-      </button>
-      <button class="social-btn apple-btn" onclick="loginWithApple()" style="width:100%; margin-bottom:0.8rem; padding:0.8rem; border:1px solid #ddd; border-radius:0.8rem; background:#000; color:white; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;">
-        <span style="margin-right:0.8rem; font-size:1.2rem;">🍎</span>
-        Continue with Apple
-      </button>
-    </div>
-    
-    <div style="text-align:center; margin:1rem 0; color:#999; font-size:0.9rem;">or</div>
+    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">Welcome Back!</h2>
+    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Sign in to access your activities</p>
     
     <form id="login-form">
       <input type="email" name="email" placeholder="Your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:0.8rem; font-size:1rem;">
       <input type="password" name="password" placeholder="Password" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
-      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem;">Sign In</button>
+      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Sign In</button>
     </form>
     
     <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
@@ -338,36 +325,17 @@
 
 <!-- Signup Modal -->
 <div id="signup-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; border-radius:2rem; max-width:420px; width:90vw; padding:2.5rem 2rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
+  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
     <button id="close-signup-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
-    <h2 style="color:#50805E; font-size:1.5rem; margin-bottom:1rem;">Create Your Account</h2>
-    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Join and start creating amazing activities today!</p>
-    
-    <!-- Social Signup Buttons -->
-    <div style="margin-bottom:1.5rem;">
-      <button class="social-btn google-btn" onclick="signupWithGoogle()" style="width:100%; margin-bottom:0.8rem; padding:0.8rem; border:1px solid #ddd; border-radius:0.8rem; background:white; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;">
-        <img src="https://developers.google.com/identity/images/g-logo.png" style="width:20px; height:20px; margin-right:0.8rem;" alt="Google">
-        Sign up with Google
-      </button>
-      <button class="social-btn apple-btn" onclick="signupWithApple()" style="width:100%; margin-bottom:0.8rem; padding:0.8rem; border:1px solid #ddd; border-radius:0.8rem; background:#000; color:white; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1rem;">
-        <span style="margin-right:0.8rem; font-size:1.2rem;">🍎</span>
-        Sign up with Apple
-      </button>
-    </div>
-    
-    <div style="text-align:center; margin:1rem 0; color:#999; font-size:0.9rem;">or</div>
+    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">🎨 Join KatoKits</h2>
+    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Start creating amazing educational activities for your kids!</p>
     
     <form id="signup-form">
-      <input type="text" name="name" placeholder="Your full name" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:0.8rem; font-size:1rem;">
-      <input type="email" name="email" placeholder="Your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:0.8rem; font-size:1rem;">
-      <input type="password" name="password" placeholder="Create a password" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
-      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem;">Create Account</button>
+      <input type="email" name="email" placeholder="Enter your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
+      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Get Started Now!</button>
     </form>
     
-    <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
-      Already have an account? <a href="#" onclick="switchToLogin()" style="color:#50805E; font-weight:600;">Sign in here</a>
-    </p>
-    <small style="color:#888; display:block; margin-top:0.8rem; font-size:0.8rem;">By signing up, you agree to our Terms of Service and Privacy Policy</small>
+    <small style="color:#888; display:block; margin-top:1rem; font-size:0.8rem;">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
   </div>
 </div>
 
@@ -474,30 +442,7 @@ function switchToLogin() {
   showLoginModal();
 }
 
-// Social Authentication Functions
-function loginWithGoogle() {
-  // TODO: Implement Google OAuth
-  console.log('Google login clicked');
-  alert('Google login will be implemented with OAuth integration');
-}
-
-function loginWithApple() {
-  // TODO: Implement Apple Sign In
-  console.log('Apple login clicked');
-  alert('Apple Sign In will be implemented with Apple ID integration');
-}
-
-function signupWithGoogle() {
-  // TODO: Implement Google OAuth for signup
-  console.log('Google signup clicked');
-  alert('Google signup will be implemented with OAuth integration');
-}
-
-function signupWithApple() {
-  // TODO: Implement Apple Sign In for signup
-  console.log('Apple signup clicked');
-  alert('Apple Sign In will be implemented with Apple ID integration');
-}
+// Simple authentication placeholder functions (social auth removed for simplicity)
 
 // --- AI Free Modal Logic ---
 function showAIModal() {
