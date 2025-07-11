@@ -99,6 +99,89 @@
     .ai-limits-section h3 {
       color: var(--green);
     }
+    .comparison-table-container {
+      overflow-x: auto;
+    }
+    .comparison-table {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-size: 1rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .comparison-table th {
+      background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
+      color: white;
+      font-weight: 800;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+    .comparison-table td span {
+      font-size: 1.2rem;
+    }
+    .btn-primary {
+      background: var(--peach);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background: #f59e0b;
+    }
+    .btn-outline {
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #374151;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+    .btn-purple {
+      background: #8b5cf6;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-purple:hover {
+      background: #7c3aed;
+    }
   </style>
 </head>
 <body>
@@ -172,6 +255,100 @@
   <div style="text-align: center; margin-top: 1rem;">
     <a href="freebies.html" style="color: var(--green); text-decoration: underline; font-weight: 600; font-size: 0.9rem;">Or try free activities first</a>
   </div>
+  </div>
+</section>
+
+<!-- Detailed Pricing Comparison Section -->
+<section class="section">
+  <h2>💎 Compare Plans - Choose What's Right for You</h2>
+  <p style="text-align: center; margin-bottom: 2rem; color: var(--green);">Every plan includes our AI generator. Pick the features you need.</p>
+  
+  <div class="comparison-table-container" style="overflow-x: auto;">
+    <table class="comparison-table" style="width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+      <thead>
+        <tr style="background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);">
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: left; font-size: 1.1rem;">Features</th>
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Free<br><span style="font-size: 0.9rem; opacity: 0.9;">$0/month</span></th>
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Basic<br><span style="font-size: 0.9rem; opacity: 0.9;">$9.99/month</span></th>
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem; background: rgba(249, 164, 113, 0.3);">🔥 Unlimited<br><span style="font-size: 0.9rem; opacity: 0.9;">$19.99/month</span></th>
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Professional<br><span style="font-size: 0.9rem; opacity: 0.9;">$79.99/month</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">AI Lesson Plans per Month</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">3 plans</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">30 plans</td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Unlimited</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">Unlimited</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Download & Print Activities</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Cloud Storage & Editing</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Activity Library Access</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Support Level</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">Community</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">Email</td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Priority Email</td>
+          <td style="padding: 1rem; text-align: center; color: #6b7280;">Phone + Email</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Multi-User Access</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Custom Branding</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 1rem; font-weight: 600; color: var(--green);">New Activities Monthly</td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+        </tr>
+        <tr>
+          <td style="padding: 1.5rem 1rem; font-weight: 600; color: var(--green);">Best For</td>
+          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Trying out<br>AI generator</td>
+          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Occasional<br>home use</td>
+          <td style="padding: 1.5rem 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach); font-size: 0.9rem;">Teachers &<br>Active Parents</td>
+          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Daycares &<br>Centers</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div style="text-align: center; margin-top: 2rem;">
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+      <a href="ai.html" class="btn btn-outline">Start Free</a>
+      <a href="shop.html" class="btn btn-outline">Choose Basic</a>
+      <a href="shop.html" class="btn btn-primary" style="transform: scale(1.1); font-weight: 800;">Try Unlimited Free for 1 Day!</a>
+      <a href="shop.html" class="btn btn-purple">Choose Professional</a>
+    </div>
   </div>
 </section>
 
