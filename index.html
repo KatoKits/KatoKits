@@ -13,16 +13,19 @@
 <header>
   <div class="logo">KatoKits</div>
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="lesson-plans.html">Lesson Plans</a>
-    <a href="ai.html">AI Generator</a>
-    <a href="freebies.html">Freebies</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <div class="auth-buttons">
-      <a href="#" onclick="showLoginModal()" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-left: 1rem;">Login</a>
-      <a href="#" onclick="showSignupModal()" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-left: 0.5rem;">Sign Up</a>
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="lesson-plans.html">Lesson Plans</a>
+      <a href="ai.html">AI Generator</a>
+      <a href="freebies.html">Freebies</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="auth-buttons">
+        <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+        <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+      </div>
     </div>
   </nav>
 </header>
@@ -438,6 +441,12 @@
 </section>
 
 <script>
+// --- Mobile Menu Toggle ---
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
 // --- Authentication Functions ---
 function showLoginModal() {
   document.getElementById('login-modal').style.display = 'flex';
