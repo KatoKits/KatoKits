@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>Lesson Plan Library | KatoKits</title>
+  <meta name="description" content="Download pre-made printable lesson kits for preschool. Sorted by age, subject, and theme. Unlimited access with a low-cost plan." />
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html" class="active">Library</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero library-hero">
+  <h1>📚 Pre-Made Lesson Plan Library</h1>
+  <p class="hero-subtitle">200+ ready-to-use lesson plans created by educators. Filter by age, subject, and theme.</p>
+  <div class="hero-stats">
+    <span>👶 Ages 6m-6y</span>
+    <span>📝 200+ Plans</span>
+    <span>🎯 Curriculum Aligned</span>
+  </div>
+</section>
+
+<section class="section filters-section">
+  <div class="library-filters">
+    <div class="filter-group">
+      <label for="age-filter">Age Group:</label>
+      <select id="age-filter" onchange="filterLibrary()">
+        <option value="">All Ages</option>
+        <option value="infant">Infants (6-12m)</option>
+        <option value="toddler">Toddlers (1-2y)</option>
+        <option value="preschool">Preschool (3-4y)</option>
+        <option value="kindergarten">Kindergarten (5-6y)</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="subject-filter">Subject:</label>
+      <select id="subject-filter" onchange="filterLibrary()">
+        <option value="">All Subjects</option>
+        <option value="math">Math & Numbers</option>
+        <option value="literacy">Literacy & Reading</option>
+        <option value="science">Science & Nature</option>
+        <option value="art">Art & Creativity</option>
+        <option value="social">Social Skills</option>
+        <option value="motor">Motor Skills</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="theme-filter">Theme:</label>
+      <select id="theme-filter" onchange="filterLibrary()">
+        <option value="">All Themes</option>
+        <option value="seasons">Seasons & Weather</option>
+        <option value="animals">Animals & Nature</option>
+        <option value="community">Community Helpers</option>
+        <option value="holidays">Holidays & Celebrations</option>
+        <option value="transportation">Transportation</option>
+        <option value="family">Family & Friends</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="section library-grid-section">
+  <div class="library-grid" id="library-grid">
+    <!-- Free Preview Plans -->
+    <div class="library-card free-plan" data-age="preschool" data-subject="math" data-theme="animals">
+      <div class="plan-thumbnail">
+        <div class="pdf-icon">📄</div>
+        <div class="free-badge">FREE PREVIEW</div>
+      </div>
+      <h3>Counting Bears Adventure</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 3-4</span>
+        <span class="subject-tag">Math</span>
+      </div>
+      <p>Learn counting 1-10 with adorable bear-themed activities. Includes worksheets and manipulatives.</p>
+      <div class="plan-features">
+        <span>✓ 6 Activities</span>
+        <span>✓ Printable Bears</span>
+        <span>✓ Number Cards</span>
+      </div>
+      <a href="#" class="btn btn-primary">Download Free</a>
+    </div>
+
+    <!-- Locked Plans (require subscription) -->
+    <div class="library-card locked-plan" data-age="toddler" data-subject="literacy" data-theme="animals">
+      <div class="plan-thumbnail blurred">
+        <div class="pdf-icon">📄</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <span>Library Plan Required</span>
+        </div>
+      </div>
+      <h3>Animal Sounds & Letters</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 1-2</span>
+        <span class="subject-tag">Literacy</span>
+      </div>
+      <p>Connect animal sounds with letter recognition. Perfect for early literacy development.</p>
+      <div class="plan-features">
+        <span>✓ 8 Activities</span>
+        <span>✓ Sound Cards</span>
+        <span>✓ Letter Tracing</span>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock with $6.99/mo</a>
+    </div>
+
+    <div class="library-card locked-plan" data-age="preschool" data-subject="science" data-theme="seasons">
+      <div class="plan-thumbnail blurred">
+        <div class="pdf-icon">📄</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <span>Library Plan Required</span>
+        </div>
+      </div>
+      <h3>Weather Science Explorer</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 3-5</span>
+        <span class="subject-tag">Science</span>
+      </div>
+      <p>Hands-on experiments to learn about rain, snow, sun, and wind. Includes observation sheets.</p>
+      <div class="plan-features">
+        <span>✓ 10 Activities</span>
+        <span>✓ Experiment Guide</span>
+        <span>✓ Weather Chart</span>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock with $6.99/mo</a>
+    </div>
+
+    <div class="library-card locked-plan" data-age="kindergarten" data-subject="art" data-theme="holidays">
+      <div class="plan-thumbnail blurred">
+        <div class="pdf-icon">📄</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <span>Library Plan Required</span>
+        </div>
+      </div>
+      <h3>Holiday Art & Crafts</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 4-6</span>
+        <span class="subject-tag">Art</span>
+      </div>
+      <p>Celebrate holidays with creative art projects. Includes templates and step-by-step guides.</p>
+      <div class="plan-features">
+        <span>✓ 12 Activities</span>
+        <span>✓ Art Templates</span>
+        <span>✓ Material Lists</span>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock with $6.99/mo</a>
+    </div>
+
+    <div class="library-card locked-plan" data-age="toddler" data-subject="motor" data-theme="transportation">
+      <div class="plan-thumbnail blurred">
+        <div class="pdf-icon">📄</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <span>Library Plan Required</span>
+        </div>
+      </div>
+      <h3>Vehicles & Movement Fun</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 1-3</span>
+        <span class="subject-tag">Motor Skills</span>
+      </div>
+      <p>Develop gross motor skills with vehicle-themed movement activities and obstacle courses.</p>
+      <div class="plan-features">
+        <span>✓ 7 Activities</span>
+        <span>✓ Movement Cards</span>
+        <span>✓ Vehicle Cutouts</span>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock with $6.99/mo</a>
+    </div>
+
+    <div class="library-card locked-plan" data-age="preschool" data-subject="social" data-theme="family">
+      <div class="plan-thumbnail blurred">
+        <div class="pdf-icon">📄</div>
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <span>Library Plan Required</span>
+        </div>
+      </div>
+      <h3>Feelings & Family Bonds</h3>
+      <div class="plan-meta">
+        <span class="age-tag">Ages 3-5</span>
+        <span class="subject-tag">Social Skills</span>
+      </div>
+      <p>Build emotional intelligence and family connections through storytelling and role-play.</p>
+      <div class="plan-features">
+        <span>✓ 9 Activities</span>
+        <span>✓ Emotion Cards</span>
+        <span>✓ Story Prompts</span>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock with $6.99/mo</a>
+    </div>
+  </div>
+</section>
+
+<section class="section upgrade-cta">
+  <div class="upgrade-box">
+    <h2>🔓 Unlock Full Library Access</h2>
+    <p>Get unlimited access to all 200+ lesson plans for just $6.99/month. Perfect for teachers, homeschoolers, and daycare providers.</p>
+    <div class="upgrade-features">
+      <div class="feature-item">
+        <span class="feature-icon">📚</span>
+        <span>200+ Premium Lesson Plans</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">📥</span>
+        <span>Unlimited Downloads</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">🎯</span>
+        <span>All Age Groups & Subjects</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon">📝</span>
+        <span>Printables & Worksheets</span>
+      </div>
+    </div>
+    <a href="pricing.html" class="btn btn-primary btn-large">Upgrade for Full Access</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="shop.html">Shop</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
+function showLoginModal() {
+  alert('Login functionality will be implemented with backend integration');
+}
+
+function showSignupModal() {
+  alert('Signup functionality will be implemented with backend integration');
+}
+
+function filterLibrary() {
+  const ageFilter = document.getElementById('age-filter').value;
+  const subjectFilter = document.getElementById('subject-filter').value;
+  const themeFilter = document.getElementById('theme-filter').value;
+  
+  const cards = document.querySelectorAll('.library-card');
+  
+  cards.forEach(card => {
+    const age = card.dataset.age;
+    const subject = card.dataset.subject;
+    const theme = card.dataset.theme;
+    
+    const ageMatch = !ageFilter || age === ageFilter;
+    const subjectMatch = !subjectFilter || subject === subjectFilter;
+    const themeMatch = !themeFilter || theme === themeFilter;
+    
+    if (ageMatch && subjectMatch && themeMatch) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

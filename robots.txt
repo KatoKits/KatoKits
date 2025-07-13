@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://katokits.com/sitemap.xml
+
+# Disallow admin areas when they exist
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Allow access to CSS, JS, and images
+Allow: /styles.css
+Allow: /images/
+Allow: /*.js
+Allow: /*.css

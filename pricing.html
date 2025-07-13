@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>Pricing | KatoKits – Affordable Lesson Plans & Curriculum</title>
+  <meta name="description" content="Plans for teachers, homeschoolers, and daycares. Get started free or access our growing lesson plan library for just $6.99/month." />
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero pricing-hero">
+  <h1>Choose Your Perfect Plan</h1>
+  <p class="hero-subtitle">Find the right plan for your teaching needs. From free trials to unlimited access.</p>
+</section>
+
+<section class="section">
+  <div class="pricing-grid-detailed">
+    <div class="pricing-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">$0<span>/month</span></div>
+      <p class="plan-description">Perfect for trying out KatoKits</p>
+      <ul class="plan-features">
+        <li>✅ 3 AI lesson plans</li>
+        <li>✅ Basic printables included</li>
+        <li>✅ Download to computer</li>
+        <li>✅ Community support</li>
+        <li>❌ Library access</li>
+        <li>❌ Cloud storage</li>
+        <li>❌ Premium templates</li>
+        <li>❌ Priority support</li>
+      </ul>
+      <a href="ai.html" class="btn btn-outline btn-large">Start Free</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="plan-name">Library</div>
+      <div class="plan-price">$6.99<span>/month</span></div>
+      <p class="plan-description">Access our growing library of pre-made plans</p>
+      <ul class="plan-features">
+        <li>✅ 3 AI lesson plans</li>
+        <li>✅ Full library access (200+ plans)</li>
+        <li>✅ All printables & worksheets</li>
+        <li>✅ Download unlimited</li>
+        <li>✅ Email support</li>
+        <li>❌ Cloud storage</li>
+        <li>❌ AI customization</li>
+        <li>❌ Premium templates</li>
+      </ul>
+      <a href="#" class="btn btn-outline btn-large">Choose Library</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price">$9.99<span>/month</span></div>
+      <p class="plan-description">More AI power for active teachers</p>
+      <ul class="plan-features">
+        <li>✅ 30 AI lesson plans/month</li>
+        <li>✅ Full library access</li>
+        <li>✅ All printables & worksheets</li>
+        <li>✅ Download unlimited</li>
+        <li>✅ Email support</li>
+        <li>✅ Save favorites</li>
+        <li>❌ Cloud storage</li>
+        <li>❌ Premium templates</li>
+      </ul>
+      <a href="#" class="btn btn-outline btn-large">Choose Basic</a>
+    </div>
+
+    <div class="pricing-card featured-plan">
+      <div class="plan-badge">🔥 Most Popular</div>
+      <div class="plan-name">Unlimited</div>
+      <div class="plan-price">$19.99<span>/month</span></div>
+      <p class="plan-description">Everything you need for professional teaching</p>
+      <ul class="plan-features">
+        <li>✅ Unlimited AI lesson plans</li>
+        <li>✅ Cloud storage & editing</li>
+        <li>✅ Full library access</li>
+        <li>✅ Priority support</li>
+        <li>✅ Premium templates</li>
+        <li>✅ Advanced customization</li>
+        <li>✅ Export to Google Drive</li>
+        <li>✅ New features first</li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-large">Choose Plan</a>
+    </div>
+  </div>
+</section>
+
+<section class="section comparison-section">
+  <h2>📊 Detailed Feature Comparison</h2>
+  <div class="comparison-table-wrapper">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Features</th>
+          <th>Free</th>
+          <th>Library</th>
+          <th>Basic</th>
+          <th>Unlimited</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AI Lesson Plans/Month</td>
+          <td>3</td>
+          <td>3</td>
+          <td>30</td>
+          <td>Unlimited</td>
+        </tr>
+        <tr>
+          <td>Pre-made Library Access</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Printables & Worksheets</td>
+          <td>Basic</td>
+          <td>All</td>
+          <td>All</td>
+          <td>All + Premium</td>
+        </tr>
+        <tr>
+          <td>Cloud Storage</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Support Level</td>
+          <td>Community</td>
+          <td>Email</td>
+          <td>Email</td>
+          <td>Priority</td>
+        </tr>
+        <tr>
+          <td>Export Options</td>
+          <td>PDF</td>
+          <td>PDF</td>
+          <td>PDF</td>
+          <td>PDF + Google Drive</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section testimonials-pricing">
+  <h2>What Our Subscribers Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <p>"I upgraded after one use! The AI is incredible and saves me hours every week. Best teaching investment I've made."</p>
+      <div class="testimonial-author">
+        <strong>Lisa Chen</strong>
+        <span>Kindergarten Teacher • Unlimited Plan</span>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <p>"The Library plan is perfect for our homeschool. So many quality activities for just $6.99. Amazing value!"</p>
+      <div class="testimonial-author">
+        <strong>Mark Johnson</strong>
+        <span>Homeschool Dad • Library Plan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section final-cta-section">
+  <div class="final-cta-box">
+    <div class="cta-content">
+      <h2>🚀 Ready to Get Started?</h2>
+      <p>Join thousands of educators saving time with KatoKits. Try 3 free AI lesson plans today!</p>
+      <div class="cta-buttons">
+        <a href="ai.html" class="btn btn-primary cta-signup">Start Free Trial</a>
+        <a href="library.html" class="btn btn-secondary">Browse Library</a>
+      </div>
+      <div class="trust-indicators">
+        <span>✅ No Credit Card Required</span>
+        <span>✅ Cancel Anytime</span>
+        <span>✅ Instant Access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="shop.html">Shop</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Authentication and mobile menu functions (same as index.html)
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
+function showLoginModal() {
+  alert('Login functionality will be implemented with backend integration');
+}
+
+function showSignupModal() {
+  alert('Signup functionality will be implemented with backend integration');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>Dashboard | KatoKits</title>
+  <meta name="description" content="Manage your KatoKits account, saved lesson plans, and downloads." />
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .dashboard-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .welcome-section {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .dashboard-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    
+    .usage-tracker {
+      background: linear-gradient(135deg, var(--green), var(--dark-green));
+      color: white;
+    }
+    
+    .usage-bar {
+      background: rgba(255,255,255,0.2);
+      height: 8px;
+      border-radius: 4px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+    
+    .usage-fill {
+      background: white;
+      height: 100%;
+      width: 60%; /* Example: 3 of 5 used */
+      border-radius: 4px;
+    }
+    
+    .plan-list {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    
+    .plan-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .plan-item:last-child {
+      border-bottom: none;
+    }
+    
+    .plan-item h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--green);
+    }
+    
+    .plan-date {
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="logout()" class="btn btn-outline">Logout</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="shop.html">Shop</a>
+        <a href="dashboard.html" class="active">Dashboard</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="pricing.html" class="btn btn-primary">Upgrade Plan</a>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <div class="welcome-section">
+    <h1>Welcome back, Sarah! 👋</h1>
+    <p>Here's your KatoKits activity and account overview</p>
+  </div>
+
+  <div class="dashboard-grid">
+    <!-- Usage Tracker -->
+    <div class="dashboard-card usage-tracker">
+      <h3>AI Plan Usage</h3>
+      <p>You've used 3 of 3 free AI lesson plans</p>
+      <div class="usage-bar">
+        <div class="usage-fill"></div>
+      </div>
+      <p>🚀 Upgrade to get unlimited AI plans!</p>
+      <a href="pricing.html" class="btn btn-outline" style="color: white; border-color: white; margin-top: 1rem;">Upgrade Now</a>
+    </div>
+
+    <!-- My Plans -->
+    <div class="dashboard-card">
+      <h3>📋 My AI-Generated Plans</h3>
+      <div class="plan-list">
+        <div class="plan-item">
+          <div>
+            <h4>Ocean Animals Discovery</h4>
+            <div class="plan-date">Created: July 10, 2025</div>
+          </div>
+          <div>
+            <a href="#" class="btn btn-small">Download</a>
+          </div>
+        </div>
+        <div class="plan-item">
+          <div>
+            <h4>Color Sorting Fun</h4>
+            <div class="plan-date">Created: July 8, 2025</div>
+          </div>
+          <div>
+            <a href="#" class="btn btn-small">Download</a>
+          </div>
+        </div>
+        <div class="plan-item">
+          <div>
+            <h4>Number Recognition 1-10</h4>
+            <div class="plan-date">Created: July 5, 2025</div>
+          </div>
+          <div>
+            <a href="#" class="btn btn-small">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Library Access -->
+    <div class="dashboard-card">
+      <h3>📚 My Library</h3>
+      <p>Access to pre-made lesson plans</p>
+      <div style="background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0;">
+        <p style="margin: 0; color: #666;">🔒 Library access requires upgrade</p>
+      </div>
+      <a href="pricing.html" class="btn btn-outline">Unlock Library ($6.99/mo)</a>
+    </div>
+
+    <!-- Account Info -->
+    <div class="dashboard-card">
+      <h3>⚙️ Account Settings</h3>
+      <div style="margin: 1rem 0;">
+        <p><strong>Plan:</strong> Free</p>
+        <p><strong>Email:</strong> sarah@example.com</p>
+        <p><strong>Member since:</strong> July 2025</p>
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#" class="btn btn-outline btn-small">Edit Profile</a>
+        <a href="#" class="btn btn-outline btn-small">Change Password</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upgrade CTA -->
+  <div class="dashboard-card" style="background: linear-gradient(135deg, var(--peach), #ff9a56); color: white; text-align: center; margin-top: 2rem;">
+    <h2>🚀 Ready to Unlock Everything?</h2>
+    <p>Get unlimited AI plans, library access, and premium features starting at just $6.99/month</p>
+    <a href="pricing.html" class="btn" style="background: white; color: var(--green); margin-top: 1rem;">View Plans & Upgrade</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="shop.html">Shop</a>
+          <a href="pricing.html">Pricing</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
+function logout() {
+  // TODO: Implement actual logout logic
+  alert('Logout functionality will be implemented with backend integration');
+  window.location.href = 'index.html';
+}
+</script>
+</body>
+</html>

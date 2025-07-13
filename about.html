@@ -4,50 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
-  <title>About KatoKits | Early Childhood Education Experts & Curriculum Designers</title>
-  <meta name="description" content="Discover KatoKits - your source for printable preschool activities, AI-powered lesson plans, and done-for-you educational resources for educators, parents, and daycare centers.">
+  <title>About KatoKits | Created by an Educator for Educators</title>
+  <meta name="description" content="Meet the creator of KatoKits — an early childhood educator on a mission to simplify lesson planning using AI and printables." />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-  <div class="logo">KatoKits</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="lesson-plans.html">Lesson Plans</a>
-    <a href="ai.html">AI Generator</a>
-    <a href="freebies.html">Freebies</a>
-    <a href="shop.html">Shop</a>
-    <a href="about.html" class="active">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-  <div class="hero-content-box">
-    <h1>About KatoKits</h1>
-    <p>Empowering educators and parents with time-saving, research-backed preschool resources</p>
-  </div>
+  <h1>About KatoKits</h1>
+  <p class="hero-subtitle">Created by an educator for educators — simplifying lesson planning with AI</p>
 </section>
 
-<!-- Mission Statement -->
-<section class="section">
-  <div class="card" style="text-align: center; max-width: 800px; margin: 0 auto;">
-    <h2>🎯 Our Mission</h2>
-    <p style="font-size: 1.1rem; line-height: 1.6;">At KatoKits, we empower educators and parents with time-saving, research-backed preschool resources — designed to spark curiosity, creativity, and developmental growth in kids aged 2–6.</p>
-  </div>
-</section>
-
-<!-- Who We Help -->
-<section class="section">
-  <h2>👩‍🏫 Who We Help</h2>
-  <div class="grid">
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏠</div>
-      <h3>Parents & Homeschoolers</h3>
-      <p>Easy-to-follow activities that make learning fun at home without hours of prep work.</p>
+<!-- Founder Bio -->
+<section class="section founder-section">
+  <div class="founder-bio">
+    <div class="founder-photo">
+      <div class="photo-placeholder">👩‍🏫</div>
     </div>
-    <div class="card">
+    <div class="founder-story">
+      <h2>Hi, I'm Sarah — Founder of KatoKits</h2>
+      <p>I'm an early childhood educator and mom who spent countless weekends searching Pinterest for the "perfect" preschool activity, only to spend hours adapting it for my classroom.</p>
+      
+      <p>After 8 years of teaching and seeing how much time educators waste on lesson planning, I knew there had to be a better way. That's when I created KatoKits — an AI-powered platform that generates custom lesson plans in seconds, not hours.</p>
+      
+      <blockquote>
+        "This has changed how I teach — and I want it to help you too. Every educator deserves more time to focus on what matters most: connecting with kids."
+      </blockquote>
+      
+      <p>KatoKits has helped thousands of teachers, homeschool parents, and daycare providers save 10+ hours per week while creating better learning experiences for children.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="section mission-section">
+  <div class="mission-box">
+    <h2>� Why I Built KatoKits</h2>
+    <div class="mission-grid">
+      <div class="mission-item">
+        <div class="mission-icon">⏰</div>
+        <h3>Save Educators Time</h3>
+        <p>No more weekend planning sessions. Generate quality lesson plans in seconds.</p>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">�</div>
+        <h3>Improve Learning Outcomes</h3>
+        <p>Research-backed activities that actually engage children and build skills.</p>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">❤️</div>
+        <h3>Support Educators</h3>
+        <p>Give teachers and parents the tools they need to succeed without burnout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credentials -->
+<section class="section credentials-section">
+  <h2>📚 Our Credentials</h2>
+  <div class="credentials-grid">
+    <div class="credential-card">
+      <div class="credential-icon">🎓</div>
+      <h3>Educational Background</h3>
+      <p>M.Ed in Early Childhood Education<br>8+ years classroom experience</p>
+    </div>
+    <div class="credential-card">
+      <div class="credential-icon">🏆</div>
+      <h3>Recognition</h3>
+      <p>Teacher of the Year 2022<br>Curriculum Innovation Award</p>
+    </div>
+    <div class="credential-card">
+      <div class="credential-icon">👥</div>
+      <h3>Community Impact</h3>
+      <p>5,000+ educators served<br>50,000+ lesson plans generated</p>
+    </div>
+  </div>
+</section>
       <div style="font-size: 2.5rem; margin-bottom: 1rem;">👩‍🏫</div>
       <h3>Solo Educators</h3>
       <p>Time-saving lesson plans and printables that help you deliver engaging learning experiences.</p>
