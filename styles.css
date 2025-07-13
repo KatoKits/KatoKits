@@ -915,3 +915,97 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* About page specific classes for inline style cleanup */
+.text-center {
+  text-align: center;
+}
+
+.text-center-auto {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.emoji-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.quote-text {
+  font-style: italic;
+  color: var(--green);
+  margin: 0;
+}
+
+.benefits-box {
+  background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e8 100%);
+  text-align: center;
+}
+
+.benefits-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--green);
+}
+
+.testimonial-text {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.seo-keywords-box {
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.seo-description {
+  margin-bottom: 1.5rem;
+}
+
+.keyword-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.keyword-tag-green {
+  background: var(--green);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.keyword-tag-peach {
+  background: var(--peach);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.footer-link {
+  color: var(--green);
+  text-decoration: underline;
+}
