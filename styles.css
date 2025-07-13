@@ -915,3 +915,113 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* Enhanced Hero CTA Styles */
+.hero-cta {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.cta-highlight {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffd700;
+  backdrop-filter: blur(10px);
+}
+
+.cta-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.cta-note {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enhanced clean text box styles */
+.clean-text-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(80, 128, 94, 0.1);
+  margin: 2rem 0;
+}
+
+/* Improved container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Mobile enhancements for CTA */
+@media (max-width: 768px) {
+  .hero-cta {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+  
+  .cta-highlight {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .cta-text {
+    font-size: 1.2rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .clean-text-box {
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-highlight {
+    padding: 1.5rem 1rem;
+  }
+  
+  .cta-text {
+    font-size: 1.1rem;
+  }
+  
+  .clean-text-box {
+    padding: 1.5rem 1rem;
+  }
+}
