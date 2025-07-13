@@ -6,21 +6,32 @@
   <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
   <title>AI Lesson Plan Generator | KatoKits</title>
   <meta name="description" content="Create preschool lesson plans with AI in seconds. Personalized by age, theme, and skill. Includes printables and checklists." />
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-  <div class="logo">KatoKits</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="lesson-plans.html">Lesson Plans</a>
-    <a href="ai.html" class="active">AI Generator</a>
-    <a href="freebies.html">Freebies</a>
-    <a href="pricing.html">Pricing & Add-ons</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing & Add-ons</a>
+        <a href="ai.html" class="active">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
 </header>
 
 <!-- Hero Section -->
