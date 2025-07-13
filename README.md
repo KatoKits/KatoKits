@@ -20,11 +20,67 @@ KatoKits is a collection of joyful, themed printable activities, AI-powered less
 
 ## 🧪 Tech Stack
 
-- 🧬 **Frontend**
-- 🔐 **Auth & Database**
-- ⚙️ **Hosting**
-- 🧠 **AI Plan Generator**
-- 🛒 **Payments**
+- 🧬 **Frontend**: Static HTML/CSS with vanilla JavaScript
+- 🔐 **Auth & Database**: Netlify Identity (planned)
+- ⚙️ **Hosting**: Netlify with serverless functions
+- 🧠 **AI Plan Generator**: OpenAI API integration
+- 🛒 **Payments**: Stripe (planned)
+
+---
+
+## 🚀 Development Setup
+
+### Prerequisites
+- Node.js 18+ 
+- Netlify CLI (optional for local development)
+
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/KatoKits/KatoKits.git
+cd KatoKits
+
+# Install dependencies for Netlify functions
+npm install
+
+# Start local development server (optional)
+npm run dev
+
+# Or simply open index.html in your browser for static development
+```
+
+### Environment Variables
+Create a `.env` file in the root directory:
+```
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+---
+
+## 📁 Project Structure
+
+```
+KatoKits/
+├── index.html              # Homepage
+├── about.html              # About page
+├── ai.html                 # AI lesson plan generator
+├── pricing.html            # Pricing and subscriptions
+├── contact.html            # Contact form
+├── library.html            # Resource library
+├── lesson-plans.html       # Lesson plan catalog
+├── freebies.html           # Free resources
+├── styles.css              # Main stylesheet
+├── images/                 # Static assets
+├── products/               # Product definitions (JSON)
+│   └── bundle-1/
+│       └── product.json
+├── netlify/
+│   └── functions/          # Serverless functions
+│       └── generateAIPlan.js
+├── netlify.toml            # Netlify configuration
+├── package.json            # Node.js dependencies
+└── README.md               # This file
+```
 
 ---
 
@@ -32,10 +88,41 @@ KatoKits is a collection of joyful, themed printable activities, AI-powered less
 
 Educators can generate custom lesson plans by theme, skill level, or materials on hand using a smart AI interface — built to reduce planning time by 90%.
 
+### AI Function
+The `/netlify/functions/generateAIPlan.js` function integrates with OpenAI's API to create detailed preschool lesson plans including:
+- Clear learning objectives
+- Materials lists
+- Step-by-step procedures
+- Teaching strategies
+- Developmental checklists
+
+---
+
+## 🛒 Products
+
+Products are defined in JSON format in the `/products` directory. Each product includes:
+- Title and description
+- Age range and subject area
+- Learning objectives
+- Price and file information
+- Preview availability
+
 ---
 
 ## 📦 Try It Out
 
-- 🎁 [Get a Free Activity + Checklist](https://katokits.ca/free)
+- 🎁 [Get a Free Activity + Checklist](https://katokits.ca/freebies.html)
 - 🌐 [Visit the Live App](https://katokits.ca)
-- 📬 [Subscribe for Updates](https://katokits.ca/signup)
+- 🤖 [Try the AI Generator](https://katokits.ca/ai.html)
+
+---
+
+## 🤝 Contributing
+
+This is a commercial project. For questions or collaboration opportunities, please contact us through our website.
+
+---
+
+## 📄 License
+
+Copyright © 2024 KatoKits. All rights reserved.
