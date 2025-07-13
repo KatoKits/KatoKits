@@ -1,0 +1,15 @@
+{
+  "name": "katokits-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for KatoKits application",
+  "scripts": {
+    "build": "echo 'No build step required for Netlify functions'"
+  },
+  "dependencies": {
+    "openai": "^4.0.0",
+    "@supabase/supabase-js": "^2.38.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -692,65 +692,174 @@ let aiGenerationCount = 0;
 const maxFreeGenerations = 3;
 
 document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('.ai-gen-form');
-  const output = document.getElementById('ai-output');
+  const forms = document.querySelectorAll('.ai-gen-form');
   
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if (aiGenerationCount >= maxFreeGenerations) {
-      output.innerHTML = '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Premium</a> for just $21.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>';
-      output.style.display = 'block';
-      return;
-    }
-    
-    const age = document.getElementById('age').value;
-    const theme = document.getElementById('theme').value;
-    const skill = document.getElementById('skill').value;
-    const duration = document.getElementById('duration').value;
-    
-    // Simulate AI generation
-    output.innerHTML = '<div style="text-align: center; padding: 1rem;"><div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div><p>Generating your custom lesson plan...</p></div>';
-    output.style.display = 'block';
-    
-    setTimeout(() => {
-      aiGenerationCount++;
-      const remainingCount = maxFreeGenerations - aiGenerationCount;
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
       
-      output.innerHTML = `
-        <h3 style="color: var(--green); margin-bottom: 1rem;">${theme} Lesson Plan (${age})</h3>
-        <div style="margin-bottom: 1rem;">
-          <h4 style="color: var(--green);">Learning Objectives:</h4>
-          <ul>
-            <li>Develop ${skill.toLowerCase()} skills through hands-on activities</li>
-            <li>Encourage creative expression and exploration</li>
-            <li>Build fine and gross motor skills</li>
-          </ul>
-        </div>
-        <div style="margin-bottom: 1rem;">
-          <h4 style="color: var(--green);">Activities (${duration} minutes):</h4>
-          <ul>
-            <li>🎨 ${theme} Art and Craft Activity</li>
-            <li>🎵 ${theme} Song and Movement</li>
-            <li>📚 ${theme} Story and Discussion</li>
-            <li>🎯 ${theme} Skill-Building Game</li>
-          </ul>
-        </div>
-        <div style="margin-bottom: 1rem;">
-          <h4 style="color: var(--green);">Materials Needed:</h4>
-          <p>Construction paper, crayons, safety scissors, glue sticks, printed worksheets (included)</p>
-        </div>
-        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
-          <p style="font-weight: bold; color: var(--green);">Remaining free generations: ${remainingCount}</p>
-          <a href="#" class="btn btn-primary" onclick="downloadLessonPlan()">Download Full Lesson Plan PDF</a>
-        </div>
-      `;
-    }, 2000);
+      if (aiGenerationCount >= maxFreeGenerations) {
+        showOutput(form, '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Premium</a> for just $21.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>');
+        return;
+      }
+      
+      await generateLessonPlan(form);
+    });
   });
 });
 
-function downloadLessonPlan() {
-  alert('Demo: In a real implementation, this would download a PDF with the complete lesson plan, worksheets, and materials list.');
+async function generateLessonPlan(form) {
+  // Get form data from either form structure
+  const formData = getFormData(form);
+  const output = getOutputElement(form);
+  
+  if (!formData.age || !formData.theme) {
+    showOutput(form, '<div style="color: red;">Please fill in all required fields.</div>');
+    return;
+  }
+  
+  // Show loading state
+  showOutput(form, '<div style="text-align: center; padding: 1rem;"><div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div><p>Generating your custom lesson plan...</p><div style="margin-top: 1rem;"><div style="width: 100%; background: #f0f0f0; border-radius: 10px; overflow: hidden;"><div id="progress-bar" style="width: 0%; height: 20px; background: linear-gradient(90deg, #4CAF50, #45a049); transition: width 1s ease;"></div></div></div></div>');
+  
+  // Animate progress bar
+  setTimeout(() => {
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = '30%';
+  }, 500);
+  
+  try {
+    // Call the Netlify function
+    const response = await fetch('/.netlify/functions/generateAIPlan', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+    
+    // Update progress
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = '70%';
+    
+    const result = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(result.error || 'Failed to generate lesson plan');
+    }
+    
+    // Complete progress
+    if (progressBar) progressBar.style.width = '100%';
+    
+    aiGenerationCount++;
+    const remainingCount = maxFreeGenerations - aiGenerationCount;
+    
+    // Format and display the AI-generated plan
+    const planHtml = formatLessonPlan(result.plan, result.metadata, remainingCount);
+    showOutput(form, planHtml);
+    
+    // Optionally save to Supabase
+    saveLessonPlan(result.plan, result.metadata);
+    
+  } catch (error) {
+    console.error('Error generating lesson plan:', error);
+    showOutput(form, `<div style="color: red; text-align: center;">
+      <h4>⚠️ Error Generating Lesson Plan</h4>
+      <p>${error.message}</p>
+      <p>Please try again in a moment.</p>
+    </div>`);
+  }
+}
+
+function getFormData(form) {
+  // Handle both form structures
+  const age = form.querySelector('#age')?.value || form.querySelector('[name="age"]')?.value;
+  const theme = form.querySelector('#theme')?.value || form.querySelector('[name="theme"]')?.value;
+  const skill = form.querySelector('#skill')?.value || form.querySelector('[name="domain"]')?.value;
+  const duration = form.querySelector('#duration')?.value || '30';
+  const goal = form.querySelector('#goal')?.value || '';
+  const setting = form.querySelector('#setting')?.value || '';
+  
+  return { age, theme, skill, duration, goal, setting };
+}
+
+function getOutputElement(form) {
+  // Find output element relative to the form
+  return form.querySelector('.ai-output') || document.getElementById('ai-output') || 
+         form.parentElement.querySelector('.ai-output');
+}
+
+function showOutput(form, html) {
+  const output = getOutputElement(form);
+  if (output) {
+    output.innerHTML = html;
+    output.style.display = 'block';
+    output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function formatLessonPlan(plan, metadata, remainingCount) {
+  return `
+    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin: 2rem 0;">
+      <h3 style="color: var(--green); margin-bottom: 1rem; text-align: center;">
+        🎯 ${metadata.theme} Lesson Plan
+      </h3>
+      <div style="background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+        <strong>Age:</strong> ${metadata.age} | 
+        <strong>Focus:</strong> ${metadata.skill} | 
+        <strong>Duration:</strong> ${metadata.duration} minutes
+      </div>
+      <div style="white-space: pre-wrap; line-height: 1.6; color: #333;">
+        ${plan}
+      </div>
+      <div style="text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #f0f0f0;">
+        <p style="font-weight: bold; color: var(--green); margin-bottom: 1rem;">
+          Remaining free generations: ${remainingCount}
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <button onclick="downloadLessonPlan('${metadata.theme}', '${metadata.age}')" class="btn btn-primary">
+            📄 Download PDF
+          </button>
+          <button onclick="shareLessonPlan()" class="btn btn-outline">
+            📤 Share Plan
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+async function saveLessonPlan(plan, metadata) {
+  try {
+    // Optional: Save to Supabase for future reference
+    await fetch('/.netlify/functions/lessonPlans', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ plan, metadata })
+    });
+  } catch (error) {
+    console.log('Note: Lesson plan not saved to database (optional feature)');
+  }
+}
+
+function downloadLessonPlan(theme, age) {
+  // In a real implementation, this would generate and download a PDF
+  alert(`📄 Downloading: ${theme} lesson plan for ${age}\n\nIn the full version, this would download a professional PDF with:\n• Complete lesson plan\n• Printable worksheets\n• Materials checklist\n• Assessment rubric`);
+}
+
+function shareLessonPlan() {
+  if (navigator.share) {
+    navigator.share({
+      title: 'Check out this AI-generated lesson plan!',
+      text: 'I just created an amazing preschool lesson plan using KatoKits AI generator.',
+      url: window.location.href
+    });
+  } else {
+    // Fallback for browsers that don't support Web Share API
+    alert('📤 Share this lesson plan:\n\n' + window.location.href + '\n\n(Link copied to clipboard)');
+    navigator.clipboard.writeText(window.location.href);
+  }
 }
 </script>
 </body>
