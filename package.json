@@ -1,0 +1,56 @@
+{
+  "name": "katokits",
+  "version": "1.0.0",
+  "description": "AI-Generated Preschool Lesson Plans & Printable Activities",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "build": "npm run minify:css && npm run minify:js && npm run optimize:images",
+    "minify:css": "cleancss -o dist/styles.min.css styles.css",
+    "minify:js": "terser js/*.js -o dist/scripts.min.js",
+    "optimize:images": "imagemin images/**/* --out-dir=dist/images",
+    "lint": "eslint . --ext .js,.html",
+    "format": "prettier --write .",
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "netlify:dev": "netlify dev",
+    "netlify:build": "npm run build",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "preschool",
+    "education",
+    "lesson-plans",
+    "ai",
+    "printables",
+    "early-childhood"
+  ],
+  "author": "KatoKits",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KatoKits/KatoKits.git"
+  },
+  "homepage": "https://katokits.ca",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-html": "^7.0.0",
+    "prettier": "^3.0.0",
+    "live-server": "^1.2.2",
+    "clean-css-cli": "^5.6.0",
+    "terser": "^5.19.0",
+    "imagemin": "^8.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-mozjpeg": "^10.0.0",
+    "netlify-cli": "^15.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

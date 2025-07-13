@@ -1,0 +1,8 @@
+{
+  "name": "katokits-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for KatoKits",
+  "dependencies": {
+    "openai": "^3.3.0"
+  }
+}

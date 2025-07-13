@@ -7,8 +7,22 @@
   <title>KatoKits | AI Lesson Plans & Printables for Preschool Teachers</title>
   <meta name="description" content="Generate custom preschool lesson plans in seconds. Includes printables, materials list, strategies & objectives. Try 3 for free." />
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#50805E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="KatoKits">
+  <link rel="apple-touch-icon" href="/images/katokits-logo.png">
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 <header>
@@ -319,114 +333,8 @@
   </div>
 </footer>
 
-
-<script>
-// --- Mobile Menu Toggle ---
-function toggleMobileMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('mobile-open');
-}
-
-// --- Authentication Functions ---
-function showLoginModal() {
-  document.getElementById('login-modal').style.display = 'flex';
-}
-
-function hideLoginModal() {
-  document.getElementById('login-modal').style.display = 'none';
-}
-
-function showSignupModal() {
-  document.getElementById('signup-modal').style.display = 'flex';
-}
-
-function hideSignupModal() {
-  document.getElementById('signup-modal').style.display = 'none';
-}
-
-function switchToSignup() {
-  hideLoginModal();
-  showSignupModal();
-}
-
-function switchToLogin() {
-  hideSignupModal();
-  showLoginModal();
-}
-
-// Simple authentication placeholder functions (social auth removed for simplicity)
-
-// --- AI Free Modal Logic ---
-function showAIModal() {
-  document.getElementById('ai-free-modal').style.display = 'flex';
-}
-function hideAIModal() {
-  document.getElementById('ai-free-modal').style.display = 'none';
-}
-function hasUsedAIFreeTrial() {
-  return localStorage.getItem('katokits_free_uses') > 0 || localStorage.getItem('katokits_email_signedup') === 'true';
-}
-
-// --- Reviews Toggle Function ---
-function toggleReviews() {
-  const reviewsContent = document.getElementById('moreReviews');
-  const toggleButton = document.querySelector('.reviews-toggle');
   
-  if (reviewsContent.style.display === 'none') {
-    reviewsContent.style.display = 'block';
-    toggleButton.innerHTML = '📖 Show Less Reviews ▲';
-  } else {
-    reviewsContent.style.display = 'none';
-    toggleButton.innerHTML = '📖 Read More Reviews ▼';
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  // AI Modal Logic
-  if (!hasUsedAIFreeTrial()) {
-    setTimeout(showAIModal, 1200);
-  }
-  
-  // Close button events
-  document.getElementById('close-ai-modal').onclick = hideAIModal;
-  document.getElementById('close-login-modal').onclick = hideLoginModal;
-  document.getElementById('close-signup-modal').onclick = hideSignupModal;
-  
-  // Form submissions
-  document.getElementById('ai-free-form').onsubmit = function(e) {
-    e.preventDefault();
-    localStorage.setItem('katokits_email_signedup', 'true');
-    localStorage.setItem('katokits_free_uses', '0');
-    hideAIModal();
-    alert('You now have 3 free AI uses! Visit the AI Generator page.');
-  };
-  
-  // Freebie form submission
-  const freebieForm = document.getElementById('freebie-form');
-  if (freebieForm) {
-    freebieForm.onsubmit = function(e) {
-      e.preventDefault();
-      const email = this.email.value;
-      localStorage.setItem('katokits_freebie_downloaded', 'true');
-      localStorage.setItem('katokits_email', email);
-      alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
-    };
-  }
-  
-  document.getElementById('login-form').onsubmit = function(e) {
-    e.preventDefault();
-    // TODO: Implement actual login logic
-    alert('Login functionality will be implemented with backend integration');
-    hideLoginModal();
-  };
-  
-  document.getElementById('signup-form').onsubmit = function(e) {
-    e.preventDefault();
-    // TODO: Implement actual signup logic
-    alert('Signup functionality will be implemented with backend integration');
-    hideSignupModal();
-  };
-});
-</script>
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
 </body>
 </html>

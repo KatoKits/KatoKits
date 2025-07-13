@@ -1,15 +1,25 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://katokits.com/sitemap.xml
+Sitemap: https://katokits.ca/sitemap.xml
 
-# Disallow admin areas when they exist
+# Disallow admin areas and build artifacts
 Disallow: /admin/
-Disallow: /dashboard/
+Disallow: /dashboard/private/
 Disallow: /private/
+Disallow: /.netlify/
+Disallow: /dist/
+Disallow: /node_modules/
 
-# Allow access to CSS, JS, and images
+# Allow access to static assets
 Allow: /styles.css
 Allow: /images/
+Allow: /js/
 Allow: /*.js
 Allow: /*.css
+Allow: /*.json
+Allow: /manifest.json
+Allow: /service-worker.js
+
+# Crawl delay to be respectful
+Crawl-delay: 1
