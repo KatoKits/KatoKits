@@ -207,148 +207,163 @@
         <span>Kindergarten Teacher • Premium Plan</span>
       </div>
     </div>
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <p>"The Library plan is perfect for our homeschool. So many quality activities for just $6.99. Amazing value!"</p>
+      <div class="testimonial-author">
+        <strong>Mark Johnson</strong>
+        <span>Homeschool Dad • Library Plan</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Add-ons & Shop Section -->
-<section class="section">
+<!-- Add-ons Section -->
+<section class="section addons-section">
   <div class="container">
-    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
-      <h2>🛍️ Add-ons & Individual Activities</h2>
-      <p style="font-size: 1.1rem;">Enhance your subscription with individual printable activities and themed bundles</p>
-    </div>
+    <h2 style="text-align: center; margin-bottom: 2rem;">🛍️ Add-ons & Individual Activities</h2>
+    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: var(--green);">
+      Enhance your subscription with individual printable activities and themed bundles
+    </p>
 
-    <!-- Quick Category Navigation -->
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
-      <button onclick="showCategory('single')" class="category-btn active" style="background: var(--green); color: white; padding: 0.7rem 1.5rem; border-radius: 2rem; border: 2px solid var(--green); font-weight: 600; cursor: pointer; transition: all 0.3s;">📝 Single Activities</button>
-      <button onclick="showCategory('bundles')" class="category-btn" style="background: transparent; color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; border: 2px solid var(--green); font-weight: 600; cursor: pointer; transition: all 0.3s;">📦 Activity Bundles</button>
-    </div>
-
-    <!-- Single Activities Section -->
-    <div id="single-activities" class="addon-category">
-      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--green);">📝 Individual Printable Activities</h3>
-      <div class="activities-grid" style="display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+    <!-- Single Activities -->
+    <div class="clean-text-box" style="margin-bottom: 3rem;">
+      <h3 style="text-align: center; margin-bottom: 2rem;">📝 Individual Activity Worksheets</h3>
+      <div class="addons-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
         
-        <!-- Fish Color Sorting Activity -->
-        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
-          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
-            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🐠 Fish Color Sorting Activity</h4>
-            <p style="margin: 0 0 0.8rem 0;">Color recognition and cognitive skill-building for toddlers.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Color identification</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Sorting skills</span>
-              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 18m-3y</span>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🐠</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Fish Color Sorting Activity</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 18m-3y</p>
             </div>
           </div>
-          <div class="activity-purchase" style="text-align: center;">
-            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$0.99</div>
-            <a href="PDFs.pdf/Fish Color Sorting.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          <p style="margin-bottom: 1rem;">Color recognition and cognitive skill-building for toddlers.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$0.99</div>
+            <a href="PDFs.pdf/Fish Color Sorting.pdf" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
           </div>
         </div>
 
-        <!-- Car Race Sorting & Graphing -->
-        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
-          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
-            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🏎️ Car Race Sorting & Graphing</h4>
-            <p style="margin: 0 0 0.8rem 0;">Early math skills with sorting, movement, and beginner graphing.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Math & graphing</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Movement integration</span>
-              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 2-4y</span>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🏎️</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Car Race Sorting & Graphing</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 2-4y</p>
             </div>
           </div>
-          <div class="activity-purchase" style="text-align: center;">
-            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.49</div>
-            <a href="PDFs.pdf/Car Race Sort & Graph.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          <p style="margin-bottom: 1rem;">Early math skills with sorting, movement, and beginner graphing.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$2.49</div>
+            <a href="PDFs.pdf/Car Race Sort & Graph.pdf" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
           </div>
         </div>
 
-        <!-- Animal Movement Cards -->
-        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
-          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
-            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🐾 Animal Movement Cards</h4>
-            <p style="margin: 0 0 0.8rem 0;">Fun gross motor skills development cards for active play.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Gross motor development</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Circle time activities</span>
-              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 1-5y</span>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🐾</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Animal Movement Cards</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 1-5y</p>
             </div>
           </div>
-          <div class="activity-purchase" style="text-align: center;">
-            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$0.99</div>
-            <a href="PDFs.pdf/Animal Movemen.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          <p style="margin-bottom: 1rem;">Fun gross motor skills development cards for active play.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$0.99</div>
+            <a href="PDFs.pdf/Animal Movemen.pdf" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
           </div>
         </div>
 
-        <!-- Paint Mixing Activity -->
-        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
-          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
-            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🎨 Paint Mixing Activity</h4>
-            <p style="margin: 0 0 0.8rem 0;">Hands-on color theory and sensory development.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Color mixing experiments</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Sensory exploration</span>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🎨</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Paint Mixing Activity</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 2-5y</p>
             </div>
           </div>
-          <div class="activity-purchase" style="text-align: center;">
-            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.47</div>
-            <a href="#" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;">Buy Now</a>
+          <p style="margin-bottom: 1rem;">Hands-on color theory and sensory development.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$2.47</div>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
           </div>
         </div>
 
-        <!-- Holiday & Seasonal Activities -->
-        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
-          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
-            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🎃 Seasonal Activities Collection</h4>
-            <p style="margin: 0 0 0.8rem 0;">Holiday-themed sorting, decorating, and seasonal fun activities.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🎃 Halloween</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🎄 Christmas</span>
-              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🍃 Fall themes</span>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🍪</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Cookie Decorating Shapes</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 2-4y</p>
             </div>
           </div>
-          <div class="activity-purchase" style="text-align: center;">
-            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.47</div>
-            <a href="#" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;">Buy Now</a>
+          <p style="margin-bottom: 1rem;">Shape recognition and fine motor practice.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$2.47</div>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
           </div>
         </div>
 
-      </div>
-    </div>
-
-    <!-- Activity Bundles Section -->
-    <div id="bundles-section" class="addon-category" style="display: none;">
-      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--green);">📦 Themed Activity Bundles</h3>
-      <div class="grid">
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
-          <h4 style="color: var(--green); margin-bottom: 1rem;">Art & Creativity Bundle</h4>
-          <p style="margin-bottom: 1.5rem;">5 art-focused activities including painting, drawing, and creative expression.</p>
-          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$9.99</div>
-          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
-        </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
-          <h4 style="color: var(--green); margin-bottom: 1rem;">Cognitive Skills Bundle</h4>
-          <p style="margin-bottom: 1.5rem;">6 brain-building activities for sorting, matching, and problem-solving.</p>
-          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$12.99</div>
-          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
-        </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎃</div>
-          <h4 style="color: var(--green); margin-bottom: 1rem;">Holiday Themes Bundle</h4>
-          <p style="margin-bottom: 1.5rem;">Year-round seasonal activities for every major holiday and season.</p>
-          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$14.99</div>
-          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
+        <div class="addon-card">
+          <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+            <div style="font-size: 2rem; margin-right: 1rem;">🍃</div>
+            <div>
+              <h4 style="margin: 0; color: var(--green);">Leaf Sorting by Size & Shape</h4>
+              <p style="margin: 0; font-size: 0.9rem; color: #666;">Ages 2-5y</p>
+            </div>
+          </div>
+          <p style="margin-bottom: 1rem;">Nature-themed sorting and classification.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: var(--green);">$2.47</div>
+            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Buy Now</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Free Starter Section -->
-    <div class="clean-text-box" style="background: #fffbe9; border: 2px dashed var(--peach); text-align: center; margin-top: 3rem;">
-      <h3 style="color: var(--green); margin-bottom: 1rem;">🎁 Try Before You Buy</h3>
-      <p style="margin-bottom: 1.5rem;">Get 1 free printable activity + developmental checklist to test our quality!</p>
-      <a href="freebies.html" class="btn" style="background: var(--peach);">Download Free Sample</a>
+    <!-- Themed Bundles -->
+    <div class="clean-text-box" style="margin-bottom: 3rem;">
+      <h3 style="text-align: center; margin-bottom: 2rem;">📦 Themed Activity Bundles</h3>
+      <p style="text-align: center; margin-bottom: 2rem; color: var(--green);">
+        Save more with collections by theme
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div class="addon-card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🎨</div>
+          <h4 style="color: var(--green);">Art & Creativity Bundle</h4>
+          <p>5 creative activities including paint mixing, cookie decorating, and ornament crafts</p>
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--green); margin-bottom: 1rem;">$9.99</div>
+          <a href="#" class="btn btn-outline">Browse Bundle</a>
+        </div>
+        
+        <div class="addon-card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🧠</div>
+          <h4 style="color: var(--green);">Cognitive Skills Bundle</h4>
+          <p>6 sorting and classification activities for cognitive development</p>
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--green); margin-bottom: 1rem;">$11.99</div>
+          <a href="#" class="btn btn-outline">Browse Bundle</a>
+        </div>
+        
+        <div class="addon-card" style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🏃</div>
+          <h4 style="color: var(--green);">Gross Motor Bundle</h4>
+          <p>4 movement activities for active learning and physical development</p>
+          <div style="font-size: 1.2rem; font-weight: 700; color: var(--green); margin-bottom: 1rem;">$7.99</div>
+          <a href="#" class="btn btn-outline">Browse Bundle</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free Starter -->
+    <div class="clean-text-box" style="background: linear-gradient(135deg, #fffbe9 0%, #fff5d1 100%); text-align: center;">
+      <h3 style="color: var(--green); margin-bottom: 1rem;">🎁 Free Starter Activity</h3>
+      <p style="margin-bottom: 1.5rem;">Get 1 printable + checklist. No cost—just creativity!</p>
+      <form style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <input type="email" placeholder="Your email" required style="padding: 0.8rem 1rem; border-radius: 2rem; border: 2px solid var(--peach); font-size: 1rem; min-width: 200px;">
+        <button type="submit" class="btn btn-primary" style="padding: 0.8rem 1.5rem;">Download Freebie</button>
+      </form>
     </div>
   </div>
 </section>
@@ -417,25 +432,6 @@ function showLoginModal() {
 
 function showSignupModal() {
   alert('Signup functionality will be implemented with backend integration');
-}
-
-// Add-ons & Shop section script
-function showCategory(category) {
-  // Hide all categories
-  document.getElementById('single-activities').style.display = category === 'single' ? 'block' : 'none';
-  document.getElementById('bundles-section').style.display = category === 'bundles' ? 'block' : 'none';
-  
-  // Update button styles
-  document.querySelectorAll('.category-btn').forEach(btn => {
-    btn.style.background = 'transparent';
-    btn.style.color = 'var(--green)';
-    btn.classList.remove('active');
-  });
-  
-  // Set active button
-  event.target.style.background = 'var(--green)';
-  event.target.style.color = 'white';
-  event.target.classList.add('active');
 }
 </script>
 </body>
