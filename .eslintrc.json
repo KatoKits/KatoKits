@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "plugins": ["html"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "error",
+    "prefer-const": "warn",
+    "no-var": "warn"
+  },
+  "globals": {
+    "showLoginModal": "readonly",
+    "showSignupModal": "readonly",
+    "toggleMobileMenu": "readonly",
+    "generateAIPlan": "readonly",
+    "showPaymentModal": "readonly"
+  }
+}
