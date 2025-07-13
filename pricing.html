@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
-  <title>Pricing | KatoKits – Affordable Lesson Plans & Curriculum</title>
+  <title>Pricing & Add-ons | KatoKits – Affordable Lesson Plans & Curriculum</title>
   <meta name="description" content="Plans for teachers, homeschoolers, and daycares. Get started free or access our growing lesson plan library for just $6.99/month." />
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
@@ -21,10 +21,9 @@
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="pricing.html" class="active">Pricing</a>
+        <a href="pricing.html" class="active">Pricing & Add-ons</a>
         <a href="ai.html">AI Generator</a>
         <a href="library.html">Library</a>
-        <a href="shop.html">Shop</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -43,60 +42,43 @@
 <section class="section">
   <div class="pricing-grid-detailed">
     <div class="pricing-card">
-      <div class="plan-name">Free</div>
-      <div class="plan-price">$0<span>/month</span></div>
-      <p class="plan-description">Perfect for trying out KatoKits</p>
-      <ul class="plan-features">
-        <li>✅ 3 AI lesson plans</li>
-        <li>✅ Basic printables included</li>
-        <li>✅ Download to computer</li>
-        <li>✅ Community support</li>
-        <li>❌ Library access</li>
-        <li>❌ Cloud storage</li>
-        <li>❌ Premium templates</li>
-        <li>❌ Priority support</li>
-      </ul>
-      <a href="ai.html" class="btn btn-outline btn-large">Start Free</a>
-    </div>
-
-    <div class="pricing-card">
-      <div class="plan-name">Library</div>
-      <div class="plan-price">$6.99<span>/month</span></div>
+      <div class="plan-name">Library Access</div>
+      <div class="plan-price">$9.99<span>/month</span></div>
       <p class="plan-description">Access our growing library of pre-made plans</p>
       <ul class="plan-features">
-        <li>✅ 3 AI lesson plans</li>
+        <li>✅ 5 AI lesson plans/month</li>
         <li>✅ Full library access (200+ plans)</li>
         <li>✅ All printables & worksheets</li>
         <li>✅ Download unlimited</li>
         <li>✅ Email support</li>
         <li>❌ Cloud storage</li>
-        <li>❌ AI customization</li>
+        <li>❌ Advanced AI customization</li>
         <li>❌ Premium templates</li>
       </ul>
-      <a href="#" class="btn btn-outline btn-large">Choose Library</a>
+      <a href="#" class="btn btn-outline btn-large">Choose Library Access</a>
     </div>
 
     <div class="pricing-card">
       <div class="plan-name">Basic</div>
-      <div class="plan-price">$9.99<span>/month</span></div>
-      <p class="plan-description">More AI power for active teachers</p>
+      <div class="plan-price">$12.99<span>/month</span></div>
+      <p class="plan-description">Perfect for individual educators</p>
       <ul class="plan-features">
-        <li>✅ 30 AI lesson plans/month</li>
+        <li>✅ 25 AI lesson plans/month</li>
         <li>✅ Full library access</li>
         <li>✅ All printables & worksheets</li>
         <li>✅ Download unlimited</li>
         <li>✅ Email support</li>
         <li>✅ Save favorites</li>
+        <li>✅ Basic customization</li>
         <li>❌ Cloud storage</li>
-        <li>❌ Premium templates</li>
       </ul>
       <a href="#" class="btn btn-outline btn-large">Choose Basic</a>
     </div>
 
     <div class="pricing-card featured-plan">
       <div class="plan-badge">🔥 Most Popular</div>
-      <div class="plan-name">Unlimited</div>
-      <div class="plan-price">$19.99<span>/month</span></div>
+      <div class="plan-name">Premium</div>
+      <div class="plan-price">$21.99<span>/month</span></div>
       <p class="plan-description">Everything you need for professional teaching</p>
       <ul class="plan-features">
         <li>✅ Unlimited AI lesson plans</li>
@@ -108,7 +90,25 @@
         <li>✅ Export to Google Drive</li>
         <li>✅ New features first</li>
       </ul>
-      <a href="#" class="btn btn-primary btn-large">Choose Plan</a>
+      <a href="#" class="btn btn-primary btn-large">Choose Premium</a>
+    </div>
+
+    <div class="pricing-card daycare-plan">
+      <div class="plan-badge">🏫 Daycare</div>
+      <div class="plan-name">Unlimited Daycare</div>
+      <div class="plan-price">$82.99<span>/month</span></div>
+      <p class="plan-description">Complete solution for childcare centers</p>
+      <ul class="plan-features">
+        <li>✅ Unlimited AI lesson plans</li>
+        <li>✅ Multi-user access (up to 10 teachers)</li>
+        <li>✅ Center dashboard & analytics</li>
+        <li>✅ Priority support & training</li>
+        <li>✅ Custom branding options</li>
+        <li>✅ Bulk downloads</li>
+        <li>✅ Progress tracking</li>
+        <li>✅ Admin management tools</li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-large">Choose Daycare Plan</a>
     </div>
   </div>
 </section>
@@ -120,78 +120,235 @@
       <thead>
         <tr>
           <th>Features</th>
-          <th>Free</th>
-          <th>Library</th>
+          <th>Library Access</th>
           <th>Basic</th>
-          <th>Unlimited</th>
+          <th>Premium</th>
+          <th>Unlimited Daycare</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>AI Lesson Plans/Month</td>
-          <td>3</td>
-          <td>3</td>
-          <td>30</td>
+          <td>5</td>
+          <td>25</td>
+          <td>Unlimited</td>
           <td>Unlimited</td>
         </tr>
         <tr>
           <td>Pre-made Library Access</td>
-          <td>❌</td>
+          <td>✅</td>
           <td>✅</td>
           <td>✅</td>
           <td>✅</td>
         </tr>
         <tr>
           <td>Printables & Worksheets</td>
-          <td>Basic</td>
           <td>All</td>
           <td>All</td>
           <td>All + Premium</td>
+          <td>All + Premium</td>
+        </tr>
+        <tr>
+          <td>Multi-User Access</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅ (Up to 10)</td>
         </tr>
         <tr>
           <td>Cloud Storage</td>
           <td>❌</td>
           <td>❌</td>
-          <td>❌</td>
+          <td>✅</td>
           <td>✅</td>
         </tr>
         <tr>
           <td>Support Level</td>
-          <td>Community</td>
           <td>Email</td>
           <td>Email</td>
           <td>Priority</td>
+          <td>Priority + Training</td>
         </tr>
         <tr>
           <td>Export Options</td>
           <td>PDF</td>
           <td>PDF</td>
-          <td>PDF</td>
           <td>PDF + Google Drive</td>
+          <td>PDF + Google Drive + Bulk</td>
+        </tr>
+        <tr>
+          <td>Center Dashboard</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<section class="section testimonials-pricing">
-  <h2>What Our Subscribers Say</h2>
-  <div class="testimonial-grid">
+<section class="section testimonials-section">
+  <h2>🌟 What Educators Are Saying</h2>
+  <div class="testimonials-slider">
+    <div class="testimonial-card">
+      <div class="quote-icon">"</div>
+      <p>"The Library Access plan is perfect for our homeschool. So many quality activities for just $9.99. Amazing value!"</p>
+      <div class="testimonial-author">
+        <strong>Mark Johnson</strong>
+        <span>Homeschool Dad • Library Access Plan</span>
+      </div>
+    </div>
     <div class="testimonial-card">
       <div class="quote-icon">"</div>
       <p>"I upgraded after one use! The AI is incredible and saves me hours every week. Best teaching investment I've made."</p>
       <div class="testimonial-author">
         <strong>Lisa Chen</strong>
-        <span>Kindergarten Teacher • Unlimited Plan</span>
+        <span>Kindergarten Teacher • Premium Plan</span>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="quote-icon">"</div>
-      <p>"The Library plan is perfect for our homeschool. So many quality activities for just $6.99. Amazing value!"</p>
-      <div class="testimonial-author">
-        <strong>Mark Johnson</strong>
-        <span>Homeschool Dad • Library Plan</span>
+  </div>
+</section>
+
+<!-- Add-ons & Shop Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
+      <h2>🛍️ Add-ons & Individual Activities</h2>
+      <p style="font-size: 1.1rem;">Enhance your subscription with individual printable activities and themed bundles</p>
+    </div>
+
+    <!-- Quick Category Navigation -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
+      <button onclick="showCategory('single')" class="category-btn active" style="background: var(--green); color: white; padding: 0.7rem 1.5rem; border-radius: 2rem; border: 2px solid var(--green); font-weight: 600; cursor: pointer; transition: all 0.3s;">📝 Single Activities</button>
+      <button onclick="showCategory('bundles')" class="category-btn" style="background: transparent; color: var(--green); padding: 0.7rem 1.5rem; border-radius: 2rem; border: 2px solid var(--green); font-weight: 600; cursor: pointer; transition: all 0.3s;">📦 Activity Bundles</button>
+    </div>
+
+    <!-- Single Activities Section -->
+    <div id="single-activities" class="addon-category">
+      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--green);">📝 Individual Printable Activities</h3>
+      <div class="activities-grid" style="display: grid; gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+        
+        <!-- Fish Color Sorting Activity -->
+        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
+          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
+            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🐠 Fish Color Sorting Activity</h4>
+            <p style="margin: 0 0 0.8rem 0;">Color recognition and cognitive skill-building for toddlers.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Color identification</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Sorting skills</span>
+              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 18m-3y</span>
+            </div>
+          </div>
+          <div class="activity-purchase" style="text-align: center;">
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$0.99</div>
+            <a href="PDFs.pdf/Fish Color Sorting.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Car Race Sorting & Graphing -->
+        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
+          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
+            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🏎️ Car Race Sorting & Graphing</h4>
+            <p style="margin: 0 0 0.8rem 0;">Early math skills with sorting, movement, and beginner graphing.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Math & graphing</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Movement integration</span>
+              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 2-4y</span>
+            </div>
+          </div>
+          <div class="activity-purchase" style="text-align: center;">
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.49</div>
+            <a href="PDFs.pdf/Car Race Sort & Graph.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Animal Movement Cards -->
+        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
+          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
+            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🐾 Animal Movement Cards</h4>
+            <p style="margin: 0 0 0.8rem 0;">Fun gross motor skills development cards for active play.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Gross motor development</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Circle time activities</span>
+              <span style="background: #fdf6ed; color: var(--peach); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">Ages 1-5y</span>
+            </div>
+          </div>
+          <div class="activity-purchase" style="text-align: center;">
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$0.99</div>
+            <a href="PDFs.pdf/Animal Movemen.pdf" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;" target="_blank">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Paint Mixing Activity -->
+        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
+          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
+            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🎨 Paint Mixing Activity</h4>
+            <p style="margin: 0 0 0.8rem 0;">Hands-on color theory and sensory development.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Color mixing experiments</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">✔️ Sensory exploration</span>
+            </div>
+          </div>
+          <div class="activity-purchase" style="text-align: center;">
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.47</div>
+            <a href="#" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;">Buy Now</a>
+          </div>
+        </div>
+
+        <!-- Holiday & Seasonal Activities -->
+        <div class="activity-item card" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;">
+          <div class="activity-info" style="flex: 1; margin-right: 1.5rem;">
+            <h4 style="color: var(--green); margin: 0 0 0.5rem 0; font-size: 1.2rem;">🎃 Seasonal Activities Collection</h4>
+            <p style="margin: 0 0 0.8rem 0;">Holiday-themed sorting, decorating, and seasonal fun activities.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🎃 Halloween</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🎄 Christmas</span>
+              <span style="background: var(--cream-left); color: var(--green); padding: 0.3rem 0.6rem; border-radius: 0.5rem; font-size: 0.85rem;">🍃 Fall themes</span>
+            </div>
+          </div>
+          <div class="activity-purchase" style="text-align: center;">
+            <div style="font-size: 1.3rem; font-weight: 900; color: var(--green); margin-bottom: 0.8rem;">$2.47</div>
+            <a href="#" class="btn-small" style="background: var(--peach); color: white; padding: 0.7rem 1.5rem; border-radius: 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem;">Buy Now</a>
+          </div>
+        </div>
+
       </div>
+    </div>
+
+    <!-- Activity Bundles Section -->
+    <div id="bundles-section" class="addon-category" style="display: none;">
+      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--green);">📦 Themed Activity Bundles</h3>
+      <div class="grid">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+          <h4 style="color: var(--green); margin-bottom: 1rem;">Art & Creativity Bundle</h4>
+          <p style="margin-bottom: 1.5rem;">5 art-focused activities including painting, drawing, and creative expression.</p>
+          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$9.99</div>
+          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
+          <h4 style="color: var(--green); margin-bottom: 1rem;">Cognitive Skills Bundle</h4>
+          <p style="margin-bottom: 1.5rem;">6 brain-building activities for sorting, matching, and problem-solving.</p>
+          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$12.99</div>
+          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎃</div>
+          <h4 style="color: var(--green); margin-bottom: 1rem;">Holiday Themes Bundle</h4>
+          <p style="margin-bottom: 1.5rem;">Year-round seasonal activities for every major holiday and season.</p>
+          <div style="font-size: 1.4rem; font-weight: 900; color: var(--green); margin-bottom: 1rem;">$14.99</div>
+          <a href="lesson-plans.html" class="btn btn-outline" style="width: 100%;">View Bundle</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Free Starter Section -->
+    <div class="clean-text-box" style="background: #fffbe9; border: 2px dashed var(--peach); text-align: center; margin-top: 3rem;">
+      <h3 style="color: var(--green); margin-bottom: 1rem;">🎁 Try Before You Buy</h3>
+      <p style="margin-bottom: 1.5rem;">Get 1 free printable activity + developmental checklist to test our quality!</p>
+      <a href="freebies.html" class="btn" style="background: var(--peach);">Download Free Sample</a>
     </div>
   </div>
 </section>
@@ -225,10 +382,9 @@
         <div class="footer-column">
           <h4>Products</h4>
           <a href="ai.html">AI Generator</a>
+          <a href="ai.html">AI Generator</a>
           <a href="library.html">Library</a>
-          <a href="shop.html">Shop</a>
-          <a href="pricing.html">Pricing</a>
-        </div>
+          <a href="pricing.html">Pricing & Add-ons</a>
         <div class="footer-column">
           <h4>Support</h4>
           <a href="contact.html">Contact Us</a>
@@ -261,6 +417,25 @@ function showLoginModal() {
 
 function showSignupModal() {
   alert('Signup functionality will be implemented with backend integration');
+}
+
+// Add-ons & Shop section script
+function showCategory(category) {
+  // Hide all categories
+  document.getElementById('single-activities').style.display = category === 'single' ? 'block' : 'none';
+  document.getElementById('bundles-section').style.display = category === 'bundles' ? 'block' : 'none';
+  
+  // Update button styles
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--green)';
+    btn.classList.remove('active');
+  });
+  
+  // Set active button
+  event.target.style.background = 'var(--green)';
+  event.target.style.color = 'white';
+  event.target.classList.add('active');
 }
 </script>
 </body>
