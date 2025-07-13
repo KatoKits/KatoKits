@@ -3,6 +3,10 @@
 .env.local
 .env.production
 
+# Test files
+test-integration.js
+integration-test.html
+
 # Dependencies
 node_modules/
 
