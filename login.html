@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <title>KatoKits Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+    const supabase = supabase.createClient('YOUR_URL', 'YOUR_ANON_KEY');
+    async function signIn() {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        alert(error.message);
+      } else {
+        localStorage.setItem('token', data.user.id);
+        window.location.href = '/generate.html';
+      }
+    }
+  </script>
+</head>
+<body>
+  <form id="loginForm" class="box" onsubmit="signIn()">
+    <input type="email" id="email" required placeholder="Email" />
+    <input type="password" id="password" required placeholder="Password" />
+    <button type="submit" class="btn">Login</button>
+  </form>
+</body>
+</html>

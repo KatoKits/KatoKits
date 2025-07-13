@@ -265,6 +265,15 @@
       background: #7c3aed;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>if(!localStorage.getItem("token")){window.location.href="/login.html";} const supabase = supabase.createClient("YOUR_URL", "YOUR_ANON_KEY");</script>
 </head>
 <body>
 <header>

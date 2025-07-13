@@ -9,6 +9,15 @@
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>const supabase = supabase.createClient("YOUR_URL", "YOUR_ANON_KEY");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
 <header>
@@ -413,18 +422,32 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
   
-  document.getElementById('login-form').onsubmit = function(e) {
+  document.getElementById("login-form").onsubmit = async function(e) {
     e.preventDefault();
-    // TODO: Implement actual login logic
-    alert('Login functionality will be implemented with backend integration');
-    hideLoginModal();
+    const email = this.email.value;
+    const password = this.password.value;
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      alert(error.message);
+    } else {
+      localStorage.setItem("token", data.user.id);
+      hideLoginModal();
+      window.location.href = "generate.html";
+    }
   };
-  
-  document.getElementById('signup-form').onsubmit = function(e) {
+
+  document.getElementById("signup-form").onsubmit = async function(e) {
     e.preventDefault();
-    // TODO: Implement actual signup logic
-    alert('Signup functionality will be implemented with backend integration');
-    hideSignupModal();
+    const email = this.email.value;
+    const password = this.password.value;
+    const { data, error } = await supabase.auth.signUp({ email, password });
+    if (error) {
+      alert(error.message);
+    } else {
+      localStorage.setItem("token", data.user.id);
+      hideSignupModal();
+      window.location.href = "generate.html";
+    }
   };
 });
 </script>
