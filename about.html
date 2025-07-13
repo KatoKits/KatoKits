@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>About KatoKits – Printable Preschool Activities & AI Lesson Plans</title>
+  <meta name="description" content="Discover KatoKits - your source for printable preschool activities, AI-powered lesson plans, and done-for-you educational resources for educators, parents, and daycare centers.">
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing & Add-ons</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-container" style="text-align: center;">
+      <div class="hero-content">
+        <h1>About KatoKits</h1>
+        <p class="hero-subtitle">Empowering educators and parents with time-saving, research-backed preschool resources</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission Statement -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <h2>🎯 Our Mission</h2>
+      <p style="font-size: 1.1rem; line-height: 1.6;">At KatoKits, we empower educators and parents with time-saving, research-backed preschool resources — designed to spark curiosity, creativity, and developmental growth in kids aged 2–6.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Help -->
+<section class="section">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">👩‍🏫 Who We Help</h2>
+    <div class="grid">
+      <div class="card">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🏠</div>
+        <h3>Parents & Homeschoolers</h3>
+        <p>Easy-to-follow activities that make learning fun at home without hours of prep work.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">👩‍🏫</div>
+        <h3>Solo Educators</h3>
+        <p>Time-saving lesson plans and printables that help you deliver engaging learning experiences.</p>
+      </div>
+      <div class="card">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">🏫</div>
+        <h3>Childcare Centers</h3>
+        <p>Comprehensive resources and multi-user access to support your entire teaching team.</p>
+      </div>
+    </div>
+    <div class="clean-text-box" style="text-align: center; margin-top: 2rem;">
+      <p style="font-style: italic; color: var(--green); margin: 0;">
+        "KatoKits is made for solo educators, busy parents, homeschoolers, and childcare centers who want easy access to proven educational activities without hours of prep."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What's Included -->
+<section class="section">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">📦 What's Included</h2>
+    <div class="grid">
+      <div class="card feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Lesson Plan Generator</h3>
+        <p>Create custom, developmentally-appropriate activities in seconds with our intelligent planning tool.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Printable Activity Packs & PDFs</h3>
+        <p>STEM activities, motor skills development, sensory play worksheets ready to download and use.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Sub-Friendly Lesson Plans</h3>
+        <p>Clear instructions, visual icons, and auto-read features make it easy for anyone to implement.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>Editable Developmental Checklists</h3>
+        <p>Track progress and milestones with customizable assessment tools.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Affordable Activity Sheets</h3>
+        <p>High-quality, classroom-tested activities starting at just $0.99.</p>
+      </div>
+      <div class="card feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Center Dashboard</h3>
+        <p>Monitor usage and track child progress with our comprehensive analytics tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Real-Life Benefits -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e8 100%); text-align: center;">
+      <h2>📈 Real-Life Benefits</h2>
+      <p style="font-size: 1.2rem; font-style: italic; color: var(--green);">
+        "No more late-night Pinterest hunts or forgotten supplies. KatoKits helps you deliver structured, engaging learning — without the burnout."
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Educational Philosophy -->
+<section class="section">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">🧩 Our Educational Philosophy</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Play-Based Learning</h3>
+        <p>We believe children learn best through exploration, discovery, and joyful play experiences.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-Domain Support</h3>
+        <p>Our activities target cognitive, motor, social-emotional, and language development simultaneously.</p>
+      </div>
+      <div class="card">
+        <h3>Flexible Approaches</h3>
+        <p>Customizable for Montessori, Reggio Emilia, and Play-to-Learn educational philosophies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 2rem;">🎓 What Educators Say</h2>
+    <div class="grid">
+      <div class="card testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>Finally — print-and-go activities that actually make sense. KatoKits changed my homeschool rhythm!</p>
+        <div class="testimonial-author">
+          <strong>Jessica</strong>
+          <span>Homeschool mom of 3</span>
+        </div>
+      </div>
+      <div class="card testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>The AI generator saves me hours every week. My preschoolers love the variety of activities!</p>
+        <div class="testimonial-author">
+          <strong>Maria</strong>
+          <span>Preschool Teacher</span>
+        </div>
+      </div>
+      <div class="card testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>Perfect for our daycare center. The multi-user access means all our teachers can plan together.</p>
+        <div class="testimonial-author">
+          <strong>David</strong>
+          <span>Daycare Director</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO Keywords Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="background: #f8f9fa; text-align: center;">
+      <h2>🔍 Find What You Need</h2>
+      <p style="margin-bottom: 1.5rem;">Explore our comprehensive collection of educational resources:</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; font-size: 0.9rem;">
+        <span style="background: var(--green); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">Printable preschool activities</span>
+        <span style="background: var(--peach); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">Done-for-you lesson plans</span>
+        <span style="background: var(--green); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">STEM worksheets for toddlers</span>
+        <span style="background: var(--peach); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">Montessori-aligned printables</span>
+        <span style="background: var(--green); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">Free preschool downloads</span>
+        <span style="background: var(--peach); color: white; padding: 0.3rem 0.8rem; border-radius: 1rem;">AI lesson plans for daycare</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="clean-text-box cta-card" style="text-align: center; background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e8 100%);">
+      <h2>💬 Ready to Get Started?</h2>
+      <p>Explore our printable shop, try our freebie starter pack, or generate your first AI lesson plan for free!</p>
+      
+      <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
+        <a href="pricing.html" class="btn btn-primary btn-large">Browse Pricing</a>
+        <a href="library.html" class="btn btn-secondary btn-large">Try Library</a>
+        <a href="ai.html" class="btn btn-primary btn-large">AI Generator</a>
+      </div>
+      
+      <div class="trust-indicators" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <span class="trust-item">✅ No Credit Card Required</span>
+        <span class="trust-item">✅ 3 Free AI Plans</span>
+        <span class="trust-item">✅ Cancel Anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Login Modal -->
+<div id="login-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
+    <button id="close-login-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
+    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">Welcome Back!</h2>
+    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Sign in to access your activities</p>
+    
+    <form id="login-form">
+      <input type="email" name="email" placeholder="Your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:0.8rem; font-size:1rem;">
+      <input type="password" name="password" placeholder="Password" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
+      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Sign In</button>
+    </form>
+    
+    <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
+      Don't have an account? <a href="#" onclick="switchToSignup()" style="color:#50805E; font-weight:600;">Sign up here</a>
+    </p>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signup-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
+    <button id="close-signup-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
+    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">🎨 Join KatoKits</h2>
+    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Start creating amazing educational activities for your kids!</p>
+    
+    <form id="signup-form">
+      <input type="email" name="email" placeholder="Enter your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
+      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Get Started Now!</button>
+    </form>
+    
+    <small style="color:#888; display:block; margin-top:1rem; font-size:0.8rem;">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="pricing.html">Pricing & Add-ons</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// --- Mobile Menu Toggle ---
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
+// --- Authentication Functions ---
+function showLoginModal() {
+  document.getElementById('login-modal').style.display = 'flex';
+}
+
+function hideLoginModal() {
+  document.getElementById('login-modal').style.display = 'none';
+}
+
+function showSignupModal() {
+  document.getElementById('signup-modal').style.display = 'flex';
+}
+
+function hideSignupModal() {
+  document.getElementById('signup-modal').style.display = 'none';
+}
+
+function switchToSignup() {
+  hideLoginModal();
+  showSignupModal();
+}
+
+function switchToLogin() {
+  hideSignupModal();
+  showLoginModal();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Close button events
+  document.getElementById('close-login-modal').onclick = hideLoginModal;
+  document.getElementById('close-signup-modal').onclick = hideSignupModal;
+  
+  document.getElementById('login-form').onsubmit = function(e) {
+    e.preventDefault();
+    // TODO: Implement actual login logic
+    alert('Login functionality will be implemented with backend integration');
+    hideLoginModal();
+  };
+  
+  document.getElementById('signup-form').onsubmit = function(e) {
+    e.preventDefault();
+    // TODO: Implement actual signup logic
+    alert('Signup functionality will be implemented with backend integration');
+    hideSignupModal();
+  };
+});
+</script>
+</body>
+</html>
