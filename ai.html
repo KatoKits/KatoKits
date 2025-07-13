@@ -8,96 +8,178 @@
   <meta name="description" content="Create preschool lesson plans with AI in seconds. Personalized by age, theme, and skill. Includes printables and checklists." />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .ai-gen-form {
-      max-width: 400px;
-      margin: 1rem auto;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-card);
-      padding: 1.2rem;
-      text-align: center;
-    }
-    .ai-gen-form label {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--green);
-      display: block;
-      margin-bottom: 0.3rem;
-      text-align: left;
-    }
-    .ai-gen-form input, .ai-gen-form select {
-      margin-bottom: 0.8rem;
-      padding: 0.5rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.5rem;
-      font-size: 0.8rem;
-      width: 100%;
-      box-sizing: border-box;
-      font-family: 'Nunito', Arial, sans-serif;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .ai-gen-form input:focus, .ai-gen-form select:focus {
-      outline: none;
-      border-color: var(--green);
-      box-shadow: 0 0 0 2px rgba(80, 128, 94, 0.1);
-    }
-    .ai-gen-form .btn {
-      margin-top: 0.3rem;
-      padding: 0.6rem 1.5rem;
-      font-size: 0.85rem;
-    }
-    .ai-output {
-      margin-top: 1rem;
-      background: linear-gradient(135deg, var(--cream-left), #f0f9f4);
-      border-radius: 0.8rem;
-      padding: 1rem;
-      color: var(--green);
-      box-shadow: 0 2px 8px rgba(80, 128, 94, 0.1);
-      font-size: 0.85rem;
-      line-height: 1.5;
-      border-left: 3px solid var(--peach);
-    }
-    .how-it-works {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .step-number {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--green);
-      min-width: 2rem;
-    }
-    .step-icon {
-      font-size: 2rem;
-    }
-    .ai-preview {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin: 2rem 0;
-      text-align: left;
-    }
-    .ai-preview h4 {
-      color: var(--green);
-      margin-bottom: 1rem;
-    }
-    .ai-limits-section {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 1rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .ai-limits-section h3 {
-      color: var(--green);
+</head>
+<body>
+<header>
+  <div class="logo">KatoKits</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="lesson-plans.html">Lesson Plans</a>
+    <a href="ai.html" class="active">AI Generator</a>
+    <a href="freebies.html">Freebies</a>
+    <a href="pricing.html">Pricing & Add-ons</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center;">
+      <h1>🤖 AI Lesson Plan Generator</h1>
+      <p>Build custom, developmentally-appropriate activities for infants through kindergarten!</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI Generator Form Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="max-width: 500px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1.5rem;">Generate Your Custom Lesson Plan</h2>
+      
+      <form class="ai-gen-form">
+        <div class="form-group">
+          <label for="age">Age Group</label>
+          <select id="age" name="age" required>
+            <option value="">Select age range</option>
+            <option value="infant">Infants (6-12 months)</option>
+            <option value="toddler">Toddlers (1-2 years)</option>
+            <option value="preschool">Preschoolers (3-4 years)</option>
+            <option value="prekindergarten">Pre-K (4-5 years)</option>
+            <option value="kindergarten">Kindergarten (5-6 years)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="theme">Theme or Topic</label>
+          <input type="text" id="theme" name="theme" placeholder="e.g., Ocean Animals, Colors, Numbers" required>
+        </div>
+
+        <div class="form-group">
+          <label for="skill">Primary Skill Focus</label>
+          <select id="skill" name="skill" required>
+            <option value="">Select primary focus</option>
+            <option value="cognitive">Cognitive Development</option>
+            <option value="language">Language & Literacy</option>
+            <option value="math">Math & Numbers</option>
+            <option value="science">Science & Nature</option>
+            <option value="social">Social-Emotional</option>
+            <option value="physical">Physical Development</option>
+            <option value="creative">Creative Arts</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Activity Duration</label>
+          <select id="duration" name="duration" required>
+            <option value="">Select duration</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">1 hour</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Generate Lesson Plan</button>
+        
+        <div id="ai-output" class="ai-output" style="display: none;"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
+      <h2>How It Works</h2>
+      <p>Creating professional lesson plans has never been easier</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card feature-card">
+        <div class="step-number">1</div>
+        <div class="step-icon">📝</div>
+        <h3>Choose Your Parameters</h3>
+        <p>Select age group, theme, and learning objectives. Our AI understands child development stages.</p>
+      </div>
+      
+      <div class="card feature-card">
+        <div class="step-number">2</div>
+        <div class="step-icon">🤖</div>
+        <h3>AI Generates Plan</h3>
+        <p>Advanced AI creates a complete lesson plan with activities, materials, and assessments in seconds.</p>
+      </div>
+      
+      <div class="card feature-card">
+        <div class="step-number">3</div>
+        <div class="step-icon">📄</div>
+        <h3>Download & Use</h3>
+        <p>Get your printable lesson plan with worksheets, instructions, and everything ready for your classroom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Output Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Sample AI-Generated Lesson Plan</h2>
+      
+      <div class="ai-preview-box" style="background: #f8f9fa; padding: 2rem; border-radius: 1rem; border-left: 4px solid var(--green);">
+        <h3 style="color: var(--green); margin-bottom: 1rem;">Ocean Animals Discovery (Ages 3-4)</h3>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--green);">Learning Objectives:</h4>
+          <ul style="margin: 0.5rem 0;">
+            <li>Identify 5 ocean animals by name and characteristics</li>
+            <li>Develop fine motor skills through ocean-themed crafts</li>
+            <li>Practice counting with sea shells and ocean creatures</li>
+          </ul>
+        </div>
+        
+        <div style="margin-bottom: 1.5rem;">
+          <h4 style="color: var(--green);">Activities Included:</h4>
+          <ul style="margin: 0.5rem 0;">
+            <li>🐠 Ocean Animal Sorting Game</li>
+            <li>🌊 Wave Movement Exercise</li>
+            <li>🐙 Octopus Tentacle Counting</li>
+            <li>🦀 Crab Walk Gross Motor Activity</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 style="color: var(--green);">Materials Needed:</h4>
+          <p style="margin: 0.5rem 0;">Ocean animal picture cards, blue construction paper, cotton balls, crayons, safety scissors, glue sticks</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Reminder Section -->
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="background: linear-gradient(135deg, #fffbe9 0%, #fff5d1 100%); text-align: center;">
+      <h2>Ready for Unlimited AI Lesson Plans?</h2>
+      <p>You've used your free trials. Upgrade to generate unlimited custom lesson plans with premium features.</p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
+        <a href="pricing.html" class="btn btn-primary">View Pricing Plans</a>
+        <a href="library.html" class="btn btn-outline">Browse Pre-made Library</a>
+      </div>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--green);">
+        <span>✅ Unlimited Generation</span>
+        <span>✅ Cloud Storage</span>
+        <span>✅ Premium Templates</span>
+      </div>
+    </div>
+  </div>
+</section>
     }
     .comparison-table-container {
       overflow-x: auto;
@@ -271,7 +353,7 @@
           <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Free<br><span style="font-size: 0.9rem; opacity: 0.9;">$0/month</span></th>
           <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Basic<br><span style="font-size: 0.9rem; opacity: 0.9;">$9.99/month</span></th>
           <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem; background: rgba(249, 164, 113, 0.3);">🔥 Unlimited<br><span style="font-size: 0.9rem; opacity: 0.9;">$19.99/month</span></th>
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Professional<br><span style="font-size: 0.9rem; opacity: 0.9;">$79.99/month</span></th>
+          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Professional<br><span style="font-size: 0.9rem, opacity: 0.9;">$79.99/month</span></th>
         </tr>
       </thead>
       <tbody>
@@ -583,9 +665,8 @@
         <div class="footer-column">
           <h4>Products</h4>
           <a href="ai.html">AI Generator</a>
-          <a href="lesson-plans.html">Lesson Plans</a>
-          <a href="pricing.html">Shop</a>
-          <a href="freebies.html">Free Activities</a>
+          <a href="library.html">Library</a>
+          <a href="pricing.html">Pricing & Add-ons</a>
         </div>
         <div class="footer-column">
           <h4>Support</h4>
@@ -607,379 +688,69 @@
 </footer>
 
 <script>
-// --- AI Access Control ---
-function isPaidUser() {
-  return localStorage.getItem('katokits_paid') === 'true';
-}
-function getFreeTrialUses() {
-  return parseInt(localStorage.getItem('katokits_free_uses') || '0', 10);
-}
-function setFreeTrialUses(val) {
-  localStorage.setItem('katokits_free_uses', val);
-}
-
-function showAIForm() {
-  document.querySelector('.ai-gen-form').style.display = 'block';
-  document.getElementById('ai-locked').style.display = 'none';
-}
-function showLocked() {
-  document.querySelector('.ai-gen-form').style.display = 'none';
-  document.getElementById('ai-locked').style.display = 'block';
-}
+let aiGenerationCount = 0;
+const maxFreeGenerations = 3;
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Add locked message container if not present
-  if (!document.getElementById('ai-locked')) {
-    const lockedDiv = document.createElement('div');
-    lockedDiv.id = 'ai-locked';
-    lockedDiv.innerHTML = `
-      <div class="card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
-        <h3 style="color: var(--green); margin-bottom: 1rem;">🔒 Premium Access Required</h3>
-        <p style="margin-bottom: 2rem;">Choose a plan to unlock unlimited AI lesson planning:</p>
-        
-        <div class="grid" style="margin-bottom: 2rem;">
-          <div class="card" style="border: 2px solid #e5e7eb;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⭐</div>
-            <h4>Basic Plan</h4>
-            <div style="font-size: 1.5rem; font-weight: 900; color: #6b7280;">$9.99 CAD/month</div>
-          </div>
-          <div class="card" style="border: 2px solid var(--peach);">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚀</div>
-            <h4>Unlimited Plan</h4>
-            <div style="font-size: 1.5rem; font-weight: 900; color: var(--peach);">$19.99 CAD/month</div>
-          </div>
-          <div class="card" style="border: 2px solid #8b5cf6;">
-            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏫</div>
-            <h4>Professional Plan</h4>
-            <div style="font-size: 1.5rem; font-weight: 900; color: #7c3aed;">$79.99 CAD/month</div>
-          </div>
-        </div>
-        
-        <a href="pricing.html" class="btn" style="margin-right: 1rem;">Choose Your Plan</a>
-        <a href="freebies.html" style="color: var(--green); text-decoration: underline;">Try free activities first</a>
-      </div>
-    `;
-    document.querySelector('section.hero').appendChild(lockedDiv);
-  }
+  const form = document.querySelector('.ai-gen-form');
+  const output = document.getElementById('ai-output');
   
-  // Show/hide based on payment/free trial
-  if (isPaidUser()) {
-    showAIForm();
-  } else if (getFreeTrialUses() > 0 && getFreeTrialUses() <= 3) {
-    showAIForm();
-    document.querySelector('.ai-gen-form .btn').textContent = `Generate Plan (${3-getFreeTrialUses()} free left)`;
-  } else {
-    showLocked();
-  }
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (aiGenerationCount >= maxFreeGenerations) {
+      output.innerHTML = '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Premium</a> for just $21.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>';
+      output.style.display = 'block';
+      return;
+    }
+    
+    const age = document.getElementById('age').value;
+    const theme = document.getElementById('theme').value;
+    const skill = document.getElementById('skill').value;
+    const duration = document.getElementById('duration').value;
+    
+    // Simulate AI generation
+    output.innerHTML = '<div style="text-align: center; padding: 1rem;"><div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div><p>Generating your custom lesson plan...</p></div>';
+    output.style.display = 'block';
+    
+    setTimeout(() => {
+      aiGenerationCount++;
+      const remainingCount = maxFreeGenerations - aiGenerationCount;
+      
+      output.innerHTML = `
+        <h3 style="color: var(--green); margin-bottom: 1rem;">${theme} Lesson Plan (${age})</h3>
+        <div style="margin-bottom: 1rem;">
+          <h4 style="color: var(--green);">Learning Objectives:</h4>
+          <ul>
+            <li>Develop ${skill.toLowerCase()} skills through hands-on activities</li>
+            <li>Encourage creative expression and exploration</li>
+            <li>Build fine and gross motor skills</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <h4 style="color: var(--green);">Activities (${duration} minutes):</h4>
+          <ul>
+            <li>🎨 ${theme} Art and Craft Activity</li>
+            <li>🎵 ${theme} Song and Movement</li>
+            <li>📚 ${theme} Story and Discussion</li>
+            <li>🎯 ${theme} Skill-Building Game</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <h4 style="color: var(--green);">Materials Needed:</h4>
+          <p>Construction paper, crayons, safety scissors, glue sticks, printed worksheets (included)</p>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+          <p style="font-weight: bold; color: var(--green);">Remaining free generations: ${remainingCount}</p>
+          <a href="#" class="btn btn-primary" onclick="downloadLessonPlan()">Download Full Lesson Plan PDF</a>
+        </div>
+      `;
+    }, 2000);
+  });
 });
 
-// --- AI Free Trial Logic ---
-document.querySelector('.ai-gen-form').onsubmit = function(e){
-  e.preventDefault();
-  if (!isPaidUser()) {
-    let uses = getFreeTrialUses();
-    if (uses >= 3) {
-      showLocked();
-      return;
-    }
-    setFreeTrialUses(uses + 1);
-    if (uses + 1 >= 3) {
-      showLocked();
-    }
-  }
-  const age = document.getElementById('age').value;
-  const domain = document.getElementById('domain').value;
-  const theme = document.getElementById('theme').value;
-  const setting = document.getElementById('setting').value;
-  const output = document.querySelector('.ai-output');
-  output.style.display = 'block';
-  let sampleActivity = '';
-  if (age.includes('6-12 months')) {
-    sampleActivity = '🍼 <b>Infant Sensory Play:</b><br>Provide soft fabric squares in different textures for baby to explore with hands and mouth. Narrate what they\'re feeling: "This is bumpy! This is smooth!" Perfect for sensory development and early language exposure.';
-  } else if (age.includes('12-18 months')) {
-    sampleActivity = '👶 <b>Toddler Discovery:</b><br>Fill a shallow bin with large, safe objects to dump and fill. Add a spoon for scooping practice. This builds fine motor skills, cause-and-effect understanding, and independence!';
-  } else if (age.includes('18-24 months')) {
-    sampleActivity = '🔵 <b>Shape Sorting Fun:</b><br>Use a simple shape sorter or make holes in a box lid. Start with just circles and squares. Celebrate each success to build confidence and shape recognition!';
-  } else if (age.includes('2-3 years')) {
-    sampleActivity = '🎨 <b>Process Art Creation:</b><br>Set up finger painting with just 2 colors. Let toddlers explore mixing and making marks. Focus on the process, not the product. Great for creativity and fine motor development!';
-  } else if (age.includes('3-4 years')) {
-    sampleActivity = '🌱 <b>Dramatic Play Garden:</b><br>Create a pretend garden with play vegetables, watering cans, and gardening tools. Children can "plant," "water," and "harvest." Builds language, social skills, and science concepts!';
-  } else if (age.includes('4-5 years')) {
-    sampleActivity = '📊 <b>Weather Graphing:</b><br>Track daily weather on a simple graph for a week. Children can draw symbols and count sunny vs. rainy days. Combines math, science, and data analysis skills!';
-  } else if (age.includes('5-6 years')) {
-    sampleActivity = '🔬 <b>Simple Science Experiment:</b><br>Mix baking soda and vinegar in a clear container. Children can predict, observe, and explain what happens. Perfect for developing scientific thinking and vocabulary!';
-  } else {
-    sampleActivity = '🌟 <b>Multi-Age Activity:</b><br>Set up a sensory bin with rice and hidden toys. Younger children explore textures while older ones can sort, count, or create stories with the objects they find!';
-  }
-  output.innerHTML = sampleActivity + '<br><br><small>💡 This is a sample activity. The full AI generator will create personalized activities based on all your selections!</small>';
-}
-</script>
-
-<!-- FAQ Section -->
-<section class="section faq-section">
-  <div class="faq-content">
-    <h2>🤔 Frequently Asked Questions About Our AI Lesson Plan Generator</h2>
-    <p class="faq-subtitle">Get answers to common questions about creating professional early childhood education materials with AI</p>
-    
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🎯 How does the AI lesson plan generator work for early childhood education?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Our AI-powered lesson plan generator uses advanced algorithms trained on thousands of <strong>developmentally appropriate activities</strong> for children ages 6 months to 6 years. Simply select your child's age, learning domain (like math, science, or social-emotional), theme, and setting. The AI instantly creates <strong>custom preschool curriculum</strong> with detailed instructions, material lists, and learning objectives aligned with early childhood education standards.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>👶 What age groups does the AI generator support?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Our <strong>AI lesson plan generator</strong> creates activities for:</p>
-          <ul>
-            <li><strong>Infants (6-12 months):</strong> Sensory exploration, tummy time activities, and early motor skills</li>
-            <li><strong>Young Toddlers (12-24 months):</strong> Fine motor development, language activities, and simple cause-and-effect</li>
-            <li><strong>Toddlers (2-3 years):</strong> Art exploration, dramatic play, and early math concepts</li>
-            <li><strong>Preschoolers (3-5 years):</strong> STEM activities, literacy games, and social-emotional learning</li>
-            <li><strong>Pre-K (4-6 years):</strong> Kindergarten readiness, complex problem-solving, and academic preparation</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🏫 Can I use AI-generated lesson plans in my daycare or preschool classroom?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Absolutely! Our AI-generated <strong>preschool curriculum</strong> is perfect for:</p>
-          <ul>
-            <li><strong>Licensed daycare providers</strong> needing quick, quality lesson plans</li>
-            <li><strong>Preschool teachers</strong> looking to supplement their curriculum</li>
-            <li><strong>Homeschool parents</strong> wanting structured learning activities</li>
-            <li><strong>Nannies and childcare professionals</strong> seeking educational activities</li>
-            <li><strong>Early intervention specialists</strong> needing adaptable activities</li>
-          </ul>
-          <p>All activities are designed to meet <strong>early childhood education standards</strong> and promote healthy child development.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>💰 How much does the AI lesson plan generator cost?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>We offer flexible pricing for every educator:</p>
-          <ul>
-            <li><strong>Free Trial:</strong> 3 AI-generated lesson plans to test our platform</li>
-            <li><strong>Basic Plan ($9.99/month):</strong> 30 AI lesson plans per month</li>
-            <li><strong>Unlimited Plan ($19.99/month):</strong> Unlimited AI generation + full activity library access</li>
-            <li><strong>Professional Plan ($79.99/month):</strong> Everything + multi-user access and custom branding</li>
-          </ul>
-          <p>Start your <strong>free trial</strong> today - no credit card required!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🎨 What learning domains and themes are available?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Our AI creates activities across all major <strong>early childhood development areas:</strong></p>
-          <ul>
-            <li><strong>STEM & Science:</strong> Simple experiments, nature exploration, math concepts</li>
-            <li><strong>Language & Literacy:</strong> Phonics, storytelling, vocabulary building</li>
-            <li><strong>Creative Arts:</strong> Process art, music, dramatic play, sensory activities</li>
-            <li><strong>Social-Emotional Learning:</strong> Feelings identification, friendship skills, self-regulation</li>
-            <li><strong>Physical Development:</strong> Fine motor, gross motor, outdoor activities</li>
-            <li><strong>Practical Life:</strong> Independence skills, cooking, self-care</li>
-          </ul>
-          <p>Popular themes include seasons, animals, community helpers, transportation, and holidays!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>⏱️ How quickly can I get a custom lesson plan?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Our AI generates <strong>complete lesson plans in under 30 seconds!</strong> Each plan includes:</p>
-          <ul>
-            <li>Clear, step-by-step activity instructions</li>
-            <li>Complete materials list (using common household items)</li>
-            <li>Learning objectives and developmental goals</li>
-            <li>Adaptation suggestions for different skill levels</li>
-            <li>Extension activities to expand learning</li>
-            <li>Assessment tips to track progress</li>
-          </ul>
-          <p>No more spending hours searching Pinterest or creating plans from scratch!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🏠 Are the activities suitable for home learning and homeschool?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! Our AI specifically designs activities perfect for <strong>home learning environments:</strong></p>
-          <ul>
-            <li>Uses common household materials (no expensive supplies needed)</li>
-            <li>Adapts to small spaces and home settings</li>
-            <li>Includes parent guidance and conversation starters</li>
-            <li>Offers mess-free and minimal-cleanup options</li>
-            <li>Provides sibling-friendly activities for multiple ages</li>
-            <li>Supports <strong>homeschool curriculum standards</strong></li>
-          </ul>
-          <p>Perfect for busy parents wanting quality educational time with their children!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>📋 Do the lesson plans meet educational standards?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Absolutely! Our AI is trained on <strong>research-based early childhood practices</strong> including:</p>
-          <ul>
-            <li><strong>NAEYC (National Association for the Education of Young Children)</strong> guidelines</li>
-            <li><strong>Head Start Early Learning Outcomes Framework</strong></li>
-            <li><strong>Common Core early learning standards</strong></li>
-            <li><strong>Montessori and play-based learning principles</strong></li>
-            <li><strong>Developmental milestone tracking</strong></li>
-          </ul>
-          <p>Created by certified early childhood educators with 15+ years of classroom experience!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🔄 Can I edit and customize the AI-generated activities?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Yes! With our <strong>Unlimited and Professional plans</strong>, you get:</p>
-          <ul>
-            <li><strong>Cloud-based editing tools</strong> to modify any activity</li>
-            <li>Add your own notes and observations</li>
-            <li>Save customized versions for future use</li>
-            <li>Share edited plans with colleagues or co-teachers</li>
-            <li>Export to Google Slides or PDF formats</li>
-            <li>Create your own activity template library</li>
-          </ul>
-          <p>Make each lesson plan perfectly fit your unique teaching style and student needs!</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question" onclick="toggleFAQ(this)">
-          <h3>🚀 How is this better than free online activity ideas?</h3>
-          <span class="faq-icon">▼</span>
-        </div>
-        <div class="faq-answer">
-          <p>Unlike generic Pinterest pins or blog posts, our <strong>AI lesson plan generator</strong> offers:</p>
-          <ul>
-            <li><strong>Personalized content</strong> based on your specific needs and age group</li>
-            <li><strong>Complete lesson plans</strong> - not just activity ideas</li>
-            <li><strong>Professional formatting</strong> ready to print and use</li>
-            <li><strong>Developmental appropriateness</strong> guaranteed for each age</li>
-            <li><strong>Time-saving automation</strong> - no more searching for hours</li>
-            <li><strong>Quality consistency</strong> across all generated content</li>
-            <li><strong>Regular updates</strong> with new themes and activities</li>
-          </ul>
-          <p>Save 10+ hours per week on lesson planning and focus on what matters - teaching!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
-function toggleFAQ(element) {
-  const faqItem = element.parentElement;
-  const answer = faqItem.querySelector('.faq-answer');
-  const icon = element.querySelector('.faq-icon');
-  
-  // Close other open FAQs
-  document.querySelectorAll('.faq-item').forEach(item => {
-    if (item !== faqItem && item.classList.contains('active')) {
-      item.classList.remove('active');
-      item.querySelector('.faq-answer').style.display = 'none';
-      item.querySelector('.faq-icon').textContent = '▼';
-    }
-  });
-  
-  // Toggle current FAQ
-  if (faqItem.classList.contains('active')) {
-    faqItem.classList.remove('active');
-    answer.style.display = 'none';
-    icon.textContent = '▼';
-  } else {
-    faqItem.classList.add('active');
-    answer.style.display = 'block';
-    icon.textContent = '▲';
-  }
-}
-
-// Existing AI generator code
-function generateAI() {
-  // Check if user has used free trials
-  function getFreeTrialUses() {
-    return parseInt(localStorage.getItem('katokits_free_uses') || '0');
-  }
-  function setFreeTrialUses(count) {
-    localStorage.setItem('katokits_free_uses', count.toString());
-  }
-  function showLocked() {
-    const output = document.querySelector('.ai-output');
-    output.style.display = 'block';
-    output.innerHTML = '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Unlimited</a> for just $19.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>';
-    return;
-  }
-  
-  if (!localStorage.getItem('katokits_email_signedup')) {
-    let uses = getFreeTrialUses();
-    if (uses >= 3) {
-      showLocked();
-      return;
-    }
-    setFreeTrialUses(uses + 1);
-    if (uses + 1 >= 3) {
-      showLocked();
-    }
-  }
-  const age = document.getElementById('age').value;
-  const domain = document.getElementById('domain').value;
-  const theme = document.getElementById('theme').value;
-  const setting = document.getElementById('setting').value;
-  const output = document.querySelector('.ai-output');
-  output.style.display = 'block';
-  let sampleActivity = '';
-  if (age.includes('6-12 months')) {
-    sampleActivity = '🍼 <b>Infant Sensory Play:</b><br>Provide soft fabric squares in different textures for baby to explore with hands and mouth. Narrate what they\'re feeling: "This is bumpy! This is smooth!" Perfect for sensory development and early language exposure.';
-  } else if (age.includes('12-18 months')) {
-    sampleActivity = '👶 <b>Toddler Discovery:</b><br>Fill a shallow bin with large, safe objects to dump and fill. Add a spoon for scooping practice. This builds fine motor skills, cause-and-effect understanding, and independence!';
-  } else if (age.includes('18-24 months')) {
-    sampleActivity = '🔵 <b>Shape Sorting Fun:</b><br>Use a simple shape sorter or make holes in a box lid. Start with just circles and squares. Celebrate each success to build confidence and shape recognition!';
-  } else if (age.includes('2-3 years')) {
-    sampleActivity = '🎨 <b>Process Art Creation:</b><br>Set up finger painting with just 2 colors. Let toddlers explore mixing and making marks. Focus on the process, not the product. Great for creativity and fine motor development!';
-  } else if (age.includes('3-4 years')) {
-    sampleActivity = '🌱 <b>Dramatic Play Garden:</b><br>Create a pretend garden with play vegetables, watering cans, and gardening tools. Children can "plant," "water," and "harvest." Builds language, social skills, and science concepts!';
-  } else if (age.includes('4-5 years')) {
-    sampleActivity = '📊 <b>Weather Graphing:</b><br>Track daily weather on a simple graph for a week. Children can draw symbols and count sunny vs. rainy days. Combines math, science, and data analysis skills!';
-  } else if (age.includes('5-6 years')) {
-    sampleActivity = '🔬 <b>Simple Science Experiment:</b><br>Mix baking soda and vinegar in a clear container. Children can predict, observe, and explain what happens. Perfect for developing scientific thinking and vocabulary!';
-  } else {
-    sampleActivity = '🌟 <b>Multi-Age Activity:</b><br>Set up a sensory bin with rice and hidden toys. Younger children explore textures while older ones can sort, count, or create stories with the objects they find!';
-  }
-  output.innerHTML = sampleActivity + '<br><br><small>💡 This is a sample activity. The full AI generator will create personalized activities based on all your selections!</small>';
+function downloadLessonPlan() {
+  alert('Demo: In a real implementation, this would download a PDF with the complete lesson plan, worksheets, and materials list.');
 }
 </script>
 </body>
