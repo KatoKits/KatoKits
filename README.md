@@ -20,11 +20,68 @@ KatoKits is a collection of joyful, themed printable activities, AI-powered less
 
 ## 🧪 Tech Stack
 
-- 🧬 **Frontend**
-- 🔐 **Auth & Database**
-- ⚙️ **Hosting**
-- 🧠 **AI Plan Generator**
-- 🛒 **Payments**
+- 🧬 **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- 🎨 **Styling**: CSS Custom Properties, Google Fonts (Pacifico, Nunito)
+- 📱 **Responsive Design**: Mobile-first approach with CSS flexbox/grid
+- ⚙️ **Hosting**: Static website (deployable to Netlify, GitHub Pages, etc.)
+- 🖼️ **Assets**: Optimized images, SVG icons
+- 📊 **Analytics**: Pinterest domain verification ready
+
+---
+
+## 📁 Project Structure
+
+```
+KatoKits/
+├── index.html              # Homepage with hero section and features
+├── about.html              # About page with mission and team info
+├── ai.html                 # AI lesson plan generator interface
+├── library.html            # Searchable lesson plan library
+├── lesson-plans.html       # Themed lesson plan bundles
+├── freebies.html          # Free resources and downloads
+├── pricing.html           # Pricing tiers and subscription options
+├── contact.html           # Contact form and support info
+├── dashboard.html         # User dashboard (for logged-in users)
+├── styles.css             # Main stylesheet with CSS custom properties
+├── images/                # Image assets and logos
+├── products/              # Product-related assets
+├── netlify/               # Netlify deployment configuration
+├── robots.txt             # SEO robots file
+├── sitemap.xml            # XML sitemap for search engines
+└── README.md              # Project documentation
+```
+
+---
+
+## 🚀 Development
+
+### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/KatoKits/KatoKits.git
+cd KatoKits
+
+# Start a local development server
+python3 -m http.server 8000
+# OR
+npx http-server .
+# OR
+php -S localhost:8000
+
+# Open browser to http://localhost:8000
+```
+
+### Making Changes
+1. Edit HTML/CSS files directly
+2. Test changes in browser
+3. Ensure responsive design works on mobile
+4. Validate HTML and CSS
+5. Test all navigation links
+
+### Deployment
+- **Netlify**: Connect GitHub repo for automatic deployments
+- **GitHub Pages**: Enable in repository settings
+- **Static Hosting**: Upload files to any static web host
 
 ---
 
@@ -36,6 +93,7 @@ Educators can generate custom lesson plans by theme, skill level, or materials o
 
 ## 📦 Try It Out
 
-- 🎁 [Get a Free Activity + Checklist](https://katokits.ca/free)
-- 🌐 [Visit the Live App](https://katokits.ca)
-- 📬 [Subscribe for Updates](https://katokits.ca/signup)
+- 🎁 [Get Free Activities](freebies.html) - Download sample lesson plans
+- 🤖 [AI Generator](ai.html) - Try the lesson plan generator
+- 📚 [Browse Library](library.html) - Explore the full collection
+- 💰 [View Pricing](pricing.html) - See subscription options
