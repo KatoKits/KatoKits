@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#f0f9ff" stroke="#e0f2fe" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">Fish Color Sorting</text>
+  
+  <!-- Fish icons -->
+  <circle cx="60" cy="100" r="25" fill="#ef4444"/>
+  <ellipse cx="70" cy="95" rx="8" ry="5" fill="#fca5a5"/>
+  <circle cx="82" cy="90" r="3" fill="white"/>
+  <circle cx="84" cy="90" r="1" fill="black"/>
+  
+  <circle cx="150" cy="100" r="25" fill="#3b82f6"/>
+  <ellipse cx="160" cy="95" rx="8" ry="5" fill="#93c5fd"/>
+  <circle cx="172" cy="90" r="3" fill="white"/>
+  <circle cx="174" cy="90" r="1" fill="black"/>
+  
+  <circle cx="240" cy="100" r="25" fill="#22c55e"/>
+  <ellipse cx="250" cy="95" rx="8" ry="5" fill="#86efac"/>
+  <circle cx="262" cy="90" r="3" fill="white"/>
+  <circle cx="264" cy="90" r="1" fill="black"/>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 18 months - 3 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Color Recognition • Fine Motor Skills</text>
+</svg>

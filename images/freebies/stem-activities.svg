@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">STEM Activities</text>
+  
+  <!-- STEM elements -->
+  <!-- Magnifying glass -->
+  <circle cx="70" cy="85" r="15" fill="none" stroke="#6b7280" stroke-width="3"/>
+  <line x1="82" y1="97" x2="95" y2="110" stroke="#6b7280" stroke-width="3"/>
+  
+  <!-- Blocks -->
+  <rect x="120" y="80" width="20" height="20" fill="#3b82f6" rx="2"/>
+  <rect x="145" y="80" width="20" height="20" fill="#ef4444" rx="2"/>
+  <rect x="132.5" y="60" width="20" height="20" fill="#22c55e" rx="2"/>
+  
+  <!-- Flask -->
+  <ellipse cx="220" cy="105" rx="8" ry="12" fill="#e5e7eb"/>
+  <rect x="217" y="93" width="6" height="12" fill="#e5e7eb"/>
+  <rect x="215" y="90" width="10" height="3" fill="#6b7280"/>
+  <ellipse cx="220" cy="100" rx="6" ry="8" fill="#06b6d4"/>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 3 - 6 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Science • Engineering • Problem Solving</text>
+</svg>

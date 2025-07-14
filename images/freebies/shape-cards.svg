@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#fef3c7" stroke="#fde68a" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">Shape Recognition Cards</text>
+  
+  <!-- Shapes -->
+  <circle cx="75" cy="100" r="20" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+  <rect x="125" y="80" width="40" height="40" fill="#2563eb" stroke="#1d4ed8" stroke-width="2" rx="3"/>
+  <polygon points="200,80 220,120 180,120" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 2 - 4 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Shape Recognition • Spatial Awareness</text>
+</svg>

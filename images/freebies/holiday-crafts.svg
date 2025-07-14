@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#fef2f2" stroke="#fecaca" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">Holiday Crafts</text>
+  
+  <!-- Holiday elements -->
+  <!-- Christmas tree -->
+  <polygon points="75,70 85,110 65,110" fill="#22c55e"/>
+  <rect x="72" y="110" width="6" height="10" fill="#92400e"/>
+  <circle cx="75" cy="65" r="3" fill="#fbbf24"/>
+  
+  <!-- Pumpkin -->
+  <circle cx="150" cy="100" r="18" fill="#f97316"/>
+  <path d="M 135 85 Q 150 75 165 85" stroke="#16a34a" stroke-width="3" fill="none"/>
+  <rect x="148" y="82" width="4" height="6" fill="#16a34a"/>
+  
+  <!-- Heart -->
+  <path d="M 225 90 C 220 85, 210 85, 210 95 C 210 85, 200 85, 195 90 C 195 95, 210 110, 225 110 C 240 110, 255 95, 255 90 C 250 85, 240 85, 240 95 C 240 85, 230 85, 225 90" fill="#ef4444"/>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 2 - 6 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Seasonal Crafts • Creativity</text>
+</svg>
