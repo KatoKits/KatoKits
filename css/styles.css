@@ -915,3 +915,163 @@ button:focus-visible {
     animation: none !important;
   }
 }
+
+/* Page-specific styles extracted from inline styles */
+
+/* Contact form styles */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input, .contact-form textarea, .contact-form select {
+  margin-bottom: 1.2rem;
+  padding: 0.6rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 0.8rem;
+  font-size: 0.85rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-info {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.contact-info h3 {
+  color: var(--green);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  color: var(--green);
+  font-size: 0.9rem;
+}
+
+#form-status {
+  border: 1px solid #ddd;
+  font-weight: 500;
+}
+
+/* Dashboard styles */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.welcome-section {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.usage-tracker {
+  background: linear-gradient(135deg, var(--green), var(--dark-green));
+  color: white;
+}
+
+.usage-bar {
+  background: rgba(255,255,255,0.2);
+  height: 8px;
+  border-radius: 4px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.usage-fill {
+  background: white;
+  height: 100%;
+  width: 60%; /* Example: 3 of 5 used */
+  border-radius: 4px;
+}
+
+.plan-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.plan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.plan-item:last-child {
+  border-bottom: none;
+}
+
+.plan-item h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--green);
+}
+
+.plan-date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Theme card styles */
+.theme-card img {
+  max-width: 80px;
+  margin-bottom: 1.2rem;
+  border-radius: 1.1rem;
+  background: #f7f7f7;
+  box-shadow: 0 2px 10px #0001;
+}
+
+.theme-card h3 {
+  margin: 0.5rem 0 0.7rem 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
