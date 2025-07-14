@@ -238,51 +238,51 @@
   </div>
 </section>
 
-<div id="ai-free-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; border-radius:2rem; max-width:370px; width:90vw; padding:2.2rem 1.5rem 1.7rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
-    <button id="close-ai-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
-    <h2 style="color:#50805E; font-size:1.3rem; margin-bottom:0.7rem;">🎁 Get 3 FREE Premium Activity Kits Worth $25!</h2>
-    <p style="color:#50805E; font-size:1.05rem; margin-bottom:1.1rem;">Transform learning time into <b>pure magic</b> - your kids will <b>beg for more activities</b> instead of screen time!</p>
-    <form id="ai-free-form">
-      <input type="email" name="email" placeholder="Enter your email for instant access" required style="width:90%; padding:0.7rem; border-radius:1.2rem; border:1.2px solid #F9A471; margin-bottom:0.7rem; font-size:1rem;">
-      <button type="submit" class="btn" style="width:100%;">Send Me My FREE Activity Kits!</button>
+<div id="ai-free-modal" class="modal ai-modal">
+  <div class="modal-content">
+    <button id="close-ai-modal" class="modal-close">&times;</button>
+    <h2>🎁 Get 3 FREE Premium Activity Kits Worth $25!</h2>
+    <p>Transform learning time into <b>pure magic</b> - your kids will <b>beg for more activities</b> instead of screen time!</p>
+    <form id="ai-free-form" class="modal-form">
+      <input type="email" name="email" placeholder="Enter your email for instant access" required>
+      <button type="submit" class="btn">Send Me My FREE Activity Kits!</button>
     </form>
-    <small style="color:#888; display:block; margin-top:0.7rem;">✅ No spam • ✅ Instant download • ✅ Cancel anytime</small>
+    <small class="modal-disclaimer">✅ No spam • ✅ Instant download • ✅ Cancel anytime</small>
   </div>
 </div>
 
 <!-- Login Modal -->
-<div id="login-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
-    <button id="close-login-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
-    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">Welcome Back!</h2>
-    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Sign in to access your activities</p>
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <button id="close-login-modal" class="modal-close">&times;</button>
+    <h2>Welcome Back!</h2>
+    <p>Sign in to access your activities</p>
     
-    <form id="login-form">
-      <input type="email" name="email" placeholder="Your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:0.8rem; font-size:1rem;">
-      <input type="password" name="password" placeholder="Password" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
-      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Sign In</button>
+    <form id="login-form" class="modal-form">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="btn">Sign In</button>
     </form>
     
-    <p style="margin-top:1rem; font-size:0.9rem; color:#666;">
-      Don't have an account? <a href="#" onclick="switchToSignup()" style="color:#50805E; font-weight:600;">Sign up here</a>
+    <p class="modal-link">
+      Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a>
     </p>
   </div>
 </div>
 
 <!-- Signup Modal -->
-<div id="signup-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
-  <div style="background:#fff; border-radius:2rem; max-width:380px; width:90vw; padding:2rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">
-    <button id="close-signup-modal" style="position:absolute; top:1rem; right:1.2rem; background:none; border:none; font-size:1.5rem; color:#aaa; cursor:pointer;">&times;</button>
-    <h2 style="color:#50805E; font-size:1.4rem; margin-bottom:0.8rem;">🎨 Join KatoKits</h2>
-    <p style="color:#50805E; font-size:1rem; margin-bottom:1.5rem;">Start creating amazing educational activities for your kids!</p>
+<div id="signup-modal" class="modal">
+  <div class="modal-content">
+    <button id="close-signup-modal" class="modal-close">&times;</button>
+    <h2>🎨 Join KatoKits</h2>
+    <p>Start creating amazing educational activities for your kids!</p>
     
-    <form id="signup-form">
-      <input type="email" name="email" placeholder="Enter your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
-      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Get Started Now!</button>
+    <form id="signup-form" class="modal-form">
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <button type="submit" class="btn">Get Started Now!</button>
     </form>
     
-    <small style="color:#888; display:block; margin-top:1rem; font-size:0.8rem;">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
+    <small class="modal-disclaimer">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
   </div>
 </div>
 
@@ -304,12 +304,12 @@
           <h4>Support</h4>
           <a href="contact.html">Contact Us</a>
           <a href="about.html">About</a>
-          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+          <p class="footer-hours">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
         </div>
         <div class="footer-column">
           <h4>Connect</h4>
           <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
-          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+          <p class="footer-badges">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
         </div>
       </div>
     </div>

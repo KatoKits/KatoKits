@@ -706,6 +706,13 @@ nav a.active::before {
   margin-top: 3rem;
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
 .pricing-card {
   background: white;
   border-radius: 1.5rem;
@@ -789,7 +796,148 @@ nav a.active::before {
   border: 2px solid #e8f5e8;
 }
 
-/* CTA Section */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 2rem;
+  max-width: 380px;
+  width: 90vw;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: #666;
+}
+
+.modal h2 {
+  color: var(--green);
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.modal p {
+  color: var(--green);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-form {
+  margin: 1rem 0;
+}
+
+.modal-form input[type="email"],
+.modal-form input[type="password"] {
+  width: 90%;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid #ddd;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.modal-form input:focus {
+  outline: none;
+  border-color: var(--peach);
+  box-shadow: 0 0 0 3px rgba(249, 164, 113, 0.2);
+}
+
+.modal-form .btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.modal-form .btn:hover {
+  background: var(--dark-green);
+}
+
+.modal-disclaimer {
+  color: #888;
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.modal-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.modal-link a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modal-link a:hover {
+  color: var(--peach);
+}
+
+/* AI Free Modal specific styles */
+.ai-modal .modal-content {
+  max-width: 370px;
+  padding: 2.2rem 1.5rem 1.7rem;
+}
+
+.ai-modal h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.ai-modal p {
+  font-size: 1.05rem;
+  margin-bottom: 1.1rem;
+}
+
+.ai-modal input[type="email"] {
+  width: 90%;
+  padding: 0.7rem;
+  border-radius: 1.2rem;
+  border: 1.2px solid var(--peach);
+  margin-bottom: 0.7rem;
+}
+
+.ai-modal .modal-disclaimer {
+  margin-top: 0.7rem;
+}
 .cta-section {
   background: transparent;
   padding: 4rem 2rem;
@@ -940,6 +1088,13 @@ footer {
   font-size: 0.9rem;
 }
 
+.footer-hours,
+.footer-badges {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* Hero Content Box */
 .hero-content-box {
   background: white;
@@ -1030,10 +1185,41 @@ footer {
     display: none;
   }
   
-  .hero {
+  .hero-section {
     padding: 3rem 1.5rem;
     margin: 1rem auto;
     border-radius: 1.5rem;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-stats {
+    gap: 1rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+  }
+  
+  .stat-item {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
   }
   
   .hero h1 {
