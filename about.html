@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
+  <title>About KatoKits | AI-Powered Preschool Lesson Plans by Educators</title>
+  <meta name="description" content="Learn about KatoKits - founded by early childhood educators to help teachers, parents, and daycares create engaging preschool activities with AI technology." />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing & Add-ons</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero-section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center;">
+      <h1>About KatoKits</h1>
+      <p class="hero-subtitle">AI-powered preschool activities designed by educators for educators, parents, and childcare providers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
+      <h2>Our Mission</h2>
+      <p>To revolutionize early childhood education by making high-quality, developmentally-appropriate lesson plans accessible to everyone through AI technology.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <div class="feature-icon">👩‍🏫</div>
+        <h3>Educator-Founded</h3>
+        <p>Founded by early childhood educators who understand the real challenges of lesson planning and classroom management.</p>
+      </div>
+      
+      <div class="card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Enhanced Learning</h3>
+        <p>We harness artificial intelligence to create personalized, curriculum-aligned activities that meet diverse learning needs.</p>
+      </div>
+      
+      <div class="card">
+        <div class="feature-icon">🌟</div>
+        <h3>Quality-Focused</h3>
+        <p>Every lesson plan is carefully designed to promote cognitive, social, emotional, and physical development in young children.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Our Story</h2>
+      <p>KatoKits was born from the frustration of spending countless hours creating lesson plans and activities for preschoolers. As educators and parents ourselves, we knew there had to be a better way.</p>
+      
+      <p>We combined our deep understanding of early childhood development with cutting-edge AI technology to create a platform that generates high-quality, personalized lesson plans in seconds rather than hours.</p>
+      
+      <p>Today, KatoKits serves thousands of educators, homeschooling families, and childcare centers worldwide, saving them time while improving learning outcomes for children ages 6 months to 6 years.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center;">
+      <h2>Ready to Transform Your Teaching?</h2>
+      <p>Join thousands of educators who are saving time and creating better learning experiences with KatoKits.</p>
+      <div style="margin-top: 2rem;">
+        <a href="ai.html" class="btn btn-primary btn-large">Try Free AI Generator</a>
+        <a href="contact.html" class="btn btn-secondary btn-large">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="pricing.html">Pricing & Add-ons</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
+}
+
+function showLoginModal() {
+  alert('Login functionality will be implemented with backend integration');
+}
+
+function showSignupModal() {
+  alert('Signup functionality will be implemented with backend integration');
+}
+</script>
+</body>
+</html>
