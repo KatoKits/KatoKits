@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/x-icon" href="../assets/img/katokits-logo.png">
+  <title>KatoKits | AI Lesson Plans & Printables for Preschool Teachers</title>
+  <meta name="description" content="Generate custom preschool lesson plans in seconds. Includes printables, materials list, strategies & objectives. Try 3 for free." />
+  <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="auth-buttons left-auth">
+      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
+    </div>
+    <div class="logo">KatoKits</div>
+    <nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="pricing.html">Pricing & Add-ons</a>
+        <a href="ai.html">AI Generator</a>
+        <a href="library.html">Library</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+    <div class="auth-buttons right-auth">
+      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Sign Up</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>AI-Generated Preschool Lesson Plans in Seconds</h1>
+        <p class="hero-subtitle">Designed by educators. Built for parents, daycares, homeschoolers & schools. Try 3 free lesson kits today.</p>
+        
+        <div class="hero-button-container">
+          <a href="ai.html" class="btn btn-primary btn-large">🎁 Generate 3 Free Lessons</a>
+        </div>
+        
+        <p class="hero-disclaimer">No credit card needed • Instant download</p>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>2,500+</strong>
+            <span>Happy Educators</span>
+          </div>
+          <div class="stat">
+            <strong>15,000+</strong>
+            <span>Lessons Generated</span>
+          </div>
+          <div class="stat">
+            <strong>4.9/5</strong>
+            <span>Average Rating</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="hero-preview">
+          <img src="../assets/img/katokits-logo.png" alt="KatoKits AI Lesson Plans Preview" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="container">
+    <h2>Everything You Need for Successful Preschool Teaching</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI-Powered Generator</h3>
+        <p>Create custom lesson plans in seconds with our advanced AI that understands early childhood development principles.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Comprehensive Library</h3>
+        <p>Access thousands of pre-made activities, worksheets, and lesson plans created by experienced educators.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Standards-Aligned</h3>
+        <p>All content aligns with early childhood education standards and developmental milestones.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Instant Download</h3>
+        <p>Get your materials immediately as print-ready PDFs. No waiting, no hassle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Creative Activities</h3>
+        <p>Engaging hands-on activities that make learning fun and memorable for young children.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Cost-Effective</h3>
+        <p>Save hundreds of hours and dollars compared to creating materials from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="social-proof-section">
+  <div class="container">
+    <h2>Trusted by Educators Worldwide</h2>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"KatoKits has transformed my lesson planning! The AI generator creates exactly what I need in minutes instead of hours."</p>
+        <div class="reviewer">
+          <strong>Sarah M.</strong>
+          <span>Preschool Teacher</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"As a homeschool mom, these resources are a lifesaver. Professional quality activities that my kids absolutely love!"</p>
+        <div class="reviewer">
+          <strong>Jennifer K.</strong>
+          <span>Homeschool Parent</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"The variety and quality of materials available is incredible. My daycare has never been better organized!"</p>
+        <div class="reviewer">
+          <strong>Michael R.</strong>
+          <span>Daycare Director</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="moreReviews" style="display: none;">
+      <div class="reviews-container">
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"The AI understands exactly what age-appropriate means. Every activity is perfectly suited for my 3-4 year olds."</p>
+          <div class="reviewer">
+            <strong>Amanda L.</strong>
+            <span>Pre-K Teacher</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"I love how everything comes with clear objectives and material lists. Makes implementation so much easier!"</p>
+          <div class="reviewer">
+            <strong>David C.</strong>
+            <span>Early Childhood Educator</span>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Best investment I've made for my classroom. The time savings alone is worth every penny!"</p>
+          <div class="reviewer">
+            <strong>Lisa T.</strong>
+            <span>Montessori Teacher</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="reviews-toggle" onclick="toggleReviews()">📖 Read More Reviews ▼</button>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Transform Your Teaching?</h2>
+    <p>Join thousands of educators who are saving time and creating better learning experiences with KatoKits.</p>
+    <a href="ai.html" class="btn btn-primary btn-large">🎁 Start Your Free Trial</a>
+    <p class="cta-note">3 free lesson plans • No credit card required</p>
+  </div>
+</section>
+
+<!-- Authentication Modals -->
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-login-modal">&times;</span>
+    <h2>Welcome Back!</h2>
+    <form id="login-form">
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a></p>
+  </div>
+</div>
+
+<div id="signup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-signup-modal">&times;</span>
+    <h2>Join KatoKits Today!</h2>
+    <form id="signup-form">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="password" name="password" placeholder="Create Password" required>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="switchToLogin()">Login here</a></p>
+  </div>
+</div>
+
+<div id="ai-free-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-ai-modal">&times;</span>
+    <h2>🎁 Get 3 Free AI Lesson Plans!</h2>
+    <p>Enter your email to unlock 3 free AI-generated lesson plans right now.</p>
+    <form id="ai-free-form">
+      <input type="email" name="email" placeholder="Enter your email address" required style="width:90%; padding:0.8rem; border-radius:0.8rem; border:1.5px solid #ddd; margin-bottom:1rem; font-size:1rem;">
+      <button type="submit" class="btn" style="width:100%; padding:0.8rem; font-size:1rem; background: var(--green); color: white; border: none; border-radius: 0.8rem; cursor: pointer; font-weight: 600;">Get Started Now!</button>
+    </form>
+    
+    <small style="color:#888; display:block; margin-top:1rem; font-size:0.8rem;">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="footer-logo">KatoKits</div>
+        <p>Professional preschool activities and AI-powered lesson plans for educators and parents.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Products</h4>
+          <a href="ai.html">AI Generator</a>
+          <a href="library.html">Library</a>
+          <a href="pricing.html">Pricing & Add-ons</a>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">📞 Monday-Friday<br>9 AM - 5 PM EST</p>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/katokitsdigital/" target="_blank">📱 Instagram</a>
+          <p style="margin: 0.5rem 0; font-size: 0.9rem;">🎓 ECE Standards Aligned<br>👩‍🏫 Educator Owned</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 KatoKits. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
