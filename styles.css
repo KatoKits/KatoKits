@@ -360,25 +360,52 @@ nav a.active::before {
 /* Professional Grid and Cards - Child-Safe Colors */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-top: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+  margin-top: 2rem;
 }
 
 .card {
   background: white;
-  border-radius: 1.2rem;
-  padding: 2.5rem;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-  border: 2px solid #ffd700;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: none;
   transition: all 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-  border-color: #ff6b6b;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* Card content structure */
+.card .feature-icon,
+.card .quote-mark {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h3 {
+  margin: 1rem 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  color: #666;
+  line-height: 1.6;
+}
+
+.card .btn {
+  margin-top: auto;
 }
 
 /* How It Works Steps */
@@ -809,7 +836,7 @@ footer {
   }
   
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
   }
   
