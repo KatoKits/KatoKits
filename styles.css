@@ -818,6 +818,31 @@ footer {
     text-align: center;
   }
   
+  /* Enhanced responsive styles for new elements */
+  .signup-form-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .email-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .cta-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .step-icon,
+  .activity-icon {
+    font-size: 1.8rem;
+  }
+  
+  .price-badge {
+    padding: 0.6rem;
+    margin-top: 0.8rem;
+  }
+  
   .pricing-card.featured-plan {
     transform: none;
   }
@@ -873,6 +898,148 @@ footer {
     width: 100%;
     max-width: 280px;
   }
+  
+  /* Enhanced mobile styles for new elements */
+  .signup-form-container {
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 0.8rem;
+  }
+  
+  .email-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.8rem;
+  }
+  
+  .cta-button {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+  
+  .step-icon,
+  .activity-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .price-badge {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.6rem;
+  }
+  
+  .alternative-cta {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Enhanced Semantic HTML Styles */
+.section-heading {
+  color: var(--green);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.step-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.activity-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.price-badge {
+  background: #f0f8f0;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  margin-top: 1rem;
+}
+
+.price-badge small {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Email Signup Form Styles */
+.signup-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #f8fffe;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid var(--green);
+}
+
+.signup-subtitle {
+  color: var(--green);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.benefits-list li {
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.signup-form {
+  text-align: center;
+}
+
+.email-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--green);
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: var(--transition);
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--dark-green);
+  box-shadow: 0 0 0 3px rgba(80, 128, 94, 0.1);
+}
+
+.cta-button {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(249, 164, 113, 0.6);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.form-disclaimer {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.alternative-cta {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 /* Accessibility Improvements */
