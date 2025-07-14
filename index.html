@@ -218,21 +218,23 @@
 </section>
 
 <!-- Final CTA Section -->
-<section class="section cta-section">
-  <div class="container">
-    <div class="clean-text-box cta-card" style="text-align: center; background: linear-gradient(135deg, #f0f9f4 0%, #e8f5e8 100%);">
-      <h2>Ready to Transform Your Teaching?</h2>
-      <p>Join thousands of educators who are saving time and creating better learning experiences with KatoKits. Generate your first AI lesson plan in under 60 seconds.</p>
+<section class="section cta-section-new">
+  <div class="cta-container">
+    <div class="cta-content">
+      <h2>Start Your Teaching Transformation Today</h2>
+      <p>Join thousands of educators saving 10+ hours weekly with AI-powered lesson plans. Get instant access to premium educational content.</p>
       
-      <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
-        <a href="ai.html" class="btn btn-primary btn-large">Try Free AI Generator</a>
-        <a href="library.html" class="btn btn-secondary btn-large">Browse Library</a>
-      </div>
+      <form class="cta-form" id="cta-email-form">
+        <div class="cta-form-group">
+          <input type="email" name="email" placeholder="Enter your email address" required class="cta-email-input">
+          <button type="submit" class="cta-submit-btn">Get Started Free</button>
+        </div>
+      </form>
       
-      <div class="trust-indicators" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <span class="trust-item">✅ No Credit Card Required</span>
-        <span class="trust-item">✅ 3 Free AI Plans</span>
-        <span class="trust-item">✅ Cancel Anytime</span>
+      <div class="cta-benefits">
+        <span class="benefit-item">✅ 3 Free AI Lesson Plans</span>
+        <span class="benefit-item">✅ No Credit Card Required</span>
+        <span class="benefit-item">✅ Instant Access</span>
       </div>
     </div>
   </div>
@@ -410,6 +412,21 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('katokits_freebie_downloaded', 'true');
       localStorage.setItem('katokits_email', email);
       alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
+    };
+  }
+  
+  // CTA form submission
+  const ctaForm = document.getElementById('cta-email-form');
+  if (ctaForm) {
+    ctaForm.onsubmit = function(e) {
+      e.preventDefault();
+      const email = this.email.value;
+      localStorage.setItem('katokits_cta_signup', 'true');
+      localStorage.setItem('katokits_email', email);
+      alert('Welcome to KatoKits! Redirecting you to the AI Generator to claim your 3 free lesson plans...');
+      setTimeout(() => {
+        window.location.href = 'ai.html';
+      }, 1500);
     };
   }
   
