@@ -344,17 +344,26 @@ nav a.active::before {
 /* Enhanced Section Styling */
 .section {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   color: var(--green);
   margin-bottom: 2.5rem;
   letter-spacing: -0.01em;
+}
+
+/* Section subtitle styling */
+.section p:first-of-type,
+.clean-text-box p:first-of-type {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  font-weight: 400;
 }
 
 /* Professional Grid and Cards - Child-Safe Colors */
@@ -595,7 +604,7 @@ nav a.active::before {
 
 .cta-content h2 {
   color: white;
-  font-size: 2.8rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 900;
 }
@@ -801,11 +810,11 @@ footer {
   }
   
   .section {
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
   }
   
   .section h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .grid {
@@ -823,7 +832,7 @@ footer {
   }
   
   .cta-content h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   
   .cta-benefits {
