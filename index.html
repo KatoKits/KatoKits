@@ -162,6 +162,27 @@
   </div>
 </section>
 
+<!-- Email CTA Section -->
+<section class="email-cta-section">
+  <div class="email-cta-container">
+    <div class="email-cta-content">
+      <h2>Start Creating Amazing Lesson Plans Today</h2>
+      <p>Join over 10,000 educators who trust KatoKits for professional, engaging activities. Get instant access to our premium content and AI-powered lesson planning tools.</p>
+      
+      <form class="email-cta-form" id="email-cta-form">
+        <input type="email" name="email" placeholder="Enter your email address" required class="email-cta-input">
+        <button type="submit" class="email-cta-button">Get Started Free</button>
+      </form>
+      
+      <div class="email-cta-benefits">
+        <span>✅ 3 Free AI Lesson Plans</span>
+        <span>✅ No Credit Card Required</span>
+        <span>✅ Instant Access</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Pricing Preview Section -->
 <section class="section pricing-preview">
   <div class="container">
@@ -410,6 +431,20 @@ document.addEventListener('DOMContentLoaded', function() {
       localStorage.setItem('katokits_freebie_downloaded', 'true');
       localStorage.setItem('katokits_email', email);
       alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
+    };
+  }
+  
+  // Email CTA form submission
+  const emailCtaForm = document.getElementById('email-cta-form');
+  if (emailCtaForm) {
+    emailCtaForm.onsubmit = function(e) {
+      e.preventDefault();
+      const email = this.email.value;
+      localStorage.setItem('katokits_email_signup', 'true');
+      localStorage.setItem('katokits_email', email);
+      localStorage.setItem('katokits_free_uses', '3');
+      alert('Welcome to KatoKits! You now have 3 free AI lesson plan generations. Visit the AI Generator to start creating!');
+      this.reset();
     };
   }
   

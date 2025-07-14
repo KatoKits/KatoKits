@@ -1013,6 +1013,136 @@ nav a.active::before {
   flex-wrap: wrap;
 }
 
+/* Email CTA Section */
+.email-cta-section {
+  background: #fef7ea;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.email-cta-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.email-cta-content h2 {
+  color: var(--green);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.email-cta-content p {
+  color: var(--green);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.email-cta-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-cta-input {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--peach);
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  background: white;
+  color: var(--green);
+  transition: var(--transition);
+  box-shadow: 0 2px 12px rgba(249, 164, 113, 0.1);
+}
+
+.email-cta-input:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 4px 20px rgba(80, 128, 94, 0.2);
+  transform: translateY(-2px);
+}
+
+.email-cta-input::placeholder {
+  color: rgba(80, 128, 94, 0.6);
+}
+
+.email-cta-button {
+  background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(80, 128, 94, 0.3);
+  min-width: 160px;
+}
+
+.email-cta-button:hover {
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--green) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(80, 128, 94, 0.4);
+}
+
+.email-cta-button:active {
+  transform: translateY(-1px);
+}
+
+.email-cta-benefits {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.email-cta-benefits span {
+  color: var(--green);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* Responsive Design for Email CTA */
+@media (max-width: 768px) {
+  .email-cta-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .email-cta-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .email-cta-input {
+    min-width: 100%;
+    max-width: 400px;
+  }
+  
+  .email-cta-button {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .email-cta-benefits {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
 /* Footer */
 footer {
   background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
