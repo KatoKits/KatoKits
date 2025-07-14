@@ -8,6 +8,57 @@
   <meta name="description" content="Create preschool lesson plans with AI in seconds. Personalized by age, theme, and skill. Includes printables and checklists." />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .ai-gen-form {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-card);
+      padding: 2rem;
+    }
+    
+    .ai-gen-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .ai-gen-form label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .ai-gen-form input, 
+    .ai-gen-form select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e5e7eb;
+      border-radius: var(--radius-small);
+      font-size: 0.9rem;
+      font-family: 'Nunito', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-sizing: border-box;
+    }
+    
+    .ai-gen-form input:focus, 
+    .ai-gen-form select:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(80, 128, 94, 0.1);
+    }
+    
+    .ai-output {
+      margin-top: 2rem;
+      background: linear-gradient(135deg, var(--cream-left), #f0f9f4);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      color: var(--green);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--peach);
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -26,77 +77,71 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <div class="clean-text-box" style="text-align: center;">
-      <h1>🤖 AI Lesson Plan Generator</h1>
-      <p>Build custom, developmentally-appropriate activities for infants through kindergarten!</p>
-    </div>
+    <h1>🤖 AI Lesson Plan Generator</h1>
+    <p>Build custom, developmentally-appropriate activities for infants through kindergarten!</p>
   </div>
 </section>
 
 <!-- AI Generator Form Section -->
 <section class="section">
   <div class="container">
-    <div class="clean-text-box" style="max-width: 500px; margin: 0 auto;">
-      <h2 style="text-align: center; margin-bottom: 1.5rem;">Generate Your Custom Lesson Plan</h2>
+    <h2>Generate Your Custom Lesson Plan</h2>
+    
+    <form class="ai-gen-form">
+      <div class="form-group">
+        <label for="age">Age Group</label>
+        <select id="age" name="age" required>
+          <option value="">Select age range</option>
+          <option value="infant">Infants (6-12 months)</option>
+          <option value="toddler">Toddlers (1-2 years)</option>
+          <option value="preschool">Preschoolers (3-4 years)</option>
+          <option value="prekindergarten">Pre-K (4-5 years)</option>
+          <option value="kindergarten">Kindergarten (5-6 years)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="theme">Theme or Topic</label>
+        <input type="text" id="theme" name="theme" placeholder="e.g., Ocean Animals, Colors, Numbers" required>
+      </div>
+
+      <div class="form-group">
+        <label for="skill">Primary Skill Focus</label>
+        <select id="skill" name="skill" required>
+          <option value="">Select primary focus</option>
+          <option value="cognitive">Cognitive Development</option>
+          <option value="language">Language & Literacy</option>
+          <option value="math">Math & Numbers</option>
+          <option value="science">Science & Nature</option>
+          <option value="social">Social-Emotional</option>
+          <option value="physical">Physical Development</option>
+          <option value="creative">Creative Arts</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="duration">Activity Duration</label>
+        <select id="duration" name="duration" required>
+          <option value="">Select duration</option>
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="45">45 minutes</option>
+          <option value="60">1 hour</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Generate Lesson Plan</button>
       
-      <form class="ai-gen-form">
-        <div class="form-group">
-          <label for="age">Age Group</label>
-          <select id="age" name="age" required>
-            <option value="">Select age range</option>
-            <option value="infant">Infants (6-12 months)</option>
-            <option value="toddler">Toddlers (1-2 years)</option>
-            <option value="preschool">Preschoolers (3-4 years)</option>
-            <option value="prekindergarten">Pre-K (4-5 years)</option>
-            <option value="kindergarten">Kindergarten (5-6 years)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="theme">Theme or Topic</label>
-          <input type="text" id="theme" name="theme" placeholder="e.g., Ocean Animals, Colors, Numbers" required>
-        </div>
-
-        <div class="form-group">
-          <label for="skill">Primary Skill Focus</label>
-          <select id="skill" name="skill" required>
-            <option value="">Select primary focus</option>
-            <option value="cognitive">Cognitive Development</option>
-            <option value="language">Language & Literacy</option>
-            <option value="math">Math & Numbers</option>
-            <option value="science">Science & Nature</option>
-            <option value="social">Social-Emotional</option>
-            <option value="physical">Physical Development</option>
-            <option value="creative">Creative Arts</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="duration">Activity Duration</label>
-          <select id="duration" name="duration" required>
-            <option value="">Select duration</option>
-            <option value="15">15 minutes</option>
-            <option value="30">30 minutes</option>
-            <option value="45">45 minutes</option>
-            <option value="60">1 hour</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-full">Generate Lesson Plan</button>
-        
-        <div id="ai-output" class="ai-output" style="display: none;"></div>
-      </form>
-    </div>
+      <div id="ai-output" class="ai-output" style="display: none;"></div>
+    </form>
   </div>
 </section>
 
 <!-- How It Works Section -->
 <section class="section">
   <div class="container">
-    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
-      <h2>How It Works</h2>
-      <p>Creating professional lesson plans has never been easier</p>
-    </div>
+    <h2>How It Works</h2>
+    <p style="margin-bottom: 3rem; color: var(--green);">Creating professional lesson plans has never been easier</p>
     
     <div class="grid">
       <div class="card feature-card">
@@ -126,531 +171,101 @@
 <!-- Sample Output Section -->
 <section class="section">
   <div class="container">
-    <div class="clean-text-box">
-      <h2 style="text-align: center; margin-bottom: 2rem;">Sample AI-Generated Lesson Plan</h2>
+    <h2>Sample AI-Generated Lesson Plan</h2>
+    
+    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: left;">
+      <h3 style="color: var(--green); margin-bottom: 1rem;">🌊 Ocean Animals Discovery (Ages 3-4)</h3>
       
-      <div class="ai-preview-box" style="background: #f8f9fa; padding: 2rem; border-radius: 1rem; border-left: 4px solid var(--green);">
-        <h3 style="color: var(--green); margin-bottom: 1rem;">Ocean Animals Discovery (Ages 3-4)</h3>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="color: var(--green);">Learning Objectives:</h4>
-          <ul style="margin: 0.5rem 0;">
-            <li>Identify 5 ocean animals by name and characteristics</li>
-            <li>Develop fine motor skills through ocean-themed crafts</li>
-            <li>Practice counting with sea shells and ocean creatures</li>
-          </ul>
-        </div>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <h4 style="color: var(--green);">Activities Included:</h4>
-          <ul style="margin: 0.5rem 0;">
-            <li>🐠 Ocean Animal Sorting Game</li>
-            <li>🌊 Wave Movement Exercise</li>
-            <li>🐙 Octopus Tentacle Counting</li>
-            <li>🦀 Crab Walk Gross Motor Activity</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h4 style="color: var(--green);">Materials Needed:</h4>
-          <p style="margin: 0.5rem 0;">Ocean animal picture cards, blue construction paper, cotton balls, crayons, safety scissors, glue sticks</p>
-        </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--green);">Learning Objectives:</h4>
+        <ul style="margin: 0.5rem 0;">
+          <li>Identify 5 ocean animals by name and characteristics</li>
+          <li>Develop fine motor skills through ocean-themed crafts</li>
+          <li>Practice counting with sea shells and ocean creatures</li>
+        </ul>
+      </div>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--green);">Activities Included:</h4>
+        <ul style="margin: 0.5rem 0;">
+          <li>🐠 Ocean Animal Sorting Game</li>
+          <li>🌊 Wave Movement Exercise</li>
+          <li>🐙 Octopus Tentacle Counting</li>
+          <li>🦀 Crab Walk Gross Motor Activity</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 style="color: var(--green);">Materials Needed:</h4>
+        <p style="margin: 0.5rem 0;">Ocean animal picture cards, blue construction paper, cotton balls, crayons, safety scissors, glue sticks</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing Reminder Section -->
+<!-- Pricing Comparison Section -->
 <section class="section">
   <div class="container">
-    <div class="clean-text-box" style="background: linear-gradient(135deg, #fffbe9 0%, #fff5d1 100%); text-align: center;">
-      <h2>Ready for Unlimited AI Lesson Plans?</h2>
-      <p>You've used your free trials. Upgrade to generate unlimited custom lesson plans with premium features.</p>
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
-        <a href="pricing.html" class="btn btn-primary">View Pricing Plans</a>
-        <a href="library.html" class="btn btn-outline">Browse Pre-made Library</a>
-      </div>
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--green);">
-        <span>✅ Unlimited Generation</span>
-        <span>✅ Cloud Storage</span>
-        <span>✅ Premium Templates</span>
-      </div>
-    </div>
-  </div>
-</section>
-    }
-    .comparison-table-container {
-      overflow-x: auto;
-    }
-    .comparison-table {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 1rem;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    }
-    .comparison-table th, .comparison-table td {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      font-size: 1rem;
-      color: #374151;
-      border-bottom: 1px solid #f3f4f6;
-    }
-    .comparison-table th {
-      background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
-      color: white;
-      font-weight: 800;
-      text-align: left;
-      font-size: 1.1rem;
-    }
-    .comparison-table td span {
-      font-size: 1.2rem;
-    }
-    .btn-primary {
-      background: var(--peach);
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-    .btn-primary:hover {
-      background: #f59e0b;
-    }
-    .btn-outline {
-      border: 2px solid var(--green);
-      color: var(--green);
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s, color 0.3s;
-    }
-    .btn-outline:hover {
-      background: var(--green);
-      color: white;
-    }
-    .btn-secondary {
-      background: #e5e7eb;
-      color: #374151;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-    .btn-secondary:hover {
-      background: #d1d5db;
-    }
-    .btn-purple {
-      background: #8b5cf6;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-    .btn-purple:hover {
-      background: #7c3aed;
-    }
-  </style>
-</head>
-<body>
-<header>
-  <div class="logo">KatoKits</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="lesson-plans.html">Lesson Plans</a>
-    <a href="ai.html" class="active">AI Generator</a>
-    <a href="freebies.html">Freebies</a>
-    <a href="pricing.html">Pricing & Add-ons</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content-box">
-    <h1>🤖 AI Lesson Plan Generator</h1>
-    <p>Build custom, developmentally-appropriate activities for infants through kindergarten!</p>
-  
-    <!-- Clean Pricing Grid -->
-    <div class="grid" style="margin: 2rem 0;">
-    <!-- Basic Plan -->
-    <div class="card" style="text-align: center; position: relative;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⭐</div>
-      <h3 style="color: #6b7280;">Basic Plan</h3>
-      <div style="font-size: 2rem; font-weight: 900; color: #6b7280; margin: 0.5rem 0;">$9.99</div>
-      <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">CAD per month</p>
-      <ul style="text-align: left; color: #6b7280; font-size: 0.9rem; margin: 0 0 1.5rem 0; padding-left: 1rem; line-height: 1.6;">
-        <li>30 AI lesson plans/month</li>
-        <li>Basic templates</li>
-        <li>Email support</li>
-        <li>Perfect for home use</li>
-      </ul>
-      <a href="pricing.html" class="btn" style="width: 100%; box-sizing: border-box;">Choose Basic</a>
+    <h2>💎 Compare Plans - Choose What's Right for You</h2>
+    <p style="margin-bottom: 2rem; color: var(--green);">Every plan includes our AI generator. Pick the features you need.</p>
+    
+    <div class="comparison-table-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Features</th>
+            <th>Free<br><span style="font-size: 0.9rem; opacity: 0.9;">$0/month</span></th>
+            <th>Basic<br><span style="font-size: 0.9rem; opacity: 0.9;">$9.99/month</span></th>
+            <th style="background: rgba(249, 164, 113, 0.3);">🔥 Unlimited<br><span style="font-size: 0.9rem; opacity: 0.9;">$19.99/month</span></th>
+            <th>Professional<br><span style="font-size: 0.9rem; opacity: 0.9;">$79.99/month</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 600; color: var(--green); text-align: left;">AI Lesson Plans per Month</td>
+            <td>3 plans</td>
+            <td>30 plans</td>
+            <td style="background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--green); text-align: left;">Download & Print Activities</td>
+            <td><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+            <td><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+            <td style="background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+            <td><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--green); text-align: left;">Cloud Storage & Editing</td>
+            <td><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+            <td><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+            <td style="background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+            <td><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--green); text-align: left;">Support Level</td>
+            <td>Community</td>
+            <td>Email</td>
+            <td style="background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Priority Email</td>
+            <td>Phone + Email</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--green); text-align: left;">Multi-User Access</td>
+            <td><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+            <td><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+            <td style="background: rgba(249, 164, 113, 0.1);"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
+            <td><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     
-    <!-- Unlimited Plan -->
-    <div class="card" style="text-align: center; position: relative; border: 2px solid var(--peach); transform: scale(1.05);">
-      <div style="position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%); background: var(--peach); color: white; padding: 0.3rem 1rem; border-radius: 1rem; font-size: 0.75rem; font-weight: 700;">Most Popular</div>
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚀</div>
-      <h3 style="color: var(--peach);">Unlimited Plan</h3>
-      <div style="font-size: 2rem; font-weight: 900; color: var(--peach); margin: 0.5rem 0;">$19.99</div>
-      <p style="color: var(--peach); font-size: 0.9rem; margin-bottom: 1rem;">CAD per month</p>
-      <ul style="text-align: left; color: #92400e; font-size: 0.9rem; margin: 0 0 1.5rem 0; padding-left: 1rem; line-height: 1.6;">
-        <li>Unlimited AI lesson plans</li>
-        <li>All printable activity sheets</li>
-        <li>Priority support</li>
-        <li>Perfect for teachers & homes</li>
-      </ul>
-      <a href="pricing.html" class="btn" style="width: 100%; box-sizing: border-box;">Choose Unlimited</a>
-    </div>
-    
-    <!-- Professional Plan -->
-    <div class="card" style="text-align: center; position: relative; border: 2px solid #8b5cf6;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏫</div>
-      <h3 style="color: #7c3aed;">Professional Plan</h3>
-      <div style="font-size: 2rem; font-weight: 900; color: #7c3aed; margin: 0.5rem 0;">$79.99</div>
-      <p style="color: #7c3aed; font-size: 0.9rem; margin-bottom: 1rem;">CAD per month</p>
-      <ul style="text-align: left; color: #6d28d9; font-size: 0.9rem; margin: 0 0 1.5rem 0; padding-left: 1rem; line-height: 1.6;">
-        <li>Unlimited AI plans</li>
-        <li>Multi-user access</li>
-        <li>Phone support</li>
-        <li>Perfect for daycares & centers</li>
-      </ul>
-      <a href="pricing.html" class="btn btn-purple" style="width: 100%; box-sizing: border-box;">Choose Professional</a>
-    </div>
-  </div>
-  
-  <div style="text-align: center; margin-top: 1rem;">
-    <a href="freebies.html" style="color: var(--green); text-decoration: underline; font-weight: 600; font-size: 0.9rem;">Or try free activities first</a>
-  </div>
-  </div>
-</section>
-
-<!-- Detailed Pricing Comparison Section -->
-<section class="section">
-  <h2>💎 Compare Plans - Choose What's Right for You</h2>
-  <p style="text-align: center; margin-bottom: 2rem; color: var(--green);">Every plan includes our AI generator. Pick the features you need.</p>
-  
-  <div class="comparison-table-container" style="overflow-x: auto;">
-    <table class="comparison-table" style="width: 100%; max-width: 1000px; margin: 0 auto; border-collapse: collapse; background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-      <thead>
-        <tr style="background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);">
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: left; font-size: 1.1rem;">Features</th>
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Free<br><span style="font-size: 0.9rem; opacity: 0.9;">$0/month</span></th>
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Basic<br><span style="font-size: 0.9rem; opacity: 0.9;">$9.99/month</span></th>
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem; background: rgba(249, 164, 113, 0.3);">🔥 Unlimited<br><span style="font-size: 0.9rem; opacity: 0.9;">$19.99/month</span></th>
-          <th style="padding: 1.5rem 1rem; color: white; font-weight: 800; text-align: center; font-size: 1.1rem;">Professional<br><span style="font-size: 0.9rem, opacity: 0.9;">$79.99/month</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">AI Lesson Plans per Month</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">3 plans</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">30 plans</td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Unlimited</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">Unlimited</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Download & Print Activities</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Cloud Storage & Editing</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Activity Library Access</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Support Level</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">Community</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">Email</td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach);">Priority Email</td>
-          <td style="padding: 1rem; text-align: center; color: #6b7280;">Phone + Email</td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Multi-User Access</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">Custom Branding</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr style="border-bottom: 1px solid #f3f4f6;">
-          <td style="padding: 1rem; font-weight: 600; color: var(--green);">New Activities Monthly</td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #ef4444; font-size: 1.2rem;">❌</span></td>
-          <td style="padding: 1rem; text-align: center; background: rgba(249, 164, 113, 0.1);"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-          <td style="padding: 1rem; text-align: center;"><span style="color: #22c55e; font-size: 1.2rem;">✅</span></td>
-        </tr>
-        <tr>
-          <td style="padding: 1.5rem 1rem; font-weight: 600; color: var(--green);">Best For</td>
-          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Trying out<br>AI generator</td>
-          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Occasional<br>home use</td>
-          <td style="padding: 1.5rem 1rem; text-align: center; background: rgba(249, 164, 113, 0.1); font-weight: 700; color: var(--peach); font-size: 0.9rem;">Teachers &<br>Active Parents</td>
-          <td style="padding: 1.5rem 1rem; text-align: center; color: #6b7280; font-size: 0.9rem;">Daycares &<br>Centers</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-  <div style="text-align: center; margin-top: 2rem;">
     <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-      <a href="ai.html" class="btn btn-outline">Start Free</a>
-      <a href="pricing.html" class="btn btn-outline">Choose Basic</a>
-      <a href="pricing.html" class="btn btn-primary" style="transform: scale(1.1); font-weight: 800;">Try Unlimited Free for 1 Day!</a>
+      <a href="freebies.html" class="btn btn-outline">Start Free</a>
+      <a href="pricing.html" class="btn btn-secondary">Choose Basic</a>
+      <a href="pricing.html" class="btn btn-primary">Try Unlimited → $19.99/month</a>
       <a href="pricing.html" class="btn btn-purple">Choose Professional</a>
     </div>
-  </div>
-</section>
-
-<section>
-  <form class="ai-gen-form" id="ai-form">
-    <h3 style="color: var(--green); margin-bottom: 1rem;">🤖 AI-Powered Preschool Curriculum Creator</h3>
-    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1.5rem;">Create custom AI-generated toddler lesson plans in under 30 seconds!</p>
-    <label for="theme">Pick a theme:</label>
-    <select id="theme" name="theme" required>
-      <option value="">-- Select Theme --</option>
-      <option>Animals & Pets</option>
-      <option>Weather & Seasons</option>
-      <option>Transportation</option>
-      <option>Community Helpers</option>
-      <option>Feelings & Social-Emotional</option>
-      <option>Bugs & Nature</option>
-      <option>All About Me & Family</option>
-      <option>Colors & Shapes</option>
-      <option>Food & Nutrition</option>
-      <option>Holidays & Celebrations</option>
-      <option>Ocean & Sea Life</option>
-      <option>Space & Planets</option>
-      <option>Plants & Gardens</option>
-      <option>Music & Movement</option>
-      <option>Art & Creativity</option>
-      <option>Books & Stories</option>
-      <option>Safety & Health</option>
-      <option>Custom Theme</option>
-    </select>
-    <label for="age">Child's Age:</label>
-    <select id="age" name="age" required>
-      <option value="">-- Select Age Range --</option>
-      <option>6-12 months (Infant)</option>
-      <option>12-18 months (Young Toddler)</option>
-      <option>18-24 months (Toddler)</option>
-      <option>2-3 years (Older Toddler)</option>
-      <option>3-4 years (Preschool)</option>
-      <option>4-5 years (Pre-K)</option>
-      <option>5-6 years (Kindergarten)</option>
-    </select>
-    <label for="domain">Developmental Domain:</label>
-    <select id="domain" name="domain" required>
-      <option value="">-- Select Domain --</option>
-      <option>Physical Development (Gross Motor)</option>
-      <option>Physical Development (Fine Motor)</option>
-      <option>Cognitive Development</option>
-      <option>Language & Communication</option>
-      <option>Social-Emotional Development</option>
-      <option>Creative Arts & Expression</option>
-      <option>Math & Early Numeracy</option>
-      <option>Science & Discovery</option>
-      <option>Literacy & Pre-Reading</option>
-      <option>Self-Help & Independence</option>
-      <option>Sensory Development</option>
-      <option>Multi-Domain (Integrated)</option>
-    </select>
-    <label for="goal">Specific Learning Goal (optional):</label>
-    <input type="text" id="goal" name="goal" placeholder="e.g. counting 1-5, expressing emotions, building with blocks">
-    <label for="setting">Learning Environment:</label>
-    <select id="setting" name="setting">
-      <option value="">-- Select Setting --</option>
-      <option>Home/Family Setting</option>
-      <option>Daycare Center</option>
-      <option>Preschool Classroom</option>
-      <option>Outdoor/Nature</option>
-      <option>Small Group (2-4 children)</option>
-      <option>Large Group (5+ children)</option>
-      <option>One-on-One</option>
-    </select>
-    <button type="submit" class="btn">Generate Plan</button>
-    <div class="ai-output" style="display:none;">
-      <!-- AI result will appear here -->
-    </div>
-  </form>
-</section>
-
-<!-- Activity Packages Section -->
-<section class="section">
-  <h2>🛍️ Printable Preschool Activities</h2>
-  <p style="text-align: center; margin-bottom: 2rem; color: var(--green);">Instant downloads. Easy instructions. Joyful learning.</p>
-  
-  <div class="grid">
-    <!-- Animal Adventures Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🦁</div>
-      <h3>Animal Adventures</h3>
-      <p>15 activities exploring farm animals, zoo animals, and pets through games, art, and sensory play.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$12.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 18 months - 5 years</li>
-        <li>Printable activity sheets</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-
-    <!-- Weather & Seasons Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌦️</div>
-      <h3>Weather & Seasons</h3>
-      <p>12 activities exploring weather patterns, seasonal changes, and nature observations.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$10.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 2-6 years</li>
-        <li>Weather tracking charts</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-
-    <!-- Transportation Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚗</div>
-      <h3>Transportation Fun</h3>
-      <p>10 activities about cars, trains, boats, and planes with sorting, counting, and dramatic play.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$9.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 18 months - 4 years</li>
-        <li>Vehicle matching games</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-
-    <!-- Community Helpers Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">👩‍🚒</div>
-      <h3>Community Helpers</h3>
-      <p>14 activities about firefighters, doctors, teachers, and other helpers in our community.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$11.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 3-6 years</li>
-        <li>Role-play activity cards</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-
-    <!-- Emotions & Feelings Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">😊</div>
-      <h3>Emotions & Feelings</h3>
-      <p>8 social-emotional activities to help children identify and express their feelings.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$8.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 2-5 years</li>
-        <li>Emotion identification cards</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-
-    <!-- Ocean & Sea Life Package -->
-    <div class="card">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🐠</div>
-      <h3>Ocean & Sea Life</h3>
-      <p>13 underwater adventures with sea creatures, ocean sounds, and water play activities.</p>
-      <div style="font-size: 1.5rem; font-weight: 700; color: var(--green); margin: 1rem 0;">$11.99 CAD</div>
-      <ul style="text-align: left; font-size: 0.9rem; color: #6b7280; margin-bottom: 1rem;">
-        <li>PDF & Google Slides formats</li>
-        <li>Ages 18 months - 5 years</li>
-        <li>Ocean animal fact cards</li>
-      </ul>
-      <a href="pricing.html" class="btn">Get Package</a>
-    </div>
-  </div>
-
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="pricing.html" class="btn">View All Packages</a>
-  </div>
-</section>
-
-<!-- How It Works Section -->
-<section class="section">
-  <h2>🔍 How AI Lesson Planning Works</h2>
-  <div class="how-it-works">
-    <div class="step">
-      <div class="step-number">1</div>
-      <div class="step-icon">🎯</div>
-      <h3>Choose Your Focus</h3>
-      <p>Select age range, theme, and developmental domain. Perfect for AI-generated toddler lesson plans and preschool curriculum creation.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">2</div>
-      <div class="step-icon">🤖</div>
-      <h3>AI Creates Magic</h3>
-      <p>Our AI instantly generates a custom lesson plan with activities, materials list, and learning objectives.</p>
-    </div>
-    <div class="step">
-      <div class="step-number">3</div>
-      <div class="step-icon">📄</div>
-      <h3>Download & Print</h3>
-      <p>Get your professional PDF with step-by-step instructions, supply lists, and assessment tools.</p>
-    </div>
-  </div>
-  
-  <div class="ai-preview" style="text-align: center; margin: 2rem 0; padding: 2rem; background: #f8f9fa; border-radius: 1rem;">
-    <h4 style="color: var(--green); margin-bottom: 1rem;">🖼️ Sample AI-Generated Plan Preview</h4>
-    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto; text-align: left;">
-      <h5 style="color: var(--green); margin-bottom: 0.5rem;">🌈 Colors & Shapes Adventure (Ages 2-3)</h5>
-      <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #666;"><strong>Objective:</strong> Identify 3 basic colors and 2 shapes</p>
-      <ul style="font-size: 0.85rem; color: #555; margin-bottom: 1rem;">
-        <li>🎨 Color sorting with everyday objects</li>
-        <li>🔺 Shape hunt around the room</li>
-        <li>🖍️ Create shape art with crayons</li>
-      </ul>
-      <div style="background: #f0f9f4; padding: 0.8rem; border-radius: 0.3rem; font-size: 0.8rem; color: var(--green);">
-        <strong>Materials needed:</strong> Paper, crayons, colored blocks, shape stickers
-      </div>
-    </div>
-    <p style="color: #666; font-size: 0.9rem; margin-top: 1rem;">This is what your AI-generated preschool curriculum creator produces!</p>
-  </div>
-</section>
-
-<section class="ai-limits-section" style="background: #f8f9fa; padding: 2rem; border-radius: 1rem; margin: 2rem 0; text-align: center;">
-  <h3 style="color: var(--green);">🎁 Try the AI Generator Free</h3>
-  <p style="margin-bottom: 1.5rem;">Free users get <strong>3 AI lesson plans per month</strong> to test our system</p>
-  <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-    <a href="#ai-form" class="btn btn-primary">Generate Your First Plan</a>
-    <a href="pricing.html" class="btn btn-secondary">Upgrade for Unlimited → $19.99/month</a>
   </div>
 </section>
 
@@ -699,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     e.preventDefault();
     
     if (aiGenerationCount >= maxFreeGenerations) {
-      output.innerHTML = '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Premium</a> for just $21.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>';
+      output.innerHTML = '🔒 <b>Free trial complete!</b><br><br>You\'ve used all 3 free AI lesson plans. <a href="pricing.html" style="color: var(--green); font-weight: bold;">Upgrade to Premium</a> for just $19.99/month to generate unlimited personalized activities!<br><br><small>💡 Includes access to our full activity library and cloud saving!</small>';
       output.style.display = 'block';
       return;
     }
@@ -708,6 +323,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const theme = document.getElementById('theme').value;
     const skill = document.getElementById('skill').value;
     const duration = document.getElementById('duration').value;
+    
+    if (!age || !theme || !skill || !duration) {
+      output.innerHTML = '⚠️ Please fill in all fields to generate your lesson plan.';
+      output.style.display = 'block';
+      return;
+    }
     
     // Simulate AI generation
     output.innerHTML = '<div style="text-align: center; padding: 1rem;"><div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div><p>Generating your custom lesson plan...</p></div>';

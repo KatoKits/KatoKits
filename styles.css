@@ -341,6 +341,112 @@ nav a.active::before {
   color: white;
 }
 
+/* Comparison Table Styles */
+.comparison-table-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.comparison-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.comparison-table th, 
+.comparison-table td {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, var(--green) 0%, var(--dark-green) 100%);
+  color: white;
+  font-weight: 800;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.comparison-table td span {
+  font-size: 1.2rem;
+}
+
+/* Override button styles to ensure consistency */
+.btn-primary {
+  background: linear-gradient(135deg, var(--peach) 0%, #ff7b32 100%) !important;
+  color: white !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff7b32 0%, var(--peach) 100%) !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: white;
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--green);
+  color: white;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+.btn-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-small);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-purple:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  transform: translateY(-2px);
+}
+
 /* Enhanced Section Styling */
 .section {
   text-align: center;
