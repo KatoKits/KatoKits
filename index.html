@@ -35,7 +35,8 @@
 </header>
 
 <!-- Hero Section -->
-<section class="hero-section">
+<main>
+<section class="hero-section" aria-label="Hero">
   <div class="container">
     <div class="hero-container">
       <div class="hero-content">
@@ -43,7 +44,7 @@
         <p class="hero-subtitle">Designed by educators. Built for parents, daycares, homeschoolers & schools. Try 3 free lesson kits today.</p>
         
         <div class="hero-button-container">
-          <a href="ai.html" class="btn btn-primary btn-large">🎁 Generate 3 Free Lessons</a>
+          <a href="ai.html" class="btn btn-primary btn-large" aria-label="Get 3 free lesson plans">🎁 Generate 3 Free Lessons</a>
         </div>
         
         <p class="hero-disclaimer">No credit card needed • Instant download</p>
@@ -55,7 +56,7 @@
         </div>
       </div>
 
-      <div class="hero-visual">
+      <aside class="hero-visual" aria-label="Preview of lesson plan content">
         <div class="hero-image-placeholder">
           <div class="preview-cards">
             <div class="preview-card">📄 Lesson Plan</div>
@@ -64,52 +65,53 @@
           </div>
           <p class="preview-text">Preview of AI lesson kits</p>
         </div>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- Key Features Section -->
-<section class="section">
+<section class="section" aria-label="Key Features">
   <div class="container">
     <div class="clean-text-box">
       <h2>Why Educators Choose KatoKits</h2>
       <p>Professional lesson planning made simple with AI technology</p>
     </div>
     
-    <div class="grid">
-      <div class="card feature-card">
-        <div class="feature-icon">🤖</div>
+    <div class="grid" role="list">
+      <article class="card feature-card" role="listitem">
+        <div class="feature-icon" aria-hidden="true">🤖</div>
         <h3>AI-Powered Generation</h3>
         <p>Create custom lesson plans in seconds with our advanced AI. Tailored to specific age groups, themes, and learning objectives.</p>
-      </div>
+      </article>
       
-      <div class="card feature-card">
-        <div class="feature-icon">📄</div>
+      <article class="card feature-card" role="listitem">
+        <div class="feature-icon" aria-hidden="true">📄</div>
         <h3>Complete Printable Kits</h3>
         <p>Every plan includes ready-to-print activities, worksheets, and detailed materials lists. No additional prep work needed.</p>
-      </div>
+      </article>
       
-      <div class="card feature-card">
-        <div class="feature-icon">👩‍🏫</div>
+      <article class="card feature-card" role="listitem">
+        <div class="feature-icon" aria-hidden="true">👩‍🏫</div>
         <h3>Educator-Designed</h3>
         <p>Created by early childhood educators who understand real classroom needs. All content is curriculum-aligned.</p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- Free Starter Kit Section -->
-<section class="section">
+<section class="section" aria-label="Free Starter Kit Offer">
   <div class="container">
     <div class="clean-text-box freebie-card">
       <div class="freebie-content">
-        <div class="freebie-icon">🎁</div>
+        <div class="freebie-icon" aria-hidden="true">🎁</div>
         <h2>Get Your Free Starter Kit</h2>
         <p>Download our "Colors & Shapes Discovery Kit" instantly - perfect for ages 2-4. Includes activities, printables, and materials list.</p>
         
-        <form class="freebie-form">
-          <input type="email" name="email" placeholder="Enter your email for instant access" required class="freebie-email">
+        <form class="freebie-form" aria-label="Download free starter kit">
+          <label for="freebie-email" class="sr-only">Enter your email for instant access</label>
+          <input type="email" id="freebie-email" name="email" placeholder="Enter your email for instant access" required class="freebie-email">
           <button type="submit" class="btn btn-primary">Download Free Kit</button>
         </form>
         
@@ -124,58 +126,58 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="section">
+<section class="section" aria-label="Customer Testimonials">
   <div class="container">
     <div class="clean-text-box">
       <h2>Trusted by Thousands of Educators</h2>
       <p>See how KatoKits is transforming lesson planning for teachers worldwide</p>
     </div>
     
-    <div class="grid">
-      <div class="card testimonial-card">
-        <div class="quote-mark">"</div>
-        <p>KatoKits saved me 10+ hours every week. The AI generates exactly what I need for my preschoolers, and the printables are classroom-ready!</p>
-        <div class="testimonial-author">
-          <strong>Sarah Martinez</strong>
+    <div class="grid" role="list">
+      <article class="card testimonial-card" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <blockquote cite="Sarah Martinez">KatoKits saved me 10+ hours every week. The AI generates exactly what I need for my preschoolers, and the printables are classroom-ready!</blockquote>
+        <footer class="testimonial-author">
+          <cite><strong>Sarah Martinez</strong></cite>
           <span>Preschool Teacher, Little Minds Academy</span>
-        </div>
-      </div>
+        </footer>
+      </article>
       
-      <div class="card testimonial-card">
-        <div class="quote-mark">"</div>
-        <p>I upgraded after one use! The quality and customization options are incredible. My lesson planning stress is completely gone.</p>
-        <div class="testimonial-author">
-          <strong>Jennifer Thompson</strong>
+      <article class="card testimonial-card" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <blockquote cite="Jennifer Thompson">I upgraded after one use! The quality and customization options are incredible. My lesson planning stress is completely gone.</blockquote>
+        <footer class="testimonial-author">
+          <cite><strong>Jennifer Thompson</strong></cite>
           <span>Homeschool Mom & Former Teacher</span>
-        </div>
-      </div>
+        </footer>
+      </article>
       
-      <div class="card testimonial-card">
-        <div class="quote-mark">"</div>
-        <p>Our entire daycare center uses KatoKits now. The activities keep kids engaged and align perfectly with our curriculum standards.</p>
-        <div class="testimonial-author">
-          <strong>David Rodriguez</strong>
+      <article class="card testimonial-card" role="listitem">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <blockquote cite="David Rodriguez">Our entire daycare center uses KatoKits now. The activities keep kids engaged and align perfectly with our curriculum standards.</blockquote>
+        <footer class="testimonial-author">
+          <cite><strong>David Rodriguez</strong></cite>
           <span>Daycare Director, Bright Futures Learning</span>
-        </div>
-      </div>
+        </footer>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- Pricing Preview Section -->
-<section class="section pricing-preview">
+<section class="section pricing-preview" aria-label="Pricing Plans">
   <div class="container">
     <div class="clean-text-box">
       <h2>Choose Your Perfect Plan</h2>
       <p>Start free and upgrade as your needs grow</p>
     </div>
     
-    <div class="pricing-grid">
-      <div class="card pricing-card">
-        <div class="plan-header">
+    <div class="pricing-grid" role="list">
+      <article class="card pricing-card" role="listitem">
+        <header class="plan-header">
           <h3 class="plan-name">Library Access</h3>
           <div class="plan-price">$9.99<span>/month</span></div>
-        </div>
+        </header>
         <ul class="plan-features">
           <li>✅ 5 AI lesson plans/month</li>
           <li>✅ Full library access</li>
@@ -183,13 +185,13 @@
           <li>✅ Download unlimited</li>
         </ul>
         <a href="pricing.html" class="btn btn-outline btn-full">Choose Library</a>
-      </div>
+      </article>
 
-      <div class="card pricing-card">
-        <div class="plan-header">
+      <article class="card pricing-card" role="listitem">
+        <header class="plan-header">
           <h3 class="plan-name">Basic</h3>
           <div class="plan-price">$12.99<span>/month</span></div>
-        </div>
+        </header>
         <ul class="plan-features">
           <li>✅ 25 AI lesson plans/month</li>
           <li>✅ Full library access</li>
@@ -197,14 +199,14 @@
           <li>✅ Save favorites</li>
         </ul>
         <a href="pricing.html" class="btn btn-outline btn-full">Choose Basic</a>
-      </div>
+      </article>
 
-      <div class="card pricing-card featured">
+      <article class="card pricing-card featured" role="listitem">
         <div class="plan-badge">Most Popular</div>
-        <div class="plan-header">
+        <header class="plan-header">
           <h3 class="plan-name">Premium</h3>
           <div class="plan-price">$21.99<span>/month</span></div>
-        </div>
+        </header>
         <ul class="plan-features">
           <li>✅ Unlimited AI lesson plans</li>
           <li>✅ Cloud storage & editing</li>
@@ -212,13 +214,13 @@
           <li>✅ Priority support</li>
         </ul>
         <a href="pricing.html" class="btn btn-primary btn-full">Choose Premium</a>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- Final CTA Section -->
-<section class="section cta-section">
+<section class="section cta-section" aria-label="Call to Action">
   <div class="container">
     <div class="cta-card">
       <h2>Ready to Transform Your Teaching?</h2>
@@ -237,6 +239,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <div id="ai-free-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.35); z-index:9999; justify-content:center; align-items:center;">
   <div style="background:#fff; border-radius:2rem; max-width:370px; width:90vw; padding:2.2rem 1.5rem 1.7rem 1.5rem; box-shadow:0 8px 32px #0003; text-align:center; position:relative;">

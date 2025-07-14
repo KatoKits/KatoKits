@@ -56,6 +56,86 @@ a:hover {
   color: var(--dark-green);
 }
 
+/* Screen Reader Only Class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Testimonial Styling */
+.testimonial-card {
+  position: relative;
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(80, 128, 94, 0.1);
+}
+
+.testimonial-author cite {
+  font-style: normal;
+}
+
+.testimonial-author span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--green);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* Pricing Card Headers */
+.plan-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Additional Button Styles */
+.btn-full {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Feature Icons */
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
+/* Quote Mark Styling */
+.quote-mark {
+  font-size: 3rem;
+  color: var(--peach);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
 /* Container and Layout Classes */
 .container {
   max-width: 1200px;
