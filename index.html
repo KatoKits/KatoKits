@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/x-icon" href="images/katokits-logo.png">
   <title>KatoKits | AI Lesson Plans & Printables for Preschool Teachers</title>
-  <meta name="description" content="Generate custom preschool lesson plans in seconds. Includes printables, materials list, strategies & objectives. Try 3 for free." />
+  <meta name="description" content="Generate custom preschool lesson plans in seconds with AI. Interactive activities, printables, materials list, and learning objectives. Mobile-friendly design for educators." />
+  <meta name="keywords" content="AI lesson plans, preschool activities, educational printables, teacher resources, mobile learning, interactive curriculum" />
+  <meta name="author" content="KatoKits - Educator-Designed AI Learning Tools" />
+  <meta property="og:title" content="KatoKits | AI-Powered Preschool Lesson Plans" />
+  <meta property="og:description" content="Create engaging lesson plans instantly with our AI generator. Perfect for teachers, parents, and educators." />
+  <meta property="og:type" content="website" />
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +23,7 @@
     </div>
     <div class="logo">KatoKits</div>
     <nav>
-      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">☰</button>
       <div class="nav-links" id="navLinks">
         <a href="index.html" class="active">Home</a>
         <a href="pricing.html">Pricing & Add-ons</a>
@@ -43,7 +48,8 @@
         <p class="hero-subtitle">Designed by educators. Built for parents, daycares, homeschoolers & schools. Try 3 free lesson kits today.</p>
         
         <div class="hero-button-container">
-          <a href="ai.html" class="btn btn-primary btn-large">🎁 Generate 3 Free Lessons</a>
+          <a href="ai.html" class="btn btn-primary btn-large">🎁 Try AI Generator Free</a>
+          <a href="#enhanced-freebie-form" class="btn btn-secondary btn-large" onclick="document.getElementById('enhanced-freebie-form').scrollIntoView({behavior: 'smooth'})">Get Free Starter Kit</a>
         </div>
         
         <p class="hero-disclaimer">No credit card needed • Instant download</p>
@@ -99,25 +105,186 @@
   </div>
 </section>
 
-<!-- Free Starter Kit Section -->
+<!-- Interactive Features Section -->
 <section class="section">
+  <div class="container">
+    <div class="clean-text-box" style="text-align: center; margin-bottom: 3rem;">
+      <h2>🚀 Discover What Makes KatoKits Special</h2>
+      <p>Click each card to explore our comprehensive educational features</p>
+    </div>
+    
+    <div class="grid interactive-features">
+      <!-- AI Generator Feature Card -->
+      <div class="card feature-dropdown" id="ai-generator-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Lesson Generator <span class="dropdown-arrow">▼</span></h3>
+        <p class="feature-summary">Create custom lesson plans in seconds</p>
+        <div class="feature-details" style="display: none;">
+          <ul class="feature-list">
+            <li>✨ Instant lesson plan generation</li>
+            <li>🎯 Age-appropriate content (6 months - 6 years)</li>
+            <li>📚 Aligned with educational standards</li>
+            <li>🎨 Includes creative activities and crafts</li>
+            <li>📊 Built-in assessment tools</li>
+          </ul>
+          <a href="ai.html" class="btn btn-primary btn-small">Try AI Generator</a>
+        </div>
+      </div>
+
+      <!-- Printable Resources Card -->
+      <div class="card feature-dropdown" id="printables-card">
+        <div class="feature-icon">📄</div>
+        <h3>Complete Printable Kits <span class="dropdown-arrow">▼</span></h3>
+        <p class="feature-summary">Ready-to-use educational materials</p>
+        <div class="feature-details" style="display: none;">
+          <ul class="feature-list">
+            <li>🖨️ High-quality PDF printables</li>
+            <li>✂️ Cut-and-paste activities</li>
+            <li>🎨 Coloring sheets and worksheets</li>
+            <li>📋 Materials lists and prep guides</li>
+            <li>📱 Mobile-friendly formats</li>
+          </ul>
+          <a href="library.html" class="btn btn-primary btn-small">Browse Library</a>
+        </div>
+      </div>
+
+      <!-- Expert Support Card -->
+      <div class="card feature-dropdown" id="support-card">
+        <div class="feature-icon">👩‍🏫</div>
+        <h3>Educator Support <span class="dropdown-arrow">▼</span></h3>
+        <p class="feature-summary">Created by early childhood experts</p>
+        <div class="feature-details" style="display: none;">
+          <ul class="feature-list">
+            <li>👩‍💼 Designed by certified educators</li>
+            <li>🔬 Research-based methodologies</li>
+            <li>🎓 Curriculum alignment guidance</li>
+            <li>💬 Expert support community</li>
+            <li>📞 Priority customer service</li>
+          </ul>
+          <a href="about.html" class="btn btn-primary btn-small">Meet Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Signup Section -->
+<section class="section signup-section">
   <div class="container">
     <div class="clean-text-box freebie-card">
       <div class="freebie-content" style="text-align: center;">
         <div class="freebie-icon">🎁</div>
-        <h2>Get Your Free Starter Kit</h2>
-        <p>Download our "Colors & Shapes Discovery Kit" instantly - perfect for ages 2-4. Includes activities, printables, and materials list.</p>
+        <h2>Start Your Free Journey Today</h2>
+        <p><strong>Get instant access</strong> to our "Colors & Shapes Discovery Kit" - perfect for ages 2-4. Includes activities, printables, and detailed instructions.</p>
         
-        <form class="freebie-form" style="display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; flex-wrap: wrap;">
-          <input type="email" name="email" placeholder="Enter your email for instant access" required style="padding: 1rem; border-radius: 2rem; border: 2px solid var(--green); min-width: 250px;">
-          <button type="submit" class="btn btn-primary">Download Free Kit</button>
+        <form class="enhanced-freebie-form" id="enhanced-freebie-form" style="max-width: 400px; margin: 2rem auto;">
+          <div class="form-instructions" style="margin-bottom: 1rem; padding: 1rem; background: rgba(80, 128, 94, 0.1); border-radius: 0.5rem;">
+            <p style="margin: 0; font-size: 0.9rem; color: var(--green);">
+              📧 <strong>Quick Signup:</strong> Enter your email below to unlock your free starter kit and gain access to our AI lesson generator!
+            </p>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" name="email" id="signup-email" placeholder="Enter your email for instant access" required 
+                   style="width: 100%; padding: 1rem; border-radius: 2rem; border: 2px solid var(--green); margin-bottom: 1rem; box-sizing: border-box;">
+            <div class="email-validation" id="email-validation" style="display: none; font-size: 0.8rem; margin-top: 0.5rem;"></div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full" style="width: 100%; margin-bottom: 1rem;">
+            🚀 Get Free Kit & AI Access
+          </button>
+          
+          <div class="signup-benefits" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font-size: 0.9rem;">
+            <span>✅ No spam ever</span>
+            <span>✅ Instant download</span>
+            <span>✅ Cancel anytime</span>
+          </div>
         </form>
-        
-        <div class="freebie-benefits" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <span>✅ No spam</span>
-          <span>✅ Instant download</span>
-          <span>✅ Cancel anytime</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Generator UI Section (Hidden until after signup) -->
+<section class="section generator-ui-section" id="generator-ui" style="display: none;">
+  <div class="container">
+    <div class="clean-text-box" style="max-width: 600px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1.5rem;">🎯 Create Your Custom Lesson Plan</h2>
+      <p style="text-align: center; margin-bottom: 2rem;">Now that you're signed up, let's create something amazing for your students!</p>
+      
+      <form class="generator-form" id="generator-form">
+        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group">
+            <label for="student-age" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--green);">Student Age</label>
+            <select id="student-age" name="age" required style="width: 100%; padding: 0.8rem; border: 2px solid var(--green); border-radius: 0.5rem; background: white;">
+              <option value="">Select age range</option>
+              <option value="infant">Infants (6-12 months)</option>
+              <option value="toddler">Toddlers (1-2 years)</option>
+              <option value="preschool">Preschoolers (3-4 years)</option>
+              <option value="prekindergarten">Pre-K (4-5 years)</option>
+              <option value="kindergarten">Kindergarten (5-6 years)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="lesson-theme" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--green);">Theme</label>
+            <select id="lesson-theme" name="theme" required style="width: 100%; padding: 0.8rem; border: 2px solid var(--green); border-radius: 0.5rem; background: white;">
+              <option value="">Choose a theme</option>
+              <option value="animals">Animals & Nature</option>
+              <option value="colors">Colors & Shapes</option>
+              <option value="numbers">Numbers & Counting</option>
+              <option value="letters">Letters & Reading</option>
+              <option value="science">Science & Discovery</option>
+              <option value="seasons">Seasons & Weather</option>
+              <option value="community">Community Helpers</option>
+              <option value="emotions">Feelings & Emotions</option>
+            </select>
+          </div>
         </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="learning-goals" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--green);">Learning Goals</label>
+          <div class="goals-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem;">
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="fine-motor" style="margin-right: 0.5rem;">
+              <span>Fine Motor Skills</span>
+            </label>
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="gross-motor" style="margin-right: 0.5rem;">
+              <span>Gross Motor Skills</span>
+            </label>
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="cognitive" style="margin-right: 0.5rem;">
+              <span>Cognitive Development</span>
+            </label>
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="social" style="margin-right: 0.5rem;">
+              <span>Social-Emotional</span>
+            </label>
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="language" style="margin-right: 0.5rem;">
+              <span>Language & Communication</span>
+            </label>
+            <label class="goal-option" style="display: flex; align-items: center; padding: 0.5rem; border: 1px solid #ddd; border-radius: 0.3rem; cursor: pointer;">
+              <input type="checkbox" name="goals" value="creative" style="margin-right: 0.5rem;">
+              <span>Creative Expression</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 2rem;">
+          <label for="custom-notes" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--green);">Additional Notes (Optional)</label>
+          <textarea id="custom-notes" name="notes" placeholder="Any specific requirements, materials you have available, or special considerations..." 
+                    style="width: 100%; padding: 0.8rem; border: 2px solid var(--green); border-radius: 0.5rem; resize: vertical; min-height: 80px; box-sizing: border-box;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+          🚀 Generate My Lesson Plan
+        </button>
+      </form>
+
+      <div class="generation-result" id="generation-result" style="display: none; margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 1rem; border-left: 4px solid var(--green);">
+        <!-- Generated content will appear here -->
       </div>
     </div>
   </div>
@@ -382,6 +549,15 @@ function toggleReviews() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize interactive features
+  initializeInteractiveFeatures();
+  
+  // Initialize form validation
+  initializeFormValidation();
+  
+  // Initialize generator UI
+  initializeGeneratorUI();
+  
   // AI Modal Logic
   if (!hasUsedAIFreeTrial()) {
     setTimeout(showAIModal, 1200);
@@ -398,35 +574,189 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('katokits_email_signedup', 'true');
     localStorage.setItem('katokits_free_uses', '0');
     hideAIModal();
-    alert('You now have 3 free AI uses! Visit the AI Generator page.');
+    showGeneratorUI();
+    alert('You now have 3 free AI uses! Visit the AI Generator page or use the tool below.');
   };
   
-  // Freebie form submission
-  const freebieForm = document.getElementById('freebie-form');
-  if (freebieForm) {
-    freebieForm.onsubmit = function(e) {
+  // Enhanced freebie form submission
+  const enhancedFreebieForm = document.getElementById('enhanced-freebie-form');
+  if (enhancedFreebieForm) {
+    enhancedFreebieForm.onsubmit = function(e) {
       e.preventDefault();
       const email = this.email.value;
-      localStorage.setItem('katokits_freebie_downloaded', 'true');
-      localStorage.setItem('katokits_email', email);
-      alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
+      if (validateEmail(email)) {
+        localStorage.setItem('katokits_freebie_downloaded', 'true');
+        localStorage.setItem('katokits_email', email);
+        localStorage.setItem('katokits_signed_up', 'true');
+        showGeneratorUI();
+        alert('Welcome! Check your email for the free starter kit. You can now use the AI generator below!');
+      }
     };
   }
   
   document.getElementById('login-form').onsubmit = function(e) {
     e.preventDefault();
-    // TODO: Implement actual login logic
     alert('Login functionality will be implemented with backend integration');
     hideLoginModal();
   };
   
   document.getElementById('signup-form').onsubmit = function(e) {
     e.preventDefault();
-    // TODO: Implement actual signup logic
-    alert('Signup functionality will be implemented with backend integration');
+    localStorage.setItem('katokits_signed_up', 'true');
+    showGeneratorUI();
+    alert('Welcome to KatoKits! You can now use the AI generator below.');
     hideSignupModal();
   };
 });
+
+// Interactive Features Functions
+function initializeInteractiveFeatures() {
+  const featureCards = document.querySelectorAll('.feature-dropdown');
+  
+  featureCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const details = this.querySelector('.feature-details');
+      const arrow = this.querySelector('.dropdown-arrow');
+      
+      // Close all other cards
+      featureCards.forEach(otherCard => {
+        if (otherCard !== this) {
+          otherCard.classList.remove('active');
+          const otherDetails = otherCard.querySelector('.feature-details');
+          const otherArrow = otherCard.querySelector('.dropdown-arrow');
+          if (otherDetails) otherDetails.style.display = 'none';
+        }
+      });
+      
+      // Toggle current card
+      this.classList.toggle('active');
+      if (details) {
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  });
+}
+
+// Form Validation Functions
+function initializeFormValidation() {
+  const emailInput = document.getElementById('signup-email');
+  const validation = document.getElementById('email-validation');
+  
+  if (emailInput && validation) {
+    emailInput.addEventListener('input', function() {
+      const email = this.value;
+      const isValid = validateEmail(email);
+      
+      validation.style.display = email.length > 0 ? 'block' : 'none';
+      
+      if (email.length > 0) {
+        if (isValid) {
+          validation.className = 'email-validation valid';
+          validation.textContent = '✅ Great! This email looks perfect.';
+        } else {
+          validation.className = 'email-validation invalid';
+          validation.textContent = '❌ Please enter a valid email address.';
+        }
+      }
+    });
+  }
+}
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Generator UI Functions
+function initializeGeneratorUI() {
+  const generatorForm = document.getElementById('generator-form');
+  if (generatorForm) {
+    generatorForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      generateLessonPlan();
+    });
+  }
+  
+  // Check if user is already signed up
+  if (localStorage.getItem('katokits_signed_up') === 'true') {
+    showGeneratorUI();
+  }
+}
+
+function showGeneratorUI() {
+  const generatorSection = document.getElementById('generator-ui');
+  if (generatorSection) {
+    generatorSection.style.display = 'block';
+    generatorSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function generateLessonPlan() {
+  const form = document.getElementById('generator-form');
+  const result = document.getElementById('generation-result');
+  const age = form.age.value;
+  const theme = form.theme.value;
+  const goals = Array.from(form.querySelectorAll('input[name="goals"]:checked')).map(cb => cb.value);
+  const notes = form.notes.value;
+  
+  if (!age || !theme) {
+    alert('Please select both age and theme to generate your lesson plan.');
+    return;
+  }
+  
+  // Show loading state
+  result.style.display = 'block';
+  result.innerHTML = `
+    <div style="text-align: center; padding: 2rem;">
+      <div style="font-size: 2rem; margin-bottom: 1rem;">🤖</div>
+      <h3 style="color: var(--green);">Generating Your Custom Lesson Plan...</h3>
+      <p>Please wait while our AI creates the perfect activities for your students.</p>
+    </div>
+  `;
+  
+  // Simulate AI generation
+  setTimeout(() => {
+    const ageText = form.querySelector(`option[value="${age}"]`).textContent;
+    const themeText = form.querySelector(`option[value="${theme}"]`).textContent;
+    const goalsList = goals.map(g => g.replace('-', ' ')).join(', ');
+    
+    result.innerHTML = `
+      <h3 style="color: var(--green); margin-bottom: 1rem;">🎯 ${themeText} Lesson Plan</h3>
+      <div style="margin-bottom: 1rem;">
+        <h4 style="color: var(--green);">Student Age:</h4>
+        <p>${ageText}</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h4 style="color: var(--green);">Learning Objectives:</h4>
+        <ul>
+          <li>Explore ${themeText.toLowerCase()} through hands-on activities</li>
+          <li>Develop ${goalsList || 'multiple developmental areas'}</li>
+          <li>Encourage creative expression and critical thinking</li>
+          <li>Build social skills through group activities</li>
+        </ul>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h4 style="color: var(--green);">Suggested Activities:</h4>
+        <ul>
+          <li>🎨 ${themeText} Art & Craft Station</li>
+          <li>🎵 ${themeText} Songs & Movement</li>
+          <li>📚 ${themeText} Story Time & Discussion</li>
+          <li>🎯 ${themeText} Learning Games</li>
+          <li>🔬 ${themeText} Discovery & Exploration</li>
+        </ul>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h4 style="color: var(--green);">Materials Needed:</h4>
+        <p>Construction paper, crayons, safety scissors, glue sticks, printed worksheets, ${theme}-related props and manipulatives</p>
+      </div>
+      ${notes ? `<div style="margin-bottom: 1rem;"><h4 style="color: var(--green);">Your Notes:</h4><p>${notes}</p></div>` : ''}
+      <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0e0e0;">
+        <a href="ai.html" class="btn btn-primary" style="margin-right: 1rem;">Create More Plans</a>
+        <a href="pricing.html" class="btn btn-secondary">Upgrade for Unlimited Access</a>
+      </div>
+    `;
+  }, 2000);
+}
 </script>
 </body>
 </html>
