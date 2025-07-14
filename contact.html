@@ -136,50 +136,6 @@
   </div>
 </footer>
 
-<script>
-  // Enhanced form submission handler with real backend integration
-  document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    const statusDiv = document.getElementById('form-status');
-    const submitBtn = this.querySelector('button[type="submit"]');
-    
-    // Show loading state
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    statusDiv.style.display = 'block';
-    statusDiv.style.backgroundColor = '#e3f2fd';
-    statusDiv.style.color = '#1976d2';
-    statusDiv.textContent = 'Sending your message...';
-    
-    // If using Formspree or similar service, let the form submit naturally
-    // For now, we'll prevent default and show success message
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Simple validation
-    if (!data.name || !data._replyto || !data.subject || !data.message) {
-      statusDiv.style.backgroundColor = '#ffebee';
-      statusDiv.style.color = '#c62828';
-      statusDiv.textContent = 'Please fill in all required fields.';
-      submitBtn.textContent = 'Send Message';
-      submitBtn.disabled = false;
-      return;
-    }
-    
-    // Simulate form submission (replace with actual backend call)
-    setTimeout(() => {
-      statusDiv.style.backgroundColor = '#e8f5e8';
-      statusDiv.style.color = '#2e7d32';
-      statusDiv.innerHTML = '✅ Thank you for your message! We\'ll get back to you within 24 hours.<br><br>For quick questions, you can also reach us on <a href="https://www.instagram.com/katokitsdigital/" target="_blank" style="color: #2e7d32; text-decoration: underline;">Instagram @katokitsdigital</a>';
-      
-      // Reset form
-      this.reset();
-      submitBtn.textContent = 'Send Message';
-      submitBtn.disabled = false;
-    }, 1500);
-  });
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>

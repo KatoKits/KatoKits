@@ -278,43 +278,6 @@
   </div>
 </footer>
 
-<script>
-function toggleMobileMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('mobile-open');
-}
-
-function showLoginModal() {
-  alert('Login functionality will be implemented with backend integration');
-}
-
-function showSignupModal() {
-  alert('Signup functionality will be implemented with backend integration');
-}
-
-function filterLibrary() {
-  const ageFilter = document.getElementById('age-filter').value;
-  const subjectFilter = document.getElementById('subject-filter').value;
-  const themeFilter = document.getElementById('theme-filter').value;
-  
-  const cards = document.querySelectorAll('.library-card');
-  
-  cards.forEach(card => {
-    const age = card.dataset.age;
-    const subject = card.dataset.subject;
-    const theme = card.dataset.theme;
-    
-    const ageMatch = !ageFilter || age === ageFilter;
-    const subjectMatch = !subjectFilter || subject === subjectFilter;
-    const themeMatch = !themeFilter || theme === themeFilter;
-    
-    if (ageMatch && subjectMatch && themeMatch) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-}
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
