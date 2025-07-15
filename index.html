@@ -9,6 +9,7 @@
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/auth-api.js"></script>
 </head>
 <body>
 <header>
@@ -285,6 +286,8 @@
       <button type="submit" class="btn">Sign In</button>
     </form>
     
+    <div id="auth-status" class="auth-status"></div>
+    
     <p class="modal-link">
       Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a>
     </p>
@@ -300,8 +303,15 @@
     
     <form id="signup-form" class="modal-form">
       <input type="email" name="email" placeholder="Enter your email address" required>
+      <input type="password" name="password" placeholder="Create a password" required>
       <button type="submit" class="btn">Get Started Now!</button>
     </form>
+    
+    <div id="auth-status" class="auth-status"></div>
+    
+    <p class="modal-link">
+      Already have an account? <a href="#" onclick="switchToLogin()">Sign in here</a>
+    </p>
     
     <small class="modal-disclaimer">✅ Free to start • ✅ Cancel anytime • ✅ Instant access</small>
   </div>
@@ -351,18 +361,22 @@ function toggleMobileMenu() {
 // --- Authentication Functions ---
 function showLoginModal() {
   document.getElementById('login-modal').style.display = 'flex';
+  clearAuthStatus();
 }
 
 function hideLoginModal() {
   document.getElementById('login-modal').style.display = 'none';
+  clearAuthStatus();
 }
 
 function showSignupModal() {
   document.getElementById('signup-modal').style.display = 'flex';
+  clearAuthStatus();
 }
 
 function hideSignupModal() {
   document.getElementById('signup-modal').style.display = 'none';
+  clearAuthStatus();
 }
 
 function switchToSignup() {
@@ -375,17 +389,124 @@ function switchToLogin() {
   showLoginModal();
 }
 
-// Simple authentication placeholder functions (social auth removed for simplicity)
+function clearAuthStatus() {
+  const statusDivs = document.querySelectorAll('.auth-status');
+  statusDivs.forEach(div => {
+    div.innerHTML = '';
+    div.className = 'auth-status';
+  });
+}
+
+function showAuthStatus(message, isError = false) {
+  const statusDivs = document.querySelectorAll('.auth-status');
+  statusDivs.forEach(div => {
+    div.innerHTML = message;
+    div.className = isError ? 'auth-status error' : 'auth-status success';
+  });
+}
+
+// --- Updated Authentication Handlers ---
+async function handleLogin(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  try {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Signing in...';
+    showAuthStatus('Signing you in...', false);
+
+    await katoAPI.login(email, password);
+    
+    showAuthStatus('Login successful! Redirecting...', false);
+    setTimeout(() => {
+      hideLoginModal();
+      katoAPI.updateAuthButtons();
+      window.location.reload();
+    }, 1000);
+  } catch (error) {
+    showAuthStatus(`Login failed: ${error.message}`, true);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Sign In';
+  }
+}
+
+async function handleSignup(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  try {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Creating account...';
+    showAuthStatus('Creating your account...', false);
+
+    await katoAPI.signup(email, password);
+    
+    showAuthStatus('Account created successfully! You now have 3 free AI generations.', false);
+    setTimeout(() => {
+      hideSignupModal();
+      katoAPI.updateAuthButtons();
+      window.location.reload();
+    }, 2000);
+  } catch (error) {
+    showAuthStatus(`Signup failed: ${error.message}`, true);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Get Started Now!';
+  }
+}
+
+// --- Email Capture Functions ---
+async function handleEmailCapture(event) {
+  event.preventDefault();
+  const form = event.target;
+  const email = form.email.value;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  try {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Processing...';
+
+    const result = await katoAPI.captureEmail(email);
+    
+    alert(`Welcome to KatoKits! You now have ${result.free_trial_uses} free AI lesson plan generations. Visit the AI Generator to start creating!`);
+    form.reset();
+  } catch (error) {
+    alert(`Failed to capture email: ${error.message}`);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = form.dataset.originalText || 'Get Started';
+  }
+}
 
 // --- AI Free Modal Logic ---
 function showAIModal() {
-  document.getElementById('ai-free-modal').style.display = 'flex';
+  if (!katoAPI.isAuthenticated()) {
+    document.getElementById('ai-free-modal').style.display = 'flex';
+  }
 }
+
 function hideAIModal() {
   document.getElementById('ai-free-modal').style.display = 'none';
 }
-function hasUsedAIFreeTrial() {
-  return localStorage.getItem('katokits_free_uses') > 0 || localStorage.getItem('katokits_email_signedup') === 'true';
+
+async function hasUsedAIFreeTrial() {
+  if (katoAPI.isAuthenticated()) {
+    try {
+      const usage = await katoAPI.getAIUsage();
+      return usage.free_trial_uses <= 0 && usage.subscription_plan === 'free';
+    } catch (error) {
+      return false;
+    }
+  }
+  // For non-authenticated users, always show the modal
+  return false;
 }
 
 // --- Reviews Toggle Function ---
@@ -402,10 +523,16 @@ function toggleReviews() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // AI Modal Logic
-  if (!hasUsedAIFreeTrial()) {
-    setTimeout(showAIModal, 1200);
+document.addEventListener('DOMContentLoaded', async function() {
+  // Update auth buttons on page load
+  katoAPI.updateAuthButtons();
+  
+  // AI Modal Logic - only show for non-authenticated users
+  if (!katoAPI.isAuthenticated()) {
+    const shouldShowModal = !(await hasUsedAIFreeTrial());
+    if (shouldShowModal) {
+      setTimeout(showAIModal, 1200);
+    }
   }
   
   // Close button events
@@ -414,54 +541,89 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('close-signup-modal').onclick = hideSignupModal;
   
   // Form submissions
-  document.getElementById('ai-free-form').onsubmit = function(e) {
+  document.getElementById('login-form').onsubmit = handleLogin;
+  document.getElementById('signup-form').onsubmit = handleSignup;
+  
+  document.getElementById('ai-free-form').onsubmit = async function(e) {
     e.preventDefault();
-    localStorage.setItem('katokits_email_signedup', 'true');
-    localStorage.setItem('katokits_free_uses', '0');
-    hideAIModal();
-    alert('You now have 3 free AI uses! Visit the AI Generator page.');
+    const email = this.email.value;
+    
+    try {
+      await katoAPI.captureEmail(email);
+      hideAIModal();
+      alert('You now have 3 free AI uses! Visit the AI Generator page.');
+    } catch (error) {
+      alert(`Failed to process request: ${error.message}`);
+    }
   };
   
   // Freebie form submission
   const freebieForm = document.getElementById('freebie-form');
   if (freebieForm) {
-    freebieForm.onsubmit = function(e) {
+    freebieForm.onsubmit = async function(e) {
       e.preventDefault();
       const email = this.email.value;
-      localStorage.setItem('katokits_freebie_downloaded', 'true');
-      localStorage.setItem('katokits_email', email);
-      alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
+      
+      try {
+        await katoAPI.captureEmail(email);
+        alert('Thank you! Check your email for the free Colors & Shapes Discovery Kit!');
+      } catch (error) {
+        alert(`Failed to process request: ${error.message}`);
+      }
     };
   }
   
   // Email CTA form submission
   const emailCtaForm = document.getElementById('email-cta-form');
   if (emailCtaForm) {
-    emailCtaForm.onsubmit = function(e) {
-      e.preventDefault();
-      const email = this.email.value;
-      localStorage.setItem('katokits_email_signup', 'true');
-      localStorage.setItem('katokits_email', email);
-      localStorage.setItem('katokits_free_uses', '3');
-      alert('Welcome to KatoKits! You now have 3 free AI lesson plan generations. Visit the AI Generator to start creating!');
-      this.reset();
-    };
+    emailCtaForm.onsubmit = handleEmailCapture;
+    // Store original button text
+    const button = emailCtaForm.querySelector('button[type="submit"]');
+    if (button) {
+      emailCtaForm.dataset.originalText = button.textContent;
+    }
   }
   
-  document.getElementById('login-form').onsubmit = function(e) {
-    e.preventDefault();
-    // TODO: Implement actual login logic
-    alert('Login functionality will be implemented with backend integration');
-    hideLoginModal();
-  };
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('mobile-open');
+  }
   
-  document.getElementById('signup-form').onsubmit = function(e) {
-    e.preventDefault();
-    // TODO: Implement actual signup logic
-    alert('Signup functionality will be implemented with backend integration');
-    hideSignupModal();
-  };
+  // Assign toggle function to button
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  if (mobileToggle) {
+    mobileToggle.onclick = toggleMobileMenu;
+  }
 });
 </script>
+
+<style>
+.auth-status {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.auth-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.auth-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.user-email {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+</style>
 </body>
 </html>

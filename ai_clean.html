@@ -7,6 +7,7 @@
   <meta name="description" content="Build custom preschool lesson plans in seconds! Use the KatoKits AI activity generator for personalized, playful, and curriculum-aligned ideas.">
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/auth-api.js"></script>
   <style>
     .ai-gen-form {
       max-width: 400px;
@@ -319,30 +320,25 @@
 </footer>
 
 <script>
-// --- AI Access Control ---
-function isPaidUser() {
-  return localStorage.getItem('katokits_paid') === 'true';
-}
-function getFreeTrialUses() {
-  return parseInt(localStorage.getItem('katokits_free_uses') || '0', 10);
-}
-function setFreeTrialUses(val) {
-  localStorage.setItem('katokits_free_uses', val);
+// --- Mobile Menu Toggle ---
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('mobile-open');
 }
 
+// --- AI Access Control (Updated for Backend) ---
 function showAIForm() {
   document.querySelector('.ai-gen-form').style.display = 'block';
-  document.getElementById('ai-locked').style.display = 'none';
-}
-function showLocked() {
-  document.querySelector('.ai-gen-form').style.display = 'none';
-  document.getElementById('ai-locked').style.display = 'block';
+  const lockedDiv = document.getElementById('ai-locked');
+  if (lockedDiv) lockedDiv.style.display = 'none';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Add locked message container if not present
-  if (!document.getElementById('ai-locked')) {
-    const lockedDiv = document.createElement('div');
+function showLocked() {
+  document.querySelector('.ai-gen-form').style.display = 'none';
+  let lockedDiv = document.getElementById('ai-locked');
+  if (!lockedDiv) {
+    // Create locked message if it doesn't exist
+    lockedDiv = document.createElement('div');
     lockedDiv.id = 'ai-locked';
     lockedDiv.innerHTML = `
       <div class="card" style="max-width: 600px; margin: 2rem auto; text-align: center;">
@@ -373,58 +369,152 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.querySelector('section.hero').appendChild(lockedDiv);
   }
+  lockedDiv.style.display = 'block';
+}
+
+// --- Initialize Page ---
+document.addEventListener('DOMContentLoaded', async function() {
+  // Update auth buttons
+  katoAPI.updateAuthButtons();
   
-  // Show/hide based on payment/free trial
-  if (isPaidUser()) {
-    showAIForm();
-  } else if (getFreeTrialUses() > 0 && getFreeTrialUses() <= 3) {
-    showAIForm();
-    document.querySelector('.ai-gen-form .btn').textContent = `Generate Plan (${3-getFreeTrialUses()} free left)`;
-  } else {
-    showLocked();
+  try {
+    if (katoAPI.isAuthenticated()) {
+      // Check user's AI usage
+      const usage = await katoAPI.getAIUsage();
+      
+      if (usage.can_generate) {
+        showAIForm();
+        // Update button text to show remaining uses
+        const button = document.querySelector('.ai-gen-form .btn');
+        if (usage.subscription_plan === 'free' && usage.free_trial_uses > 0) {
+          button.textContent = `Generate Plan (${usage.free_trial_uses} free left)`;
+        } else if (usage.subscription_plan !== 'free') {
+          button.textContent = 'Generate Plan';
+        }
+      } else {
+        showLocked();
+      }
+    } else {
+      // For non-authenticated users, show form but check on submission
+      showAIForm();
+      const button = document.querySelector('.ai-gen-form .btn');
+      button.textContent = 'Generate Plan (Sign up for 3 free)';
+    }
+  } catch (error) {
+    console.error('Error checking AI usage:', error);
+    showAIForm(); // Default to showing form
   }
 });
 
-// --- AI Free Trial Logic ---
-document.querySelector('.ai-gen-form').onsubmit = function(e){
-  e.preventDefault();
-  if (!isPaidUser()) {
-    let uses = getFreeTrialUses();
-    if (uses >= 3) {
-      showLocked();
-      return;
+// --- AI Generation Form Handler ---
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.ai-gen-form').onsubmit = async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    try {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Generating...';
+      
+      // Check if user can generate
+      if (!katoAPI.isAuthenticated()) {
+        // Prompt for signup or email
+        const email = prompt('Enter your email to get 3 free AI lesson plans:');
+        if (!email) {
+          return;
+        }
+        
+        try {
+          await katoAPI.captureEmail(email);
+        } catch (error) {
+          alert(`Failed to capture email: ${error.message}`);
+          return;
+        }
+      }
+      
+      // Record AI usage first
+      const email = katoAPI.isAuthenticated() ? null : prompt('Enter your email:');
+      await katoAPI.recordAIUsage(email);
+      
+      // Get form data
+      const age = document.getElementById('age').value;
+      const domain = document.getElementById('domain').value;
+      const theme = document.getElementById('theme').value;
+      const setting = document.getElementById('setting').value;
+      
+      // Create prompt
+      const prompt = `Create a preschool lesson plan for ${age} children focusing on ${domain} learning. Theme: ${theme}. Setting: ${setting}.`;
+      
+      // Call AI generation API
+      const response = await fetch('/.netlify/functions/generateAIPlan', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(katoAPI.authToken ? { 'Authorization': `Bearer ${katoAPI.authToken}` } : {})
+        },
+        body: JSON.stringify({ 
+          prompt, 
+          email: katoAPI.isAuthenticated() ? null : email 
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Generation failed');
+      }
+      
+      // Display result
+      const output = document.querySelector('.ai-output');
+      output.style.display = 'block';
+      output.innerHTML = `
+        <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+          <h3 style="color: var(--green); margin-bottom: 1rem;">🎯 Your Custom Lesson Plan</h3>
+          <div style="white-space: pre-wrap; line-height: 1.6;">${data.plan}</div>
+        </div>
+      `;
+      
+      // Check if user has exceeded free limit
+      if (data.error && data.upgrade_required) {
+        showLocked();
+      }
+      
+    } catch (error) {
+      console.error('AI generation error:', error);
+      
+      if (error.message.includes('Free trial limit reached')) {
+        alert('You\'ve used all your free AI generations. Please upgrade to continue.');
+        showLocked();
+      } else {
+        alert(`AI generation failed: ${error.message}`);
+        
+        // Show sample content as fallback
+        const age = document.getElementById('age').value;
+        let sampleActivity = '';
+        if (age.includes('6-12 months')) {
+          sampleActivity = '🍼 <b>Infant Sensory Play:</b><br>Provide soft fabric squares in different textures for baby to explore with hands and mouth. Narrate what they\'re feeling: "This is bumpy! This is smooth!" Perfect for sensory development and early language exposure.';
+        } else if (age.includes('2-3 years')) {
+          sampleActivity = '🎨 <b>Process Art Creation:</b><br>Set up finger painting with just 2 colors. Let toddlers explore mixing and making marks. Focus on the process, not the product. Great for creativity and fine motor development!';
+        } else if (age.includes('3-4 years')) {
+          sampleActivity = '🌱 <b>Dramatic Play Garden:</b><br>Create a pretend garden with play vegetables, watering cans, and gardening tools. Children can "plant," "water," and "harvest." Builds language, social skills, and science concepts!';
+        } else if (age.includes('4-5 years')) {
+          sampleActivity = '📊 <b>Weather Graphing:</b><br>Track daily weather on a simple graph for a week. Children can draw symbols and count sunny vs. rainy days. Combines math, science, and data analysis skills!';
+        } else {
+          sampleActivity = '🌟 <b>Multi-Age Activity:</b><br>Set up a sensory bin with rice and hidden toys. Younger children explore textures while older ones can sort, count, or create stories with the objects they find!';
+        }
+        
+        const output = document.querySelector('.ai-output');
+        output.style.display = 'block';
+        output.innerHTML = sampleActivity + '<br><br><small>💡 This is a sample activity. Please try again or upgrade for full AI generation!</small>';
+      }
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
     }
-    setFreeTrialUses(uses + 1);
-    if (uses + 1 >= 3) {
-      showLocked();
-    }
-  }
-  const age = document.getElementById('age').value;
-  const domain = document.getElementById('domain').value;
-  const theme = document.getElementById('theme').value;
-  const setting = document.getElementById('setting').value;
-  const output = document.querySelector('.ai-output');
-  output.style.display = 'block';
-  let sampleActivity = '';
-  if (age.includes('6-12 months')) {
-    sampleActivity = '🍼 <b>Infant Sensory Play:</b><br>Provide soft fabric squares in different textures for baby to explore with hands and mouth. Narrate what they\'re feeling: "This is bumpy! This is smooth!" Perfect for sensory development and early language exposure.';
-  } else if (age.includes('12-18 months')) {
-    sampleActivity = '👶 <b>Toddler Discovery:</b><br>Fill a shallow bin with large, safe objects to dump and fill. Add a spoon for scooping practice. This builds fine motor skills, cause-and-effect understanding, and independence!';
-  } else if (age.includes('18-24 months')) {
-    sampleActivity = '🔵 <b>Shape Sorting Fun:</b><br>Use a simple shape sorter or make holes in a box lid. Start with just circles and squares. Celebrate each success to build confidence and shape recognition!';
-  } else if (age.includes('2-3 years')) {
-    sampleActivity = '🎨 <b>Process Art Creation:</b><br>Set up finger painting with just 2 colors. Let toddlers explore mixing and making marks. Focus on the process, not the product. Great for creativity and fine motor development!';
-  } else if (age.includes('3-4 years')) {
-    sampleActivity = '🌱 <b>Dramatic Play Garden:</b><br>Create a pretend garden with play vegetables, watering cans, and gardening tools. Children can "plant," "water," and "harvest." Builds language, social skills, and science concepts!';
-  } else if (age.includes('4-5 years')) {
-    sampleActivity = '📊 <b>Weather Graphing:</b><br>Track daily weather on a simple graph for a week. Children can draw symbols and count sunny vs. rainy days. Combines math, science, and data analysis skills!';
-  } else if (age.includes('5-6 years')) {
-    sampleActivity = '🔬 <b>Simple Science Experiment:</b><br>Mix baking soda and vinegar in a clear container. Children can predict, observe, and explain what happens. Perfect for developing scientific thinking and vocabulary!';
-  } else {
-    sampleActivity = '🌟 <b>Multi-Age Activity:</b><br>Set up a sensory bin with rice and hidden toys. Younger children explore textures while older ones can sort, count, or create stories with the objects they find!';
-  }
-  output.innerHTML = sampleActivity + '<br><br><small>💡 This is a sample activity. The full AI generator will create personalized activities based on all your selections!</small>';
-}
+  };
+});
 </script>
 </body>
 </html>
