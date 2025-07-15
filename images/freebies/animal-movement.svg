@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#ecfdf5" stroke="#d1fae5" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">Animal Movement Cards</text>
+  
+  <!-- Animal icons -->
+  <!-- Lion -->
+  <circle cx="75" cy="90" r="15" fill="#f59e0b"/>
+  <circle cx="70" cy="85" r="3" fill="#92400e"/>
+  <circle cx="80" cy="85" r="3" fill="#92400e"/>
+  <path d="M 65 95 Q 75 105 85 95" stroke="#92400e" stroke-width="2" fill="none"/>
+  
+  <!-- Rabbit -->
+  <ellipse cx="150" cy="100" rx="12" ry="15" fill="#d1d5db"/>
+  <ellipse cx="145" cy="80" rx="3" ry="8" fill="#d1d5db"/>
+  <ellipse cx="155" cy="80" rx="3" ry="8" fill="#d1d5db"/>
+  <circle cx="147" cy="95" r="2" fill="black"/>
+  <circle cx="153" cy="95" r="2" fill="black"/>
+  
+  <!-- Frog -->
+  <ellipse cx="225" cy="100" rx="15" ry="10" fill="#22c55e"/>
+  <circle cx="220" cy="95" r="3" fill="black"/>
+  <circle cx="230" cy="95" r="3" fill="black"/>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 2 - 5 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Gross Motor • Animal Recognition</text>
+</svg>

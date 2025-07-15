@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" fill="#f3e8ff" stroke="#e9d5ff" stroke-width="2" rx="10"/>
+  
+  <!-- Title area -->
+  <rect x="10" y="10" width="280" height="40" fill="white" rx="5"/>
+  <text x="150" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0f766e">Number Practice</text>
+  
+  <!-- Numbers -->
+  <circle cx="60" cy="100" r="20" fill="#8b5cf6" stroke="white" stroke-width="3"/>
+  <text x="60" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">1</text>
+  
+  <circle cx="120" cy="100" r="20" fill="#8b5cf6" stroke="white" stroke-width="3"/>
+  <text x="120" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">2</text>
+  
+  <circle cx="180" cy="100" r="20" fill="#8b5cf6" stroke="white" stroke-width="3"/>
+  <text x="180" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">3</text>
+  
+  <circle cx="240" cy="100" r="20" fill="#8b5cf6" stroke="white" stroke-width="3"/>
+  <text x="240" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">4</text>
+  
+  <!-- Bottom section -->
+  <rect x="10" y="140" width="280" height="50" fill="white" rx="5"/>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Ages 3 - 5 years</text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Number Recognition • Early Math</text>
+</svg>
