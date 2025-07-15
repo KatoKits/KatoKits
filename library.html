@@ -9,6 +9,7 @@
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/auth-api.js"></script>
 </head>
 <body>
 <header>
@@ -285,11 +286,11 @@ function toggleMobileMenu() {
 }
 
 function showLoginModal() {
-  alert('Login functionality will be implemented with backend integration');
+  alert('Please navigate to the home page to login');
 }
 
 function showSignupModal() {
-  alert('Signup functionality will be implemented with backend integration');
+  alert('Please navigate to the home page to signup');
 }
 
 function filterLibrary() {
@@ -315,6 +316,50 @@ function filterLibrary() {
     }
   });
 }
+
+// Initialize page and check library access
+document.addEventListener('DOMContentLoaded', async function() {
+  // Update auth buttons
+  katoAPI.updateAuthButtons();
+  
+  // Check library access
+  if (katoAPI.isAuthenticated()) {
+    try {
+      const usage = await katoAPI.getAIUsage();
+      
+      if (usage.subscription_plan === 'free') {
+        // Show library locked message
+        const libraryContent = document.querySelector('.library-grid') || document.querySelector('.grid');
+        if (libraryContent) {
+          libraryContent.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: white; border-radius: 1rem;">
+              <h2 style="color: var(--green); margin-bottom: 1rem;">🔒 Library Access Required</h2>
+              <p style="margin-bottom: 2rem;">Upgrade your plan to access our full library of 200+ lesson plans</p>
+              <a href="pricing.html" class="btn btn-primary">View Upgrade Options</a>
+            </div>
+          `;
+        }
+      }
+    } catch (error) {
+      console.error('Error checking library access:', error);
+    }
+  } else {
+    // Show login required message
+    const libraryContent = document.querySelector('.library-grid') || document.querySelector('.grid');
+    if (libraryContent) {
+      libraryContent.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; background: white; border-radius: 1rem;">
+          <h2 style="color: var(--green); margin-bottom: 1rem;">📚 Login Required</h2>
+          <p style="margin-bottom: 2rem;">Sign in to access the library or create an account to get started</p>
+          <div style="display: flex; gap: 1rem; justify-content: center;">
+            <a href="index.html" class="btn btn-outline">Login</a>
+            <a href="pricing.html" class="btn btn-primary">View Plans</a>
+          </div>
+        </div>
+      `;
+    }
+  }
+});
 </script>
 </body>
 </html>

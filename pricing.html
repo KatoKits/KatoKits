@@ -9,6 +9,7 @@
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/auth-api.js"></script>
 </head>
 <body>
 <header>
@@ -55,60 +56,60 @@
         <li>❌ Advanced AI customization</li>
         <li>❌ Premium templates</li>
       </ul>
-      <a href="#" class="btn btn-outline btn-large">Choose Library Access</a>
+      <button class="btn btn-outline btn-large" onclick="subscribeToPlan('basic')" id="library-access-btn">Choose Library Access</button>
     </div>
 
     <div class="pricing-card">
       <div class="plan-name">Basic</div>
-      <div class="plan-price">$12.99<span>/month</span></div>
+      <div class="plan-price">$9.99<span>/month</span></div>
       <p class="plan-description">Perfect for individual educators</p>
       <ul class="plan-features">
-        <li>✅ 25 AI lesson plans/month</li>
-        <li>✅ Full library access</li>
-        <li>✅ All printables & worksheets</li>
-        <li>✅ Download unlimited</li>
+        <li>✅ 10 AI lesson plans per month</li>
+        <li>✅ Basic templates</li>
         <li>✅ Email support</li>
-        <li>✅ Save favorites</li>
-        <li>✅ Basic customization</li>
+        <li>✅ Download unlimited</li>
+        <li>❌ Library access</li>
         <li>❌ Cloud storage</li>
+        <li>❌ Advanced customization</li>
+        <li>❌ Premium templates</li>
       </ul>
-      <a href="#" class="btn btn-outline btn-large">Choose Basic</a>
+      <button class="btn btn-outline btn-large" onclick="subscribeToPlan('basic')" id="basic-plan-btn">Choose Basic</button>
     </div>
 
     <div class="pricing-card featured-plan">
       <div class="plan-badge">🔥 Most Popular</div>
-      <div class="plan-name">Premium</div>
-      <div class="plan-price">$21.99<span>/month</span></div>
+      <div class="plan-name">Unlimited</div>
+      <div class="plan-price">$19.99<span>/month</span></div>
       <p class="plan-description">Everything you need for professional teaching</p>
       <ul class="plan-features">
         <li>✅ Unlimited AI lesson plans</li>
-        <li>✅ Cloud storage & editing</li>
         <li>✅ Full library access</li>
-        <li>✅ Priority support</li>
         <li>✅ Premium templates</li>
-        <li>✅ Advanced customization</li>
-        <li>✅ Export to Google Drive</li>
-        <li>✅ New features first</li>
+        <li>✅ Priority support</li>
+        <li>✅ Advanced features</li>
+        <li>✅ All printables & worksheets</li>
+        <li>✅ Save favorites</li>
+        <li>✅ Export options</li>
       </ul>
-      <a href="#" class="btn btn-primary btn-large">Choose Premium</a>
+      <button class="btn btn-primary btn-large" onclick="subscribeToPlan('unlimited')" id="unlimited-plan-btn">Choose Unlimited</button>
     </div>
 
     <div class="pricing-card daycare-plan">
       <div class="plan-badge">🏫 Daycare</div>
-      <div class="plan-name">Unlimited Daycare</div>
-      <div class="plan-price">$82.99<span>/month</span></div>
+      <div class="plan-name">Professional</div>
+      <div class="plan-price">$79.99<span>/month</span></div>
       <p class="plan-description">Complete solution for childcare centers</p>
       <ul class="plan-features">
-        <li>✅ Unlimited AI lesson plans</li>
+        <li>✅ Everything in Unlimited</li>
         <li>✅ Multi-user access (up to 10 teachers)</li>
         <li>✅ Center dashboard & analytics</li>
-        <li>✅ Priority support & training</li>
+        <li>✅ Dedicated support</li>
         <li>✅ Custom branding options</li>
         <li>✅ Bulk downloads</li>
         <li>✅ Progress tracking</li>
         <li>✅ Admin management tools</li>
       </ul>
-      <a href="#" class="btn btn-primary btn-large">Choose Daycare Plan</a>
+      <button class="btn btn-primary btn-large" onclick="subscribeToPlan('professional')" id="professional-plan-btn">Choose Professional</button>
     </div>
   </div>
 </section>
@@ -420,19 +421,90 @@
 </footer>
 
 <script>
-// Authentication and mobile menu functions (same as index.html)
+// Mobile menu toggle
 function toggleMobileMenu() {
   const navLinks = document.getElementById('navLinks');
   navLinks.classList.toggle('mobile-open');
 }
 
+// Authentication functions
 function showLoginModal() {
-  alert('Login functionality will be implemented with backend integration');
+  alert('Please navigate to the home page to login');
 }
 
 function showSignupModal() {
-  alert('Signup functionality will be implemented with backend integration');
+  alert('Please navigate to the home page to signup');
 }
+
+// Stripe subscription function
+async function subscribeToPlan(planId) {
+  // Check if user is authenticated
+  if (!katoAPI.isAuthenticated()) {
+    const proceed = confirm('You need to create an account first. Would you like to sign up?');
+    if (proceed) {
+      window.location.href = 'index.html';
+    }
+    return;
+  }
+
+  try {
+    const button = document.getElementById(`${planId}-plan-btn`) || 
+                   document.getElementById('library-access-btn') ||
+                   event.target;
+    
+    button.disabled = true;
+    button.textContent = 'Processing...';
+
+    // Create Stripe checkout session
+    const response = await fetch('/.netlify/functions/stripe-checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${katoAPI.authToken}`
+      },
+      body: JSON.stringify({
+        planId: planId,
+        successUrl: `${window.location.origin}/dashboard.html?success=true`,
+        cancelUrl: `${window.location.origin}/pricing.html?canceled=true`
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to create checkout session');
+    }
+
+    // Redirect to Stripe Checkout
+    window.location.href = data.url;
+
+  } catch (error) {
+    console.error('Subscription error:', error);
+    alert(`Failed to start subscription: ${error.message}`);
+    
+    // Reset button
+    const button = document.getElementById(`${planId}-plan-btn`) || 
+                   document.getElementById('library-access-btn') ||
+                   event.target;
+    button.disabled = false;
+    button.textContent = button.textContent.replace('Processing...', 'Choose ' + planId.charAt(0).toUpperCase() + planId.slice(1));
+  }
+}
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', function() {
+  // Update auth buttons
+  katoAPI.updateAuthButtons();
+  
+  // Check for success/cancel parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    alert('Subscription successful! Welcome to your new plan.');
+    window.location.href = 'dashboard.html';
+  } else if (urlParams.get('canceled') === 'true') {
+    alert('Subscription was canceled. You can try again anytime.');
+  }
+});
 </script>
 </body>
 </html>

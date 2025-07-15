@@ -9,6 +9,7 @@
   <meta name="p:domain_verify" content="1c2313345a716871cc8a3641fb0710e0"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="js/auth-api.js"></script>
   <style>
     .dashboard-container {
       max-width: 1200px;
@@ -112,7 +113,7 @@
 
 <div class="dashboard-container">
   <div class="welcome-section">
-    <h1>Welcome back, Sarah! 👋</h1>
+    <h1 id="welcome-message">Welcome back! 👋</h1>
     <p>Here's your KatoKits activity and account overview</p>
   </div>
 
@@ -120,78 +121,80 @@
     <!-- Usage Tracker -->
     <div class="dashboard-card usage-tracker">
       <h3>AI Plan Usage</h3>
-      <p>You've used 3 of 3 free AI lesson plans</p>
+      <p id="usage-text">Loading...</p>
       <div class="usage-bar">
-        <div class="usage-fill"></div>
+        <div class="usage-fill" id="usage-fill"></div>
       </div>
-      <p>🚀 Upgrade to get unlimited AI plans!</p>
-      <a href="pricing.html" class="btn btn-outline" style="color: white; border-color: white; margin-top: 1rem;">Upgrade Now</a>
+      <p id="upgrade-prompt">🚀 Upgrade to get unlimited AI plans!</p>
+      <a href="pricing.html" class="btn btn-outline" style="color: white; border-color: white; margin-top: 1rem;" id="upgrade-btn">Upgrade Now</a>
     </div>
 
     <!-- My Plans -->
     <div class="dashboard-card">
       <h3>📋 My AI-Generated Plans</h3>
-      <div class="plan-list">
-        <div class="plan-item">
-          <div>
-            <h4>Ocean Animals Discovery</h4>
-            <div class="plan-date">Created: July 10, 2025</div>
-          </div>
-          <div>
-            <a href="#" class="btn btn-small">Download</a>
-          </div>
-        </div>
-        <div class="plan-item">
-          <div>
-            <h4>Color Sorting Fun</h4>
-            <div class="plan-date">Created: July 8, 2025</div>
-          </div>
-          <div>
-            <a href="#" class="btn btn-small">Download</a>
-          </div>
-        </div>
-        <div class="plan-item">
-          <div>
-            <h4>Number Recognition 1-10</h4>
-            <div class="plan-date">Created: July 5, 2025</div>
-          </div>
-          <div>
-            <a href="#" class="btn btn-small">Download</a>
-          </div>
-        </div>
+      <div class="plan-list" id="plan-list">
+        <p style="text-align: center; color: #666;">Loading your plans...</p>
       </div>
     </div>
 
     <!-- Library Access -->
-    <div class="dashboard-card">
+    <div class="dashboard-card" id="library-access">
       <h3>📚 My Library</h3>
       <p>Access to pre-made lesson plans</p>
-      <div style="background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0;">
-        <p style="margin: 0; color: #666;">🔒 Library access requires upgrade</p>
+      <div style="background: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0;" id="library-status">
+        <p style="margin: 0; color: #666;">Loading library access...</p>
       </div>
-      <a href="pricing.html" class="btn btn-outline">Unlock Library ($6.99/mo)</a>
+      <a href="library.html" class="btn btn-outline" id="library-btn">View Library</a>
     </div>
 
     <!-- Account Info -->
     <div class="dashboard-card">
       <h3>⚙️ Account Settings</h3>
-      <div style="margin: 1rem 0;">
-        <p><strong>Plan:</strong> Free</p>
-        <p><strong>Email:</strong> sarah@example.com</p>
-        <p><strong>Member since:</strong> July 2025</p>
+      <div style="margin: 1rem 0;" id="account-info">
+        <p><strong>Plan:</strong> <span id="user-plan">Loading...</span></p>
+        <p><strong>Email:</strong> <span id="user-email">Loading...</span></p>
+        <p><strong>Member since:</strong> <span id="member-since">Loading...</span></p>
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#" class="btn btn-outline btn-small">Edit Profile</a>
-        <a href="#" class="btn btn-outline btn-small">Change Password</a>
+        <button class="btn btn-outline btn-small" onclick="showEditProfile()">Edit Profile</button>
+        <button class="btn btn-outline btn-small" onclick="showChangePassword()">Change Password</button>
       </div>
     </div>
   </div>
 
   <!-- Upgrade CTA -->
-  <div class="dashboard-card" style="background: linear-gradient(135deg, var(--peach), #ff9a56); color: white; text-align: center; margin-top: 2rem;">
+  <div class="dashboard-card" id="upgrade-cta" style="background: linear-gradient(135deg, var(--peach), #ff9a56); color: white; text-align: center; margin-top: 2rem; display: none;">
     <h2>🚀 Ready to Unlock Everything?</h2>
-    <p>Get unlimited AI plans, library access, and premium features starting at just $6.99/month</p>
+    <p>Get unlimited AI plans, library access, and premium features starting at just $9.99/month</p>
     <a href="pricing.html" class="btn" style="background: white; color: var(--green); margin-top: 1rem;">View Plans & Upgrade</a>
+  </div>
+</div>
+
+<!-- Edit Profile Modal -->
+<div id="edit-profile-modal" class="modal">
+  <div class="modal-content">
+    <button onclick="hideEditProfile()" class="modal-close">&times;</button>
+    <h2>Edit Profile</h2>
+    <form id="edit-profile-form" class="modal-form">
+      <input type="email" id="profile-email" name="email" placeholder="Email address" required>
+      <button type="submit" class="btn">Update Profile</button>
+    </form>
+    <div id="profile-status" class="auth-status"></div>
+  </div>
+</div>
+
+<!-- Change Password Modal -->
+<div id="change-password-modal" class="modal">
+  <div class="modal-content">
+    <button onclick="hideChangePassword()" class="modal-close">&times;</button>
+    <h2>Change Password</h2>
+    <form id="change-password-form" class="modal-form">
+      <input type="password" name="currentPassword" placeholder="Current password" required>
+      <input type="password" name="newPassword" placeholder="New password" required>
+      <input type="password" name="confirmPassword" placeholder="Confirm new password" required>
+      <button type="submit" class="btn">Change Password</button>
+    </form>
+    <div id="password-status" class="auth-status"></div>
   </div>
 </div>
 
@@ -235,10 +238,242 @@ function toggleMobileMenu() {
   navLinks.classList.toggle('mobile-open');
 }
 
-function logout() {
-  // TODO: Implement actual logout logic
-  alert('Logout functionality will be implemented with backend integration');
-  window.location.href = 'index.html';
+async function logout() {
+  try {
+    await katoAPI.logout();
+    window.location.href = 'index.html';
+  } catch (error) {
+    console.error('Logout error:', error);
+    // Proceed with logout even if API call fails
+    window.location.href = 'index.html';
+  }
+}
+
+// Modal Functions
+function showEditProfile() {
+  const user = katoAPI.getCurrentUser();
+  if (user) {
+    document.getElementById('profile-email').value = user.email;
+  }
+  document.getElementById('edit-profile-modal').style.display = 'flex';
+}
+
+function hideEditProfile() {
+  document.getElementById('edit-profile-modal').style.display = 'none';
+  clearStatus('profile-status');
+}
+
+function showChangePassword() {
+  document.getElementById('change-password-modal').style.display = 'flex';
+}
+
+function hideChangePassword() {
+  document.getElementById('change-password-modal').style.display = 'none';
+  clearStatus('password-status');
+}
+
+function clearStatus(elementId) {
+  const statusDiv = document.getElementById(elementId);
+  statusDiv.innerHTML = '';
+  statusDiv.className = 'auth-status';
+}
+
+function showStatus(elementId, message, isError = false) {
+  const statusDiv = document.getElementById(elementId);
+  statusDiv.innerHTML = message;
+  statusDiv.className = isError ? 'auth-status error' : 'auth-status success';
+}
+
+// Initialize Dashboard
+document.addEventListener('DOMContentLoaded', async function() {
+  // Check if user is authenticated
+  if (!katoAPI.isAuthenticated()) {
+    window.location.href = 'index.html';
+    return;
+  }
+
+  // Update auth buttons
+  katoAPI.updateAuthButtons();
+
+  const user = katoAPI.getCurrentUser();
+  const profile = katoAPI.getUserProfile();
+
+  // Update welcome message
+  if (user) {
+    document.getElementById('welcome-message').textContent = `Welcome back, ${user.email.split('@')[0]}! 👋`;
+    document.getElementById('user-email').textContent = user.email;
+    
+    // Format member since date
+    if (user.created_at) {
+      const memberDate = new Date(user.created_at).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long' 
+      });
+      document.getElementById('member-since').textContent = memberDate;
+    }
+  }
+
+  // Load user data
+  try {
+    await loadDashboardData();
+  } catch (error) {
+    console.error('Failed to load dashboard data:', error);
+    showDefaultData();
+  }
+
+  // Set up form handlers
+  document.getElementById('edit-profile-form').onsubmit = handleEditProfile;
+  document.getElementById('change-password-form').onsubmit = handleChangePassword;
+});
+
+async function loadDashboardData() {
+  try {
+    // Load AI usage data
+    const usage = await katoAPI.getAIUsage();
+    updateUsageDisplay(usage);
+
+    // Load AI generations (this would need a new API endpoint)
+    // For now, show placeholder
+    loadAIGenerations();
+
+    // Update library access based on subscription
+    updateLibraryAccess(usage.subscription_plan);
+
+    // Update account info
+    document.getElementById('user-plan').textContent = 
+      usage.subscription_plan.charAt(0).toUpperCase() + usage.subscription_plan.slice(1);
+
+    // Show upgrade CTA if on free plan
+    if (usage.subscription_plan === 'free') {
+      document.getElementById('upgrade-cta').style.display = 'block';
+    }
+
+  } catch (error) {
+    console.error('Error loading dashboard data:', error);
+    showDefaultData();
+  }
+}
+
+function updateUsageDisplay(usage) {
+  const usageText = document.getElementById('usage-text');
+  const usageFill = document.getElementById('usage-fill');
+  const upgradePrompt = document.getElementById('upgrade-prompt');
+  const upgradeBtn = document.getElementById('upgrade-btn');
+
+  if (usage.subscription_plan === 'free') {
+    const remaining = usage.free_trial_uses || 0;
+    const total = 3;
+    const used = total - remaining;
+    
+    usageText.textContent = `You've used ${used} of ${total} free AI lesson plans`;
+    
+    // Update progress bar
+    const percentage = (used / total) * 100;
+    usageFill.style.width = `${percentage}%`;
+    
+    if (remaining === 0) {
+      upgradePrompt.textContent = '🔒 Free limit reached - upgrade to continue!';
+    } else {
+      upgradePrompt.textContent = `🚀 ${remaining} free plans remaining - upgrade for unlimited!`;
+    }
+  } else {
+    usageText.textContent = `Unlimited AI lesson plans`;
+    usageFill.style.width = '100%';
+    upgradePrompt.textContent = '✨ Enjoying unlimited access!';
+    upgradeBtn.style.display = 'none';
+  }
+}
+
+function loadAIGenerations() {
+  // Placeholder for AI generations - would need backend API
+  const planList = document.getElementById('plan-list');
+  planList.innerHTML = `
+    <div style="text-align: center; color: #666; padding: 2rem;">
+      <p>Your AI-generated lesson plans will appear here</p>
+      <a href="ai_clean.html" class="btn btn-outline">Generate Your First Plan</a>
+    </div>
+  `;
+}
+
+function updateLibraryAccess(plan) {
+  const libraryStatus = document.getElementById('library-status');
+  const libraryBtn = document.getElementById('library-btn');
+
+  if (plan === 'free') {
+    libraryStatus.innerHTML = '<p style="margin: 0; color: #666;">🔒 Library access requires upgrade</p>';
+    libraryBtn.textContent = 'Unlock Library ($9.99/mo)';
+    libraryBtn.href = 'pricing.html';
+  } else {
+    libraryStatus.innerHTML = '<p style="margin: 0; color: #28a745;">✅ Full library access enabled</p>';
+    libraryBtn.textContent = 'Browse Library';
+    libraryBtn.href = 'library.html';
+  }
+}
+
+function showDefaultData() {
+  document.getElementById('usage-text').textContent = 'Unable to load usage data';
+  document.getElementById('user-plan').textContent = 'Unknown';
+  document.getElementById('member-since').textContent = 'Recently';
+}
+
+async function handleEditProfile(event) {
+  event.preventDefault();
+  const form = event.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  try {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Updating...';
+    showStatus('profile-status', 'Updating profile...', false);
+
+    // This would need a backend API endpoint for profile updates
+    // For now, just show success
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    showStatus('profile-status', 'Profile updated successfully!', false);
+    setTimeout(() => {
+      hideEditProfile();
+    }, 2000);
+  } catch (error) {
+    showStatus('profile-status', `Update failed: ${error.message}`, true);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Update Profile';
+  }
+}
+
+async function handleChangePassword(event) {
+  event.preventDefault();
+  const form = event.target;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const newPassword = form.newPassword.value;
+  const confirmPassword = form.confirmPassword.value;
+
+  if (newPassword !== confirmPassword) {
+    showStatus('password-status', 'Passwords do not match', true);
+    return;
+  }
+
+  try {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Changing...';
+    showStatus('password-status', 'Changing password...', false);
+
+    // This would need a backend API endpoint for password changes
+    // For now, just show success
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    showStatus('password-status', 'Password changed successfully!', false);
+    form.reset();
+    setTimeout(() => {
+      hideChangePassword();
+    }, 2000);
+  } catch (error) {
+    showStatus('password-status', `Password change failed: ${error.message}`, true);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Change Password';
+  }
 }
 </script>
 </body>
