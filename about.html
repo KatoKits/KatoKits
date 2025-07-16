@@ -1,104 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="images/phto.jpg/katokits-logo.png">
-  <title>About KatoKits – Printable Preschool Activities & AI Lesson Plans</title>
-  <meta name="description" content="Discover KatoKits - your source for printable preschool activities, AI-powered lesson plans, and done-for-you educational resources for educators, parents, and daycare centers.">
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-  <div class="header-container">
-    <div class="auth-buttons left-auth">
-      <a href="#" onclick="showLoginModal()" class="btn btn-outline">Login</a>
-    </div>
-    <div class="logo">KatoKits</div>
-    <nav>
-      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="pricing.html">Pricing & Add-ons</a>
-        <a href="ai.html">AI Generator</a>
-        <a href="library.html">Library</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-    <div class="auth-buttons right-auth">
-      <a href="#" onclick="showSignupModal()" class="btn btn-primary">Start Free Trial</a>
-    </div>
-  </div>
-</header>
-
-<main>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>About <span class="brand-text">KatoKits</span></h1>
-        <p class="hero-subtitle">Empowering educators and parents with AI-powered lesson plans and printable activities for preschoolers</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Content -->
-  <section class="about-content">
-    <div class="container">
-      <div class="content-grid">
-        <div class="content-text">
-          <h2>Our Mission</h2>
-          <p>At KatoKits, we believe every child deserves engaging, educational experiences that spark curiosity and foster development. Our mission is to make high-quality preschool education accessible to teachers, parents, and daycare centers everywhere.</p>
-          
-          <h3>What We Offer</h3>
-          <ul>
-            <li><strong>AI-Powered Lesson Plans:</strong> Generate customized lesson plans in seconds, tailored to specific themes, ages, and learning objectives</li>
-            <li><strong>Printable Activities:</strong> Ready-to-use worksheets, games, and activities that complement our lesson plans</li>
-            <li><strong>Comprehensive Resources:</strong> Complete educational materials including objectives, materials lists, and assessment tools</li>
-            <li><strong>Free Resources:</strong> Access to our growing library of free educational materials</li>
-          </ul>
-
-          <h3>Why Choose KatoKits?</h3>
-          <p>Our platform combines the power of artificial intelligence with proven educational methodologies to create resources that are both innovative and effective. Whether you're a seasoned educator or a parent looking to enhance your child's learning at home, KatoKits provides the tools you need to succeed.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/phto.jpg/katokits-logo.png"
+    />
+    <title>
+      About KatoKits – Printable Preschool Activities & AI Lesson Plans
+    </title>
+    <meta
+      name="description"
+      content="Discover KatoKits - your source for printable preschool activities, AI-powered lesson plans, and done-for-you educational resources for educators, parents, and daycare centers."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="auth-buttons left-auth">
+          <a href="#" onclick="showLoginModal()" class="btn btn-outline"
+            >Login</a
+          >
+        </div>
+        <div class="logo">KatoKits</div>
+        <nav>
+          <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            ☰
+          </button>
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing & Add-ons</a>
+            <a href="ai.html">AI Generator</a>
+            <a href="library.html">Library</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </nav>
+        <div class="auth-buttons right-auth">
+          <a href="#" onclick="showSignupModal()" class="btn btn-primary"
+            >Start Free Trial</a
+          >
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>KatoKits</h3>
-        <p>AI-powered preschool education resources for modern educators.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="ai.html">AI Generator</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="freebies.html">Free Resources</a></li>
-          <li><a href="library.html">Library</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 KatoKits. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>About <span class="brand-text">KatoKits</span></h1>
+            <p class="hero-subtitle">
+              Empowering educators and parents with AI-powered lesson plans and
+              printable activities for preschoolers
+            </p>
+          </div>
+        </div>
+      </section>
 
-<script src="js/main.js"></script>
-</body>
+      <!-- About Content -->
+      <section class="about-content">
+        <div class="container">
+          <div class="content-grid">
+            <div class="content-text">
+              <h2>Our Mission</h2>
+              <p>
+                At KatoKits, we believe every child deserves engaging,
+                educational experiences that spark curiosity and foster
+                development. Our mission is to make high-quality preschool
+                education accessible to teachers, parents, and daycare centers
+                everywhere.
+              </p>
+
+              <h3>What We Offer</h3>
+              <ul>
+                <li>
+                  <strong>AI-Powered Lesson Plans:</strong> Generate customized
+                  lesson plans in seconds, tailored to specific themes, ages,
+                  and learning objectives
+                </li>
+                <li>
+                  <strong>Printable Activities:</strong> Ready-to-use
+                  worksheets, games, and activities that complement our lesson
+                  plans
+                </li>
+                <li>
+                  <strong>Comprehensive Resources:</strong> Complete educational
+                  materials including objectives, materials lists, and
+                  assessment tools
+                </li>
+                <li>
+                  <strong>Free Resources:</strong> Access to our growing library
+                  of free educational materials
+                </li>
+              </ul>
+
+              <h3>Why Choose KatoKits?</h3>
+              <p>
+                Our platform combines the power of artificial intelligence with
+                proven educational methodologies to create resources that are
+                both innovative and effective. Whether you're a seasoned
+                educator or a parent looking to enhance your child's learning at
+                home, KatoKits provides the tools you need to succeed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>KatoKits</h3>
+            <p>
+              AI-powered preschool education resources for modern educators.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="ai.html">AI Generator</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="freebies.html">Free Resources</a></li>
+              <li><a href="library.html">Library</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 KatoKits. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

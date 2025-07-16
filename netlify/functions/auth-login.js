@@ -1,6 +1,6 @@
 const { supabase } = require('./supabase-config');
 
-exports.handler = async (event) => {
+exports.handler = async event => {
   // Set CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',

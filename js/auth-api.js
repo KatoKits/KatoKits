@@ -1,13 +1,45 @@
-// KatoKits Authentication and API Client
+/**
+ * KatoKits Authentication and API Client
+ *
+ * This module provides a comprehensive API client for the KatoKits application,
+ * handling authentication, user management, and API communications with Netlify functions.
+ *
+ * Features:
+ * - User authentication (signup, login, logout)
+ * - Session management with localStorage
+ * - API call abstraction with error handling
+ * - UI state management for auth buttons
+ * - AI usage tracking and permissions
+ *
+ * @author KatoKits Team
+ * @version 1.0.0
+ */
+
+/**
+ * Main API client class for KatoKits application
+ * Handles all authentication and API operations
+ */
 class KatoKitsAPI {
+  /**
+   * Initialize the API client
+   * Loads existing authentication state from localStorage
+   */
   constructor() {
     this.baseURL = window.location.origin;
     this.authToken = localStorage.getItem('katokits_auth_token');
     this.user = JSON.parse(localStorage.getItem('katokits_user') || 'null');
-    this.profile = JSON.parse(localStorage.getItem('katokits_profile') || 'null');
+    this.profile = JSON.parse(
+      localStorage.getItem('katokits_profile') || 'null'
+    );
   }
 
-  // Helper method to make API calls
+  /**
+   * Make authenticated API calls to Netlify functions
+   * @param {string} endpoint - The Netlify function endpoint name
+   * @param {Object} options - Fetch options (method, body, headers, etc.)
+   * @returns {Promise<Object>} API response data
+   * @throws {Error} If the API call fails
+   */
   async apiCall(endpoint, options = {}) {
     const url = `${this.baseURL}/.netlify/functions/${endpoint}`;
     const headers = {
@@ -43,7 +75,13 @@ class KatoKitsAPI {
     }
   }
 
-  // Authentication methods
+  /**
+   * Register a new user account
+   * @param {string} email - User's email address
+   * @param {string} password - User's password
+   * @returns {Promise<Object>} Registration response with user data and session
+   * @throws {Error} If signup fails
+   */
   async signup(email, password) {
     try {
       const data = await this.apiCall('auth-signup', {
@@ -110,7 +148,7 @@ class KatoKitsAPI {
     localStorage.removeItem('katokits_auth_token');
     localStorage.removeItem('katokits_user');
     localStorage.removeItem('katokits_profile');
-    
+
     // Clear old localStorage keys for backward compatibility
     localStorage.removeItem('katokits_free_uses');
     localStorage.removeItem('katokits_paid');
