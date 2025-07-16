@@ -1,6 +1,6 @@
 const { supabase } = require('./supabase-config');
 
-exports.handler = async (event) => {
+exports.handler = async event => {
   // Set CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -45,8 +45,8 @@ exports.handler = async (event) => {
         data: {
           free_trial_uses: 3,
           subscription_plan: 'free',
-        }
-      }
+        },
+      },
     });
 
     if (error) {
@@ -68,7 +68,7 @@ exports.handler = async (event) => {
             free_trial_uses: 3,
             subscription_plan: 'free',
             created_at: new Date().toISOString(),
-          }
+          },
         ]);
 
       if (profileError) {
@@ -87,11 +87,13 @@ exports.handler = async (event) => {
           email: data.user?.email,
           email_confirmed_at: data.user?.email_confirmed_at,
         },
-        session: data.session ? {
-          access_token: data.session.access_token,
-          refresh_token: data.session.refresh_token,
-          expires_at: data.session.expires_at,
-        } : null,
+        session: data.session
+          ? {
+              access_token: data.session.access_token,
+              refresh_token: data.session.refresh_token,
+              expires_at: data.session.expires_at,
+            }
+          : null,
       }),
     };
   } catch (error) {

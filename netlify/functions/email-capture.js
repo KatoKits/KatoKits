@@ -1,6 +1,6 @@
 const { supabase } = require('./supabase-config');
 
-exports.handler = async (event) => {
+exports.handler = async event => {
   // Set CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -45,12 +45,13 @@ exports.handler = async (event) => {
           email,
           created_at: new Date().toISOString(),
           source: 'website_signup',
-          free_trial_granted: true
-        }
+          free_trial_granted: true,
+        },
       ])
       .select();
 
-    if (error && error.code === '23505') { // Unique constraint violation
+    if (error && error.code === '23505') {
+      // Unique constraint violation
       // Email already exists, update the record
       const { data: updateData, error: updateError } = await supabase
         .from('email_signups')

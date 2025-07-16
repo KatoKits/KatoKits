@@ -1,6 +1,6 @@
 const { supabase } = require('./supabase-config');
 
-exports.handler = async (event) => {
+exports.handler = async event => {
   // Set CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -26,7 +26,8 @@ exports.handler = async (event) => {
     // Try to get user from auth token
     if (authHeader && authHeader.startsWith('Bearer ')) {
       const token = authHeader.substring(7);
-      const { data: userData, error: authError } = await supabase.auth.getUser(token);
+      const { data: userData, error: authError } =
+        await supabase.auth.getUser(token);
       if (!authError && userData.user) {
         userId = userData.user.id;
         userEmail = userData.user.email;
@@ -65,7 +66,9 @@ exports.handler = async (event) => {
           free_trial_uses: profile?.free_trial_uses || 0,
           subscription_plan: profile?.subscription_plan || 'free',
           ai_generations_used: profile?.ai_generations_used || 0,
-          can_generate: profile?.subscription_plan !== 'free' || (profile?.free_trial_uses || 0) > 0,
+          can_generate:
+            profile?.subscription_plan !== 'free' ||
+            (profile?.free_trial_uses || 0) > 0,
         }),
       };
     }
@@ -92,21 +95,29 @@ exports.handler = async (event) => {
         }
 
         // Check if user can generate
-        if (profile?.subscription_plan === 'free' && (profile?.free_trial_uses || 0) <= 0) {
+        if (
+          profile?.subscription_plan === 'free' &&
+          (profile?.free_trial_uses || 0) <= 0
+        ) {
           return {
             statusCode: 403,
             headers,
             body: JSON.stringify({
               error: 'Free trial limit reached',
-              subscription_required: true
+              subscription_required: true,
             }),
           };
         }
 
         // Update usage
-        const updates = { ai_generations_used: (profile?.ai_generations_used || 0) + 1 };
+        const updates = {
+          ai_generations_used: (profile?.ai_generations_used || 0) + 1,
+        };
         if (profile?.subscription_plan === 'free') {
-          updates.free_trial_uses = Math.max(0, (profile?.free_trial_uses || 0) - 1);
+          updates.free_trial_uses = Math.max(
+            0,
+            (profile?.free_trial_uses || 0) - 1
+          );
         }
 
         const { error: updateError } = await supabase
@@ -129,7 +140,9 @@ exports.handler = async (event) => {
           body: JSON.stringify({
             message: 'AI usage recorded',
             remaining_free_uses: updates.free_trial_uses,
-            can_continue: profile?.subscription_plan !== 'free' || updates.free_trial_uses > 0,
+            can_continue:
+              profile?.subscription_plan !== 'free' ||
+              updates.free_trial_uses > 0,
           }),
         };
       }
@@ -143,7 +156,8 @@ exports.handler = async (event) => {
           .eq('email', email)
           .single();
 
-        if (emailError && emailError.code !== 'PGRST116') { // Not found is OK
+        if (emailError && emailError.code !== 'PGRST116') {
+          // Not found is OK
           console.error('Email record error:', emailError);
           return {
             statusCode: 500,
@@ -159,7 +173,7 @@ exports.handler = async (event) => {
             headers,
             body: JSON.stringify({
               error: 'Free trial limit reached',
-              signup_required: true
+              signup_required: true,
             }),
           };
         }
@@ -168,7 +182,10 @@ exports.handler = async (event) => {
         const { error: updateError } = await supabase
           .from('email_signups')
           .update({
-            free_trial_uses: Math.max(0, (emailRecord.free_trial_uses || 0) - 1),
+            free_trial_uses: Math.max(
+              0,
+              (emailRecord.free_trial_uses || 0) - 1
+            ),
             ai_generations_used: (emailRecord.ai_generations_used || 0) + 1,
             updated_at: new Date().toISOString(),
           })
@@ -188,7 +205,10 @@ exports.handler = async (event) => {
           headers,
           body: JSON.stringify({
             message: 'AI usage recorded',
-            remaining_free_uses: Math.max(0, (emailRecord.free_trial_uses || 0) - 1),
+            remaining_free_uses: Math.max(
+              0,
+              (emailRecord.free_trial_uses || 0) - 1
+            ),
             can_continue: (emailRecord.free_trial_uses || 0) > 1,
           }),
         };

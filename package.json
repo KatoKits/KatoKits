@@ -4,14 +4,17 @@
   "version": "1.0.0",
   "description": "AI-powered preschool lesson plans and educational activities",
   "scripts": {
-    "build": "parcel build src/index.html --dist-dir dist",
+    "build": "parcel build src/index.html --dist-dir dist --no-source-maps",
+    "build:simple": "parcel build src/index.html --dist-dir dist",
     "start": "parcel src/index.html --open",
-    "dev": "parcel src/index.html --port 3000",
+    "dev": "parcel src/index.html --port 3000 --no-cache",
     "lint": "eslint js/ netlify/functions/ --fix",
     "lint:check": "eslint js/ netlify/functions/",
     "clean": "rm -rf dist .parcel-cache",
-    "format": "prettier --write \"**/*.{js,html,css,md}\"",
-    "format:check": "prettier --check \"**/*.{js,html,css,md}\""
+    "format": "prettier --write \"**/*.{js,html,css,md}\" --ignore-path .gitignore",
+    "format:check": "prettier --check \"**/*.{js,html,css,md}\" --ignore-path .gitignore",
+    "validate": "npm run lint:check && npm run format:check",
+    "prepare": "npm run clean && npm run build:simple"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.0.0",

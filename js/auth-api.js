@@ -28,7 +28,9 @@ class KatoKitsAPI {
     this.baseURL = window.location.origin;
     this.authToken = localStorage.getItem('katokits_auth_token');
     this.user = JSON.parse(localStorage.getItem('katokits_user') || 'null');
-    this.profile = JSON.parse(localStorage.getItem('katokits_profile') || 'null');
+    this.profile = JSON.parse(
+      localStorage.getItem('katokits_profile') || 'null'
+    );
   }
 
   /**

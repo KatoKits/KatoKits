@@ -18,17 +18,20 @@ KatoKits is a collection of joyful, themed printable activities, AI-powered less
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/KatoKits/KatoKits.git
    cd KatoKits
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -242,4 +245,4 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ---
 
-*Built with ❤️ for educators and children everywhere.*
+_Built with ❤️ for educators and children everywhere._

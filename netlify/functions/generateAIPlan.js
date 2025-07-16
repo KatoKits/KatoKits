@@ -1,7 +1,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 const { supabase } = require('./supabase-config');
 
-exports.handler = async (event) => {
+exports.handler = async event => {
   // Set CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -46,7 +46,8 @@ exports.handler = async (event) => {
     // Try to get user from auth token
     if (authHeader && authHeader.startsWith('Bearer ')) {
       const token = authHeader.substring(7);
-      const { data: userData, error: authError } = await supabase.auth.getUser(token);
+      const { data: userData, error: authError } =
+        await supabase.auth.getUser(token);
       if (!authError && userData.user) {
         userId = userData.user.id;
 
@@ -57,7 +58,9 @@ exports.handler = async (event) => {
           .eq('user_id', userId)
           .single();
 
-        canGenerate = profile?.subscription_plan !== 'free' || (profile?.free_trial_uses || 0) > 0;
+        canGenerate =
+          profile?.subscription_plan !== 'free' ||
+          (profile?.free_trial_uses || 0) > 0;
       }
     } else if (email) {
       // Check usage for non-authenticated user with email
@@ -75,8 +78,9 @@ exports.handler = async (event) => {
         statusCode: 403,
         headers,
         body: JSON.stringify({
-          error: 'Free trial limit reached. Please sign up or upgrade your plan.',
-          upgrade_required: true
+          error:
+            'Free trial limit reached. Please sign up or upgrade your plan.',
+          upgrade_required: true,
         }),
       };
     }
@@ -110,9 +114,14 @@ Create a highly detailed preschool lesson plan for: ${prompt}.
         .eq('user_id', userId)
         .single();
 
-      const updates = { ai_generations_used: (profile?.ai_generations_used || 0) + 1 };
+      const updates = {
+        ai_generations_used: (profile?.ai_generations_used || 0) + 1,
+      };
       if (profile?.subscription_plan === 'free') {
-        updates.free_trial_uses = Math.max(0, (profile?.free_trial_uses || 0) - 1);
+        updates.free_trial_uses = Math.max(
+          0,
+          (profile?.free_trial_uses || 0) - 1
+        );
       }
 
       await supabase
@@ -142,10 +151,9 @@ Create a highly detailed preschool lesson plan for: ${prompt}.
       headers,
       body: JSON.stringify({
         plan: response.data.choices[0].text,
-        usage_updated: true
+        usage_updated: true,
       }),
     };
-
   } catch (error) {
     console.error('AI Plan generation error:', error);
     return {

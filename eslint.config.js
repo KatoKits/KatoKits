@@ -17,19 +17,19 @@ export default [
         confirm: 'readonly',
         prompt: 'readonly',
         FormData: 'readonly',
-        Event: 'readonly'
-      }
+        Event: 'readonly',
+      },
     },
     rules: {
-      'indent': ['error', 2],
+      indent: ['error', 2],
       'linebreak-style': ['error', 'unix'],
-      'quotes': ['error', 'single'],
-      'semi': ['error', 'always'],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
       'no-unused-vars': ['warn'],
       'no-console': ['warn'],
       'no-trailing-spaces': ['error'],
-      'eol-last': ['error', 'always']
-    }
+      'eol-last': ['error', 'always'],
+    },
   },
   {
     files: ['netlify/functions/**/*.js'],
@@ -49,25 +49,21 @@ export default [
         setTimeout: 'readonly',
         clearTimeout: 'readonly',
         setInterval: 'readonly',
-        clearInterval: 'readonly'
-      }
+        clearInterval: 'readonly',
+      },
     },
     rules: {
-      'indent': ['error', 2],
+      indent: ['error', 2],
       'linebreak-style': ['error', 'unix'],
-      'quotes': ['error', 'single'],
-      'semi': ['error', 'always'],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
       'no-unused-vars': ['warn'],
       'no-console': ['warn'],
       'no-trailing-spaces': ['error'],
-      'eol-last': ['error', 'always']
-    }
+      'eol-last': ['error', 'always'],
+    },
   },
   {
-    ignores: [
-      'node_modules/**',
-      'dist/**',
-      '.parcel-cache/**'
-    ]
-  }
+    ignores: ['node_modules/**', 'dist/**', '.parcel-cache/**'],
+  },
 ];

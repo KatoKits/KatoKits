@@ -9,7 +9,7 @@ console.log('KatoKits application loaded successfully');
 /**
  * Initialize the application when DOM is ready
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   initializeApp();
 });
 
@@ -51,16 +51,18 @@ function initializeAuthModals() {
   // Login modal initialization
   const loginButtons = document.querySelectorAll('[onclick*="showLoginModal"]');
   loginButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
       showLoginModal();
     });
   });
 
   // Signup modal initialization
-  const signupButtons = document.querySelectorAll('[onclick*="showSignupModal"]');
+  const signupButtons = document.querySelectorAll(
+    '[onclick*="showSignupModal"]'
+  );
   signupButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
       showSignupModal();
     });
