@@ -1,17 +1,28 @@
 {
+  "type": "module",
   "name": "katokits",
   "version": "1.0.0",
   "description": "AI-powered preschool lesson plans and educational activities",
   "scripts": {
     "build": "parcel build src/index.html --dist-dir dist",
-    "start": "parcel src/index.html --open"
+    "start": "parcel src/index.html --open",
+    "dev": "parcel src/index.html --port 3000",
+    "lint": "eslint js/ netlify/functions/ --fix",
+    "lint:check": "eslint js/ netlify/functions/",
+    "clean": "rm -rf dist .parcel-cache",
+    "format": "prettier --write \"**/*.{js,html,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css,md}\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.0.0",
     "stripe": "^10.0.0"
   },
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-node": "^11.1.0",
+    "parcel": "^2.0.0",
+    "prettier": "^3.6.2"
   },
   "author": "KatoKits",
   "license": "ISC"

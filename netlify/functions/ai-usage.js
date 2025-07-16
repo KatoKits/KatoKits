@@ -96,9 +96,9 @@ exports.handler = async (event) => {
           return {
             statusCode: 403,
             headers,
-            body: JSON.stringify({ 
+            body: JSON.stringify({
               error: 'Free trial limit reached',
-              subscription_required: true 
+              subscription_required: true
             }),
           };
         }
@@ -157,9 +157,9 @@ exports.handler = async (event) => {
           return {
             statusCode: 403,
             headers,
-            body: JSON.stringify({ 
+            body: JSON.stringify({
               error: 'Free trial limit reached',
-              signup_required: true 
+              signup_required: true
             }),
           };
         }
